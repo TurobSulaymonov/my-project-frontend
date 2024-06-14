@@ -104,7 +104,7 @@ export function useApollo(initialState: any) {
 	return useMemo(() => initializeApollo(initialState), [initialState]);
 }
 
-/**
+/* 
 import { ApolloClient, InMemoryCache, createHttpLink } from "@apollo/client";
 
 // No Subscription required for develop process
@@ -118,5 +118,5 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-export default client;
-*/
+export default client; */
+
