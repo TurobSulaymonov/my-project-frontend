@@ -49,27 +49,27 @@ const Filter = (props: FilterType) => {
 		if (searchFilter?.search?.locationList?.length == 0) {
 			delete searchFilter.search.locationList;
 			setShowMore(false);
-			router.push(`/property?input=${JSON.stringify}`, `/property?input=${queryParams}`, { scroll: false }).then();
+			router.push(`/property?input=${JSON.stringify}`, `/property?input=${JSON.stringify}`, { scroll: false }).then();
 		}
 
 		if (searchFilter?.search?.typeList?.length == 0) {
 			delete searchFilter.search.typeList;
-			router.push(`/property?input=${JSON.stringify}`, `/property?input=${queryParams}`, { scroll: false }).then();
+			router.push(`/property?input=${JSON.stringify}`, `/property?input=${JSON.stringify}`, { scroll: false }).then();
 		}
 
 		if (searchFilter?.search?.roomsList?.length == 0) {
 			delete searchFilter.search.roomsList;
-			router.push(`/property?input=${JSON.stringify}`, `/property?input=${queryParams}`, { scroll: false }).then();
+			router.push(`/property?input=${JSON.stringify}`, `/property?input=${JSON.stringify}`, { scroll: false }).then();
 		}
 
 		if (searchFilter?.search?.options?.length == 0) {
 			delete searchFilter.search.options;
-			router.push(`/property?input=${JSON.stringify}`, `/property?input=${queryParams}`, { scroll: false }).then();
+			router.push(`/property?input=${JSON.stringify}`, `/property?input=${JSON.stringify}`, { scroll: false }).then();
 		}
 
 		if (searchFilter?.search?.bedsList?.length == 0) {
 			delete searchFilter.search.bedsList;
-			router.push(`/property?input=${JSON.stringify}`, `/property?input=${queryParams}`, { scroll: false }).then();
+			router.push(`/property?input=${JSON.stringify}`, `/property?input=${JSON.stringify}`, { scroll: false }).then();
 		}
 
 		if (searchFilter?.search?.locationList) setShowMore(true);
