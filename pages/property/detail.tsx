@@ -32,6 +32,7 @@ import { T } from '../../libs/types/common';
 import { Direction, Message } from '../../libs/enums/common.enum';
 import { sweetMixinErrorAlert, sweetTopSmallSuccessAlert } from '../../libs/sweetAlert';
 import { LIKE_TARGET_PROPERTY } from '../../apollo/user/mutation';
+import { GET_COMMENTS } from '../../apollo/admin/query';
 
 SwiperCore.use([Autoplay, Navigation, Pagination]);
 
@@ -93,14 +94,31 @@ const PropertyDetail: NextPage = ({ initialComment, ...props }: any) => {
 			   sort: "propertyViews",
 			   direction: Direction.DESC,
 			   search: {
-				locationList: [property?.propertyLocation]
+				locationList: property?.propertyLocation ? [property?.propertyLocation] : [],
 			   },
 			},
 		 },
 		 skip: !propertyId && !property,
 		notifyOnNetworkStatusChange: true,
 		onCompleted:( data: T) => {
-			if(data?.getproperties?.list) setDestinationProperties(data?.getProperties?.list)
+			if(data?.getComments?.list) setDestinationProperties(data?.getProperties?.list)
+		},
+	 });
+
+	 const {
+		loading: getCommentsLoading,
+		data: getCommentsData,
+		error: getCommentsError,
+        refetch: getCommentsRefetch,
+	 } = useQuery(GET_COMMENTS, {
+		fetchPolicy: "cache-and-network",
+		variables:{
+			input: initialComment },
+		 skip: !commentInquiry.search.commentRefId,
+		notifyOnNetworkStatusChange: true,
+		onCompleted:( data: T) => {
+			if(data?.getComments?.list) setPropertyComments(data?.getComments?.list),
+			setCommentTotal(data?.getComments?.metaCounter[0]?.total ?? 0)
 		},
 	 });
 	/** LIFECYCLES **/
@@ -120,7 +138,11 @@ const PropertyDetail: NextPage = ({ initialComment, ...props }: any) => {
 		}
 	}, [router]);
 
-	useEffect(() => {}, [commentInquiry]);
+	useEffect(() => {
+		if(commentInquiry.search.commentRefId) {
+			getCommentsRefetch({input: commentInquiry});
+		}
+	}, [commentInquiry]);
 
 	/** HANDLERS **/
 
