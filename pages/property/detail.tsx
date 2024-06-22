@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useEffect, useState } from 'react';
-import { Box, Button, Checkbox, Stack, Typography } from '@mui/material';
+import { Box, Button, CircularProgress, Stack, Typography } from '@mui/material';
 import useDeviceDetect from '../../libs/hooks/useDeviceDetect';
 import withLayoutFull from '../../libs/components/layout/LayoutFull';
 import { NextPage } from 'next';
@@ -27,12 +27,12 @@ import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { GET_PROPERTIES, GET_PROPERTY } from '../../apollo/user/query';
+import { GET_COMMENTS, GET_PROPERTIES, GET_PROPERTY } from '../../apollo/user/query';
 import { T } from '../../libs/types/common';
 import { Direction, Message } from '../../libs/enums/common.enum';
 import { sweetErrorHandling, sweetMixinErrorAlert, sweetTopSmallSuccessAlert } from '../../libs/sweetAlert';
 import { CREATE_COMMENT, LIKE_TARGET_PROPERTY } from '../../apollo/user/mutation';
-import { GET_COMMENTS } from '../../apollo/admin/query';
+
 
 SwiperCore.use([Autoplay, Navigation, Pagination]);
 
@@ -71,7 +71,7 @@ const PropertyDetail: NextPage = ({ initialComment, ...props }: any) => {
 		error: getPropertyError,
         refetch: getPropertyRefetch,
 	 } = useQuery(GET_PROPERTY, {
-		fetchPolicy: "cache-and-network",
+		fetchPolicy: "network-only",
 		variables:{input: propertyId},
 		skip: !propertyId,
 		notifyOnNetworkStatusChange: true,
@@ -200,6 +200,14 @@ const PropertyDetail: NextPage = ({ initialComment, ...props }: any) => {
 		} catch(err: any) {
             await sweetErrorHandling(err);
 		}
+	};
+
+	if(getPropertyLoading) {
+		return(<Stack
+	     sx={{ display: "flex", justifyContent: "center", alignItems:"center", width: '100%', height: "1080px" }} 	
+		>
+			<CircularProgress  />
+		</Stack>)
 	}
 
 	if (device === 'mobile') {
