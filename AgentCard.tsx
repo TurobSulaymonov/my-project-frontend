@@ -16,7 +16,7 @@ interface AgentCardProps {
 }
 
 const AgentCard = (props: AgentCardProps) => {
-	const { agent, likeMemberHandler} = props;
+	const { agent, likeMemberHandler } = props;
 	const device = useDeviceDetect();
 	const user = useReactiveVar(userVar);
 	const imagePath: string = agent?.memberImage
@@ -66,7 +66,7 @@ const AgentCard = (props: AgentCardProps) => {
 						</IconButton>
 						<Typography className="view-cnt">{agent?.memberViews}</Typography>
 						<IconButton color={'default'} onClick={() => likeMemberHandler(user, agent?._id)}>
-						    {agent?.meLiked && agent?.meLiked[0]?.myFavorite ? (
+							{agent?.meLiked && agent?.meLiked[0]?.myFavorite ? (
 								<FavoriteIcon color={'primary'} />
 							) : (
 								<FavoriteBorderIcon />

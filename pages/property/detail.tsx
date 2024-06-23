@@ -88,22 +88,22 @@ const PropertyDetail: NextPage = ({ initialComment, ...props }: any) => {
 		error: getPropertiesError,
         refetch: getPropertiesRefetch,
 	 } = useQuery(GET_PROPERTIES, {
-		fetchPolicy: "cache-and-network",
+		fetchPolicy: 'cache-and-network',
 		variables:{
 			input: {
                page: 1,
 			   limit: 4,
-			   sort: "propertyViews",
+			   sort: 'createdAt',
 			   direction: Direction.DESC,
 			   search: {
-				locationList: property?.propertyLocation ? [property?.propertyLocation] : [],
+				locationList:property?.propertyLocation ? [property?.propertyLocation] : [],
 			   },
 			},
 		 },
 		 skip: !propertyId && !property,
 		notifyOnNetworkStatusChange: true,
 		onCompleted:( data: T) => {
-			if(data?.getComments?.list) setDestinationProperties(data?.getProperties?.list)
+			if(data?.getProperties?.list) setDestinationProperties(data?.getProperties?.list)
 		},
 	 });
 

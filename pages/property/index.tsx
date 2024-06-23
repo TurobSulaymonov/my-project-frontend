@@ -38,20 +38,21 @@ const PropertyList: NextPage = ({ initialInput, ...props }: any) => {
 
 	/** APOLLO REQUESTS **/
 	const [likeTargetProperty] = useMutation(LIKE_TARGET_PROPERTY);
+
 	const {
 		loading: getPropertiesLoading,
 		data: getPropertiesData,
 		error: getPropertiesError,
-        refetch: getPropertiesRefetch,
-	 } = useQuery(GET_PROPERTIES, {
-		fetchPolicy: "network-only",
-		variables:{input: searchFilter},
+		refetch: getPropertiesRefetch,
+	} = useQuery(GET_PROPERTIES, {
+		fetchPolicy: 'network-only',
+		variables: { input: searchFilter },
 		notifyOnNetworkStatusChange: true,
-		onCompleted:( data: T) => {
+		onCompleted: (data: T) => {
 			setProperties(data?.getProperties?.list);
 			setTotal(data?.getProperties?.metaCounter[0]?.total);
 		},
-	 });
+	});
 
 	/** LIFECYCLES **/
 	useEffect(() => {
