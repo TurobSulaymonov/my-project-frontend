@@ -52,7 +52,7 @@ const MyFavorites: NextPage = () => {
 					input: id
 				},
 			});
-			//execute getPropertiesRefetch
+		
 			await getFavoritesRefetch({input: searchFavorites});
            } catch (err: any) {
 			console.log('ERROR, likePropertyHandler ', err.message);
