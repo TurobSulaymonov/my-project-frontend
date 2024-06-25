@@ -48,14 +48,15 @@ const Filter = (props: FilterType) => {
 		if (searchFilter?.search?.locationList?.length == 0) {
 			delete searchFilter.search.locationList;
 			setShowMore(false);
-			router.push(`/property?input=${JSON.stringify({
+			router
+			.push(`/property?input=${JSON.stringify({
 				...searchFilter,
-				searchFilter: {
+				search: {
 					...searchFilter.search
 				}
 			})}`, `/property?input=${JSON.stringify({
 				...searchFilter,
-				searchFilter: {
+				search: {
 					...searchFilter.search
 				}
 			})}`, { scroll: false }).then();
@@ -65,12 +66,12 @@ const Filter = (props: FilterType) => {
 			delete searchFilter.search.typeList;
 			router.push(`/property?input=${JSON.stringify({
 				...searchFilter,
-				searchFilter: {
+				search: {
 					...searchFilter.search
 				}
 			})}`, `/property?input=${JSON.stringify({
 				...searchFilter,
-				searchFilter: {
+				search: {
 					...searchFilter.search
 				}
 			})}`, { scroll: false }).then();
@@ -80,12 +81,12 @@ const Filter = (props: FilterType) => {
 			delete searchFilter.search.roomsList;
 			router.push(`/property?input=${JSON.stringify({
 				...searchFilter,
-				searchFilter: {
+				search: {
 					...searchFilter.search
 				}
 			})}`, `/property?input=${JSON.stringify({
 				...searchFilter,
-				searchFilter: {
+				search: {
 					...searchFilter.search
 				}
 			})}`, { scroll: false }).then();
@@ -95,12 +96,12 @@ const Filter = (props: FilterType) => {
 			delete searchFilter.search.options;
 			router.push(`/property?input=${JSON.stringify({
 				...searchFilter,
-				searchFilter: {
+				search: {
 					...searchFilter.search
 				}
 			})}`, `/property?input=${JSON.stringify({
 				...searchFilter,
-				searchFilter: {
+				search: {
 					...searchFilter.search
 				}
 			})}`, { scroll: false }).then();
@@ -110,12 +111,12 @@ const Filter = (props: FilterType) => {
 			delete searchFilter.search.bedsList;
 			router.push(`/property?input=${JSON.stringify({
 				...searchFilter,
-				searchFilter: {
+				search: {
 					...searchFilter.search
 				}
 			})}`, `/property?input=${JSON.stringify({
 				...searchFilter,
-				searchFilter: {
+				search: {
 					...searchFilter.search
 				}
 			})}`, { scroll: false }).then();
