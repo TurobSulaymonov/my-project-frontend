@@ -35,7 +35,7 @@ const MemberMenu = (props: MemberMenuProps) => {
 			input: memberId, 
 		},
 		onCompleted(data: T) {
-			setMember(data.getMember?.list);
+			setMember(data.getMember);
 		},
 		
 	});
