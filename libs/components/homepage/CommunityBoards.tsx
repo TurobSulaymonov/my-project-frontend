@@ -52,13 +52,13 @@ const CommunityBoards = () => {
 
 
 	if (device === 'mobile') {
-		return <div>COMMUNITY BOARDS (MOBILE)</div>;
+		return <div>News Feed (MOBILE)</div>;
 	} else {
 		return (
 			<Stack className={'community-board'}>
 				<Stack className={'container'}>
 					<Stack>
-						<Typography variant={'h1'}>COMMUNITY BOARD HIGHLIGHTS</Typography>
+						<Typography variant={'h1'}>News Feed</Typography>
 					</Stack>
 					<Stack className="community-main">
 						<Stack className={'community-left'}>

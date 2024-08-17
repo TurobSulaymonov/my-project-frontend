@@ -105,8 +105,8 @@ const TrendProperties = (props: TrendPropertiesProps) => {
 				<Stack className={'container'}>
 					<Stack className={'info-box'}>
 						<Box component={'div'} className={'left'}>
-							<span>Trend Properties</span>
-							<p>Trend is based on likes</p>
+							<span>Browse By Type of Cake</span>
+							<p>Establishments producing and selling flour-based food like cakes cookies, and pastries are what bakeries.</p>
 						</Box>
 						<Box component={'div'} className={'right'}>
 							<div className={'pagination-box'}>

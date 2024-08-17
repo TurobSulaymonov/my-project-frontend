@@ -45,7 +45,7 @@ const PopularProperties = (props: PopularPropertiesProps) => {
 			<Stack className={'popular-properties'}>
 				<Stack className={'container'}>
 					<Stack className={'info-box'}>
-						<span>Popular properties</span>
+						<span>Browse By Type of Cake</span>
 					</Stack>
 					<Stack className={'card-box'}>
 						<Swiper
@@ -73,8 +73,8 @@ const PopularProperties = (props: PopularPropertiesProps) => {
 				<Stack className={'container'}>
 					<Stack className={'info-box'}>
 						<Box component={'div'} className={'left'}>
-							<span>Popular properties</span>
-							<p>Popularity is based on views</p>
+							<span>Layer Cakes</span>
+							<p>True Pound Cake is a recipe that dates</p>
 						</Box>
 						<Box component={'div'} className={'right'}>
 							<div className={'more-box'}>
