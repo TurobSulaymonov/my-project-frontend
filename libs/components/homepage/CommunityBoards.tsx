@@ -58,23 +58,26 @@ const CommunityBoards = () => {
 			<Stack className={'community-board'}>
 				<Stack className={'container'}>
 					<Stack>
-						<Typography variant={'h1'}>News Feed</Typography>
+					<div className="fz-3-section-heading">
+                       <h2 className="fz-section-title">News Feed</h2>
+                       <p className="fz-section-sub-title">
+                         True Pound Cake is a recipe that dates
+                         </p>
+                      </div>
 					</Stack>
 					<Stack className="community-main">
 						<Stack className={'community-left'}>
 							<Stack className={'content-top'}>
-								<Link href={'/community?articleCategory=NEWS'}>
-									<span>News</span>
-								</Link>
-								<img src="/img/icons/arrowBig.svg" alt="" />
+							     
+							
 							</Stack>
 							<Stack className={'card-wrap'}>
 								{newsArticles.map((article, index) => {
 									return <CommunityCard vertical={true} article={article} index={index} key={article?._id} />;
 								})}
 							</Stack>
-						</Stack>
-						<Stack className={'community-right'}>
+						</Stack> 
+						{/* <Stack className={'community-right'}>
 							<Stack className={'content-top'}>
 								<Link href={'/community?articleCategory=FREE'}>
 									<span>Free</span>
@@ -86,7 +89,7 @@ const CommunityBoards = () => {
 									return <CommunityCard vertical={false} article={article} index={index} key={article?._id} />;
 								})}
 							</Stack>
-						</Stack>
+						</Stack> */}
 					</Stack>
 				</Stack>
 			</Stack>

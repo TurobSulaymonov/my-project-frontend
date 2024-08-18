@@ -12,6 +12,7 @@ import Advertisement from '../libs/components/homepage/Advertisement';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import ClientSlider from '../libs/components/homepage/ClientSlider';
 import OfferSection from '../libs/components/homepage/OfferSection';
+import FeaturedSection from '../libs/components/homepage/FeaturedSection';
 
 export const getStaticProps = async ({ locale }: any) => ({
 	props: {
@@ -35,6 +36,7 @@ const Home: NextPage = () => {
 	} else {
 		return (
 			<Stack className={'home-page'}>
+				 <FeaturedSection/>
 				<TrendProperties />
 				<PopularProperties />
 				<OfferSection/>

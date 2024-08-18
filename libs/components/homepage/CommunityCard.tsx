@@ -25,18 +25,43 @@ const CommunityCard = (props: CommunityCardProps) => {
 			return (
 				<Link href={`/community/detail?articleCategory=${article?.articleCategory}&id=${article?._id}`}>
 					<Box component={'div'} className={'vertical-card'}>
-						<div className={'community-img'} style={{ backgroundImage: `url(${articleImage})` }}>
-							<div>{index + 1}</div>
+						{/* <div className={'community-img'} style={{ backgroundImage: `url(${articleImage})` }}>
+							<div>{article.articleCategory} </div>
 						</div>
 						<strong>{article?.articleTitle}</strong>
-						<span>Free Board</span>
+						<span>Free Board</span> */}
+						<div className="fz-3-single-blog">
+                <div className="community-img"  style={{ backgroundImage: `url(${articleImage})` }}>
+				<div>{article.articleCategory} </div>
+            
+                </div>
+
+                <div className="fz-3-single-blog__txt">
+                  <h3 className="fz-3-single-blog__title">
+                    <Link href="#">
+                      Banana Cake with Brown Butter Cream Cheese
+                    </Link>
+                  </h3>
+                  <div className="fz-3-single-blog__category-and-actions">
+                    <span className="fz-3-single-blog__category">
+                      <Link href="/blog">Cake Shop</Link>
+                    </span>
+                   <span>
+				   <Link href="#" className="fz-3-single-blog__btn">
+                      Read More <i className="fa-regular fa-arrow-right"></i>
+                    </Link>
+				   </span>
+                  </div>
+                </div>
+              </div>
+
 					</Box>
 				</Link>
 			);
 		} else {
 			return (
 				<>
-					<Link href={`/community/detail?articleCategory=${article?.articleCategory}&id=${article?._id}`}>
+					{/* <Link href={`/community/detail?articleCategory=${article?.articleCategory}&id=${article?._id}`}>
 						<Box component={'div'} className="horizontal-card">
 							<img src={articleImage} alt="" />
 							<div>
@@ -46,7 +71,7 @@ const CommunityCard = (props: CommunityCardProps) => {
 								</span>
 							</div>
 						</Box>
-					</Link>
+					</Link> */}
 				</>
 			);
 		}
