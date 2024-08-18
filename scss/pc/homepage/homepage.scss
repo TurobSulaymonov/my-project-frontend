@@ -7,13 +7,14 @@
 			width: 100%;
 			display: flex;
 			flex-direction: row;
-			justify-content: space-between;
+			justify-content: center;
 			.left {
 				display: flex;
 				flex-direction: column;
 				span {
 					color: #181a20;
-					font-family: $font;
+					font-family: $font; 
+                    text-align: center;
 					font-size: 34px;
 					font-style: normal;
 					font-weight: 500;
@@ -151,6 +152,10 @@
 						width: 300px;
 						height: 375px;
 						display: flex;
+						justify-content: center;
+						gap: 10px;
+						border-radius: 50%;
+                       // border: 2px solid springgreen;
 						flex-direction: column;
 						transition: transform 0.3s;
 						&:hover {
@@ -159,39 +164,35 @@
 						}
 						.card-img {
 							position: relative;
-							width: 100%;
-							height: 203px;
+							width:  214px;
+							height: 214px;
+							background-color: #bdbdbd;
 							background-size: cover;
-							border-radius: 12px 12px 0px 0px;
+							//border-radius: 12px 12px 0px 0px;
+							border-radius: 50%;
+							
 							cursor: pointer;
-							div {
-								position: absolute;
-								padding: 8px 12px;
-								left: 12px;
-								bottom: 12px;
-								border-radius: 6px;
-								background: #fff;
-								color: #181a20;
-								font-family: $font;
-								font-size: 15px;
-								font-style: normal;
-								font-weight: 600;
-								line-height: normal;
+							img{
+								width: 142px;
+								height: 97px;
+								margin-left: 15%;
+								margin-top: 25%;
 							}
+							
 						}
 						.info {
+							
 							padding: 20px 22px 17px;
 							display: flex;
 							flex-direction: column;
+							justify-content: center;
+							align-items: center;
 							box-sizing: border-box;
-							border-radius: 0px 0px 12px 12px;
-							border: 1px solid rgba(196, 196, 196, 0.71);
-							border-top: none;
-							background: #fff;
-							box-shadow: 0px 1px 4px 0px rgba(24, 26, 32, 0.07);
+						    box-shadow: 0px 1px 4px 0px rgba(24, 26, 32, 0.07);
 							.title {
 								overflow: hidden;
-								color: #181a20;
+								color: crimson;
+							    margin-right:35%;
 								text-overflow: ellipsis;
 								white-space: nowrap;
 								font-family: $font;

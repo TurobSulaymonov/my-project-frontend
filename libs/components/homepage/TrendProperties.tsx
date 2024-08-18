@@ -109,11 +109,7 @@ const TrendProperties = (props: TrendPropertiesProps) => {
 							<p>Establishments producing and selling flour-based food like cakes cookies, and pastries are what bakeries.</p>
 						</Box>
 						<Box component={'div'} className={'right'}>
-							<div className={'pagination-box'}>
-								<WestIcon className={'swiper-trend-prev'} />
-								<div className={'swiper-trend-pagination'}></div>
-								<EastIcon className={'swiper-trend-next'} />
-							</div>
+							
 						</Box>
 					</Stack>
 					<Stack className={'card-box'}>
@@ -154,7 +150,7 @@ const TrendProperties = (props: TrendPropertiesProps) => {
 TrendProperties.defaultProps = {
 	initialInput: {
 		page: 1,
-		limit: 8,
+		limit: 5,
 		sort: 'propertyLikes',
 		direction: 'DESC',
 		search: {},
