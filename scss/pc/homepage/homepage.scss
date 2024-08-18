@@ -279,6 +279,69 @@
 				}
 			}
 		}
+		.offer-section{
+			//padding: 132px 0px 94px;
+			width: 100%;
+			height: 400px;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			background: #f6f6f6;
+			.info-row{
+				display: flex;
+				flex-direction: row;
+				gap: 10px;
+				justify-content: space-around;
+				.fz-3-single-offer {
+				    background: url('/img/banner/cake-banner.jpg');
+					background-size: cover;
+					padding: 50px;
+					padding-right: 320px;
+					color: white;
+					transition: all 0.4s ease;
+					overflow: hidden;
+					position: relative;
+					isolation: isolate;
+			
+					
+			
+					&::after {
+						content: "";
+						position: absolute;
+						inset: 0;
+						background-color: rgba(0, 0, 0, 0.32);
+						z-index: -1;
+					}
+			
+					
+			
+					&__title {
+						font-size: 35px;
+						line-height: 45px;
+						font-weight: 600;
+						margin-bottom: 23px;
+			
+			
+					
+					}
+			
+					&__btn {
+						color: #fff;
+					
+						padding: 0 20px;
+						height: 35px;
+						line-height: 33px;
+			
+						&:hover {
+							background-color: white;
+							color: black;
+						}
+					}
+				}
+			}
+
+		
+		}
 		.popular-properties {
 			padding: 132px 0px 94px;
 			width: 100%;
@@ -289,6 +352,30 @@
 			.container {
 				flex-direction: column;
 				align-items: center;
+				.info-box-1{
+					width: 100%;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			.left {
+				display: flex;
+				flex-direction: column;
+				span {
+					color: #181a20;
+					font-family: $font; 
+                   // text-align: center;
+					font-size: 34px;
+					font-style: normal;
+					font-weight: 500;
+					line-height: 150%;
+					letter-spacing: -0.646px;
+					text-transform: capitalize;
+					&.white {
+						color: #ffffff;
+					}
+				}
+			}
+				}
 				.card-box {
 					margin-top: 34px;
 					width: 100%;
@@ -298,7 +385,7 @@
 					justify-content: space-between;
 					.popular-property-swiper {
 						width: 100%;
-						height: 425px;
+						height: 435px;
 						display: flex;
 						flex-direction: row;
 						.popular-property-slide {
@@ -311,21 +398,27 @@
 					.popular-card-box {
 						position: relative;
 						width: 400px;
-						height: 425px;
-						display: flex;
+						height: 350px;
+					    display: flex;
 						flex-direction: column;
+						justify-content: center;
 						transition: transform 0.3s, opacity 0.3s;
 						&:hover {
 							opacity: 1;
 							transform: scale(1.05);
+							//box-shadow: 10px 10px #181a20;
 						}
 						.card-img {
 							position: relative;
-							width: 100%;
-							height: 203px;
+							width: 400px;
+							height:  336px;
 							background-size: cover;
 							border-radius: 12px 12px 0px 0px;
 							cursor: pointer;
+							&.hover{
+								transform: scale(.8);
+								
+							}
 							div.status {
 								position: absolute;
 								padding: 6px 34px;
@@ -334,11 +427,12 @@
 								display: flex;
 								align-items: center;
 								border-radius: 6px;
-								background: #eb6753;
+							
 								img {
 									width: 14px;
 									height: 14px;
 								}
+							
 								span {
 									margin-left: 5px;
 									color: #fff;
@@ -356,7 +450,7 @@
 								left: 20px;
 								bottom: 20px;
 								border-radius: 6px;
-								background: #fff;
+								
 								color: #181a20;
 								font-family: $font;
 								font-size: 15px;
@@ -371,9 +465,9 @@
 							flex-direction: column;
 							box-sizing: border-box;
 							border-radius: 0px 0px 12px 12px;
-							border: 1px solid rgba(196, 196, 196, 0.71);
+							
 							border-top: none;
-							background: #fff;
+							
 							box-shadow: 0px 1px 4px 0px rgba(24, 26, 32, 0.07);
 							.title {
 								overflow: hidden;
@@ -387,7 +481,12 @@
 								line-height: normal;
 								text-transform: capitalize;
 								cursor: pointer;
+								
 							}
+							a:hover{
+								color: crimson;
+							}
+						
 							.desc {
 								margin-top: 5px;
 								overflow: hidden;
@@ -408,11 +507,7 @@
 								div {
 									display: flex;
 									flex-direction: row;
-									img {
-										margin-right: 5px;
-										width: 17px;
-										height: 17px;
-									}
+							   
 									span {
 										color: #181a20;
 										font-family: $font;
@@ -428,7 +523,8 @@
 								flex-direction: row;
 								justify-content: space-between;
 								align-items: center;
-								p {
+								width: 100%;
+								Button {
 									color: #181a20;
 									font-family: $font;
 									font-size: 13px;
@@ -437,21 +533,19 @@
 									line-height: normal;
 									text-transform: capitalize;
 								}
-								button {
-									margin-left: 7px;
-									width: 16px;
-									height: 16px;
-									box-sizing: border-box;
+								Button:hover{
+									background: crimson;
 								}
+							
 								.view-like-box {
 									display: flex;
 									flex-direction: row;
 									gap: 7px;
 									align-items: center;
 									.view-cnt {
-										color: #717171;
+										color: #181a20;
 										font-family: $font;
-										font-size: 13px;
+										font-size: 15px;
 										font-style: normal;
 										font-weight: 400;
 										line-height: normal;
@@ -467,6 +561,7 @@
 					flex-direction: row;
 					justify-content: center;
 					align-items: center;
+					margin-top: 25px;
 					.swiper-pagination-bullet.swiper-pagination-bullet-active {
 						background: #000000;
 					}

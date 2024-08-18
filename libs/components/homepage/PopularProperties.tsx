@@ -10,8 +10,11 @@ import { Property } from '../../types/property/property';
 import Link from 'next/link';
 import { PropertiesInquiry } from '../../types/property/property.input';
 import { GET_PROPERTIES } from '../../../apollo/user/query';
-import { useQuery } from '@apollo/client';
+import { useMutation, useQuery } from '@apollo/client';
 import { T } from '../../types/common';
+import { LIKE_TARGET_PROPERTY } from '../../../apollo/user/mutation';
+import { Message } from '../../enums/common.enum';
+import { sweetMixinErrorAlert, sweetTopSmallSuccessAlert } from '../../sweetAlert';
 
 interface PopularPropertiesProps {
 	initialInput: PropertiesInquiry;
@@ -23,6 +26,7 @@ const PopularProperties = (props: PopularPropertiesProps) => {
 	const [popularProperties, setPopularProperties] = useState<Property[]>([]);
 
 	/** APOLLO REQUESTS **/
+	const [likeTargetProperty] = useMutation(LIKE_TARGET_PROPERTY);
 	const {
 		loading: getPopularPropertiesLoading,
 		data: getPopularPropertiesData,
@@ -37,6 +41,23 @@ const PopularProperties = (props: PopularPropertiesProps) => {
 		},
 	 });
 	/** HANDLERS **/
+	const likePropertyHandler = async(user: T, id: string) => {
+		try{
+			if(!id) return;
+			if(!user._id) throw new Error(Message.NOT_AUTHENTICATED);
+
+			// execute likeTargetProperty Mutation
+			await likeTargetProperty(
+				{variables: {input: id}}
+			);
+			//execute getPropertiesRefetch
+			await getPopularPropertiesRefetch({input: initialInput});
+             await sweetTopSmallSuccessAlert("success", 400);
+		} catch (err: any) {
+			console.log('ERROR, likePropertyHandler ', err.message);
+			sweetMixinErrorAlert(err.message).then();
+		}
+	}
 
 	if (!popularProperties) return null;
 
@@ -58,7 +79,7 @@ const PopularProperties = (props: PopularPropertiesProps) => {
 							{popularProperties.map((property: Property) => {
 								return (
 									<SwiperSlide key={property._id} className={'popular-property-slide'}>
-										<PopularPropertyCard property={property} />
+										<PopularPropertyCard property={property}  likePropertyHandler={likePropertyHandler} />
 									</SwiperSlide>
 								);
 							})}
@@ -69,9 +90,9 @@ const PopularProperties = (props: PopularPropertiesProps) => {
 		);
 	} else {
 		return (
-			<Stack className={'popular-properties'}>
+			<Stack className={'popular-properties py-120'}>
 				<Stack className={'container'}>
-					<Stack className={'info-box'}>
+					<Stack className={'info-box-1 d-flex flex-column flex-md-row justify-content-between align-items-center align-items-md-end'}>
 						<Box component={'div'} className={'left'}>
 							<span>Layer Cakes</span>
 							<p>True Pound Cake is a recipe that dates</p>
@@ -90,7 +111,7 @@ const PopularProperties = (props: PopularPropertiesProps) => {
 							className={'popular-property-swiper'}
 							slidesPerView={'auto'}
 							spaceBetween={25}
-							modules={[Autoplay, Navigation, Pagination]}
+	
 							navigation={{
 								nextEl: '.swiper-popular-next',
 								prevEl: '.swiper-popular-prev',
@@ -98,11 +119,30 @@ const PopularProperties = (props: PopularPropertiesProps) => {
 							pagination={{
 								el: '.swiper-popular-pagination',
 							}}
+							breakpoints={{
+								0: {
+								  slidesPerView: 1,
+								  spaceBetween: 20,
+								},
+								480: {
+								  slidesPerView: 2,
+								},
+								768: {
+								  slidesPerView: 3,
+								},
+								992: {
+								  slidesPerView: 4,
+								},
+								1200: {
+								  spaceBetween: 30,
+								},
+							  }}
+							  modules={[Autoplay, Navigation, Pagination]}
 						>
 							{popularProperties.map((property: Property) => {
 								return (
 									<SwiperSlide key={property._id} className={'popular-property-slide'}>
-										<PopularPropertyCard property={property} />
+										<PopularPropertyCard property={property} likePropertyHandler={likePropertyHandler} />
 									</SwiperSlide>
 								);
 							})}
