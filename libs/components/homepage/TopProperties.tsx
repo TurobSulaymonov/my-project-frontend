@@ -99,35 +99,45 @@ const TopProperties = (props: TopPropertiesProps) => {
 							<p>True Pound Cake is a recipe that dates</p>
 						</Box>
 						<Box component={'div'} className={'right'}>
-							<div className={'pagination-box'}>
-								<WestIcon className={'swiper-top-prev'} />
-								<div className={'swiper-top-pagination'}></div>
-								<EastIcon className={'swiper-top-next'} />
-							</div>
+							
 						</Box>
 					</Stack>
 					<Stack className={'card-box'}>
-						<Swiper
+					   <Swiper
 							className={'top-property-swiper'}
-							slidesPerView={'auto'}
+							slidesPerView={4}
 							spaceBetween={15}
-							modules={[Autoplay, Navigation, Pagination]}
 							navigation={{
-								nextEl: '.swiper-top-next',
-								prevEl: '.swiper-top-prev',
+								prevEl: ".fz-4-prev",
+								nextEl: ".fz-4-next",
 							}}
-							pagination={{
-								el: '.swiper-top-pagination',
+							modules={[Navigation]}
+							breakpoints={{
+								0: {
+								slidesPerView: 1,
+								},
+
+								480: {
+								slidesPerView: 2,
+								},
+
+								768: {
+								slidesPerView: 3,
+								},
+
+								992: {
+								slidesPerView: 4,
+								},
 							}}
-						>
-							{topProperties.map((property: Property) => {
-								return (
-									<SwiperSlide className={'top-property-slide'} key={property?._id}>
-										<TopPropertyCard property={property} likePropertyHandler={likePropertyHandler} />
-									</SwiperSlide>
-								);
-							})}
-						</Swiper>
+							>
+						            {topProperties.map((property: Property) => {
+													return (
+														<SwiperSlide className={'top-property-slide'} key={property?._id}>
+															<TopPropertyCard property={property} likePropertyHandler={likePropertyHandler} />
+														</SwiperSlide>
+													);
+												})}
+							</Swiper>
 					</Stack>
 				</Stack>
 			</Stack>
