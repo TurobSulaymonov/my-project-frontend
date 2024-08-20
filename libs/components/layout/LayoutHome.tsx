@@ -13,6 +13,7 @@ import Chat from '../Chat';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import FeaturedSection from '../homepage/FeaturedSection';
 
 const withLayoutMain = (Component: any) => {
 	return (props: any) => {
@@ -31,8 +32,8 @@ const withLayoutMain = (Component: any) => {
 			return (
 				<>
 					<Head>
-						<title>Nestar</title>
-						<meta name={'title'} content={`Nestar`} />
+						<title>Cake-shop</title>
+						<meta name={'title'} content={`Cake-shop`} />
 					</Head>
 					<Stack id="mobile-wrap">
 						<Stack id={'top'}>
@@ -64,7 +65,8 @@ const withLayoutMain = (Component: any) => {
 						<Stack className={'header-main'}>
 							<FiberContainer />
 							<Stack className={'container'}>
-								<HeaderFilter />
+								{/* <HeaderFilter /> */}
+								<FeaturedSection/>
 							</Stack>
 						</Stack>
 

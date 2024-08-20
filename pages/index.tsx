@@ -36,13 +36,12 @@ const Home: NextPage = () => {
 	} else {
 		return (
 			<Stack className={'home-page'}>
-				 <FeaturedSection/>
 				<TrendProperties />
 				<PopularProperties />
 				<OfferSection/>
 				<Advertisement />
 				<TopProperties />
-				<TopAgents />
+				{/* <TopAgents /> */}
 				<ClientSlider/>
 				<Events />
 				<CommunityBoards />
