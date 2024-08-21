@@ -164,11 +164,7 @@ const Top = () => {
 			<Stack className={'navbar'}>
 				<Stack className={`navbar-main ${colorChange ? 'transparent' : ''} ${bgColor ? 'transparent' : ''}`}>
 					<Stack className={'container'}>
-						<Box component={'div'} className={'logo-box'}>
-							<Link href={'/'}>
-								<img src="/img/logo/logo-3.png" alt="" />
-							</Link>
-						</Box>
+						
 						<Box component={'div'} className={'router-box'}>
 							<Link href={'/'}>
 								<div>{t('Home')}</div>
@@ -189,6 +185,11 @@ const Top = () => {
 							)}
 							<Link href={'/cs'}>
 								<div> {t('CS')} </div>
+							</Link>
+						</Box> 
+						<Box component={'div'} className={'logo-box'}>
+							<Link href={'/'}>
+								<img src="/img/logo/logo-3.png" alt="" />
 							</Link>
 						</Box>
 						<Box component={'div'} className={'user-box'}>
@@ -223,7 +224,7 @@ const Top = () => {
 									<div className={'join-box'}>
 										<AccountCircleOutlinedIcon />
 										<span>
-											{t('Login')} / {t('Register')}
+											{t('Joinfree')}
 										</span>
 									</div>
 								</Link>
