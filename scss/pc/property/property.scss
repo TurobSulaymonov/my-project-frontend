@@ -209,20 +209,31 @@
 						display: flex;
 						width: 100%;
 						height: auto;
-						flex-direction: row;
+						flex-direction: column;
+						justify-content: space-between;
 						flex-wrap: wrap;
 						gap: 23px;
 						.card-config {
-							width: 296px;
-							height: 413px;
-							margin-bottom: 7px;
+							width: 100%;
+							height: 350px;
+							
 							border-radius: 12px;
 							background: #fff;
+							display: flex;
+								flex-direction: row;
+								justify-content: center;
 							box-shadow: 0px 1px 4px 0px rgba(24, 26, 32, 0.07);
 							.top {
+								margin-top: 25px;
 								position: relative;
 								width: 100%;
-								height: 240px;
+								height: 300px;
+								background-color: #28a745;
+								&:hover{
+									transform: scale(1.1);
+								}
+								
+
 								a {
 									height: 100%;
 								}
@@ -275,7 +286,7 @@
 									}
 								}
 							}
-							.bottom {
+						/* 	.bottom {
 								width: 100%;
 								height: 173px;
 								padding: 20px 16px 10px 16px;
@@ -374,6 +385,149 @@
 										}
 									}
 								}
+							} */
+						
+							$primary-color: #007bff;
+							$secondary-color: #6c757d;
+							$success-color: #28a745;
+							$danger-color: #dc3545;
+							$light-bg: #f8f9fa;
+							$dark-bg: #343a40;
+							
+							// Define some reusable styles
+							.btn {
+							  border: none;
+							  border-radius: 4px;
+							  padding: 10px 10px;
+							  font-size: 14px;
+							  
+							  cursor: pointer;
+							  flex-direction: row;
+							  display: flex;
+							  align-items: center;
+							  justify-content: space-around;
+							  transition: background-color 0.3s, color 0.3s;
+							  &.fz-add-to-wishlist-btn {
+								background-color: $light-bg;
+								color: $secondary-color;
+								&:hover {
+									.fz-single-product__actions button {
+										translate: 0;
+										opacity: 1;
+									}
+								}
+							  }
+							  &.fz-add-to-cart-btn {
+								background-color: $success-color;
+								color: #fff;
+								&:hover {
+								  background-color: darken($success-color, 10%);
+								}
+							  }
+							  &.fz-add-to-compare-btn {
+								background-color: $primary-color;
+								color: #fff;
+								&:hover {
+								  background-color: darken($primary-color, 10%);
+								}
+							  }
+							}
+							
+							.fz-single-product {
+							  background-color:   blue;;
+							  border: 1px solid $light-bg;
+							  border-radius: 8px;
+							  overflow: hidden;
+							  
+							  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+							  margin-bottom: 20px;
+							  transition: box-shadow 0.3s;
+							  
+							  &:hover {
+								box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+							  }
+							  
+							  &__img {
+								position: relative;
+								
+								.fz-single-product__actions {
+								  position: absolute;
+								  bottom: 10px;
+								  right: 10px;
+								  display: flex;
+								  gap: 10px;
+								}
+								
+								.fz-add-to-wishlist-btn, .fz-add-to-cart-btn, .fz-add-to-compare-btn {
+								  background-color: transparent;
+								  border: 1px solid $light-bg;
+								  color: $secondary-color;
+								  background: #007bff;
+								  &:hover {
+									background-color: $light-bg;
+								  }
+								  
+								  .btn-icon {
+									margin-left: 5px;
+								  }
+								}
+							  }
+							  
+							  &__txt {
+							   padding: 0 20px;
+							   margin: 10px;
+							   word-spacing: 2px;
+							
+								
+								.fz-single-product__category {
+								  font-size: 15px;
+								  color: $secondary-color;
+								}
+								
+								.fz-single-product__title {
+								  font-size: 28px;
+								  font-weight: bold;
+								  color: $dark-bg;
+								  text-decoration: none;
+								  display: block;
+								  margin: 10px 0;
+								  &:hover {
+									color: $primary-color;
+								  }
+								}
+								
+								.fz-single-product__price-rating {
+								  display: flex;
+								  justify-content: space-between;
+								  align-items: center;
+								  margin-bottom: 10px;
+								  
+								  .fz-single-product__price {
+									font-size: 26px;
+									font-weight: bold;
+									
+									.current-price {
+									  color: $danger-color;
+									}
+								  }
+								  
+								  .rating {
+									.MuiRating-root {
+									  color: $primary-color;
+									}
+								  }
+								}
+								
+								.fz-single-product__desc {
+								  color: $secondary-color;
+								  margin-bottom: 15px;
+								}
+								
+								.fz-single-product__actions {
+								  display: flex;
+								  gap: 10px;
+								}
+							  }
 							}
 						}
 					}
