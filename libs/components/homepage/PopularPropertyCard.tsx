@@ -30,7 +30,7 @@ const PopularPropertyCard = (props: PopularPropertyCardProps) => {
 	   }
 
 	if (device === 'mobile') {
-		return (
+	/* 	return (
 			<Stack className="popular-card-box">
 				<Box
 					component={'div'}
@@ -46,7 +46,7 @@ const PopularPropertyCard = (props: PopularPropertyCardProps) => {
 					) : (
 						''
 					)}
-
+                      
 					<div className={'price'}>${property.propertyPrice}</div>
 				</Box>
 				<Box component={'div'} className={'info'}>
@@ -81,10 +81,10 @@ const PopularPropertyCard = (props: PopularPropertyCardProps) => {
 				</Box>
 			</Stack>
 		);
-	} else {
+	*/}  else {
 		return (
 			<Stack className="popular-card-box">
-				<Box
+				{/* <Box
 					component={'div'}
 					className={'card-img'}
 					//style={{ backgroundImage: `url(${REACT_APP_API_URL}/${property?.propertyImages[0]})` }}
@@ -101,8 +101,8 @@ const PopularPropertyCard = (props: PopularPropertyCardProps) => {
 					)}
 
 
-				</Box>
-				<Box component={'div'} className={'info'}>
+				</Box> */}
+				{/* <Box component={'div'} className={'info'}>
 					<strong className={'title'}
 					 onClick={() => {pushDetailHandler(property._id)}}
 					><Link href={'/property'}>{property.propertyTitle}</Link></strong>
@@ -128,7 +128,69 @@ const PopularPropertyCard = (props: PopularPropertyCardProps) => {
 							<Typography className="view-cnt">{property?.propertyLikes}</Typography>
 						</div>
 					</div>
-				</Box>
+				</Box> */}
+				<div className="fz-3-single-product__img">
+                <img src={`${REACT_APP_API_URL}/${property?.propertyImages[0]}`} alt="Product Image" />
+                <div className="fz-3-single-product__actions">
+                  <div className="top-actions">
+				{/*   <div className="view-li-box">
+							<IconButton color={'default'}>
+								<RemoveRedEyeIcon />
+							</IconButton>
+							<Typography className="view-cnt">{property?.propertyViews}</Typography>
+							<IconButton color={'default'} onClick={() => likePropertyHandler(user, property?._id)}>
+								{property?.meLiked && property?.meLiked[0]?.myFavorite ? (
+									<FavoriteIcon style={{ color: 'red' }} />
+								) : (
+									<FavoriteIcon />
+								)}
+							</IconButton>
+							<Typography className="view-cnt">{property?.propertyLikes}</Typography>
+						</div> */}
+                  </div>
+                  <div className="bottom-actions">
+                    <Button
+					variant="outlined"
+                      className="fz-3-add-to-cart"
+                     // onClick={() => addToCakeCart(item.id)}
+                    >
+                      Add to cart
+                    </Button>
+                    <Button variant="outlined"
+                      className="fz-3-quick-view"
+                     // onClick={handleProductViewOpen}
+                    >
+                   <div className="fz-3-quick-view ">
+						
+
+							<IconButton color={'default'} onClick={() => likePropertyHandler(user, property?._id)}>
+								{property?.meLiked && property?.meLiked[0]?.myFavorite ? (
+									<FavoriteIcon style={{ color: 'red' }} />
+								) : (
+									<FavoriteIcon />
+								)}
+							</IconButton>
+							<Typography className="view-cnt">{property?.propertyLikes}</Typography>
+						</div> 
+                    </Button>
+                  </div>
+                </div>
+              </div>
+
+			  <div className="fz-3-single-product__txt">
+                <Link
+                  href={`/property/detail}`}
+                  className="fz-3-single-product__title"
+                >
+                  {property.propertyTitle}
+                </Link>
+                <p className="fz-3-single-product__price">
+                  <span className="current-price">${property.propertyPrice}</span>
+                  <span className="prev-price text-decoration-line-through">
+                    ${property.propertyPrice}
+                  </span>
+                </p>
+              </div>
 			</Stack>
 		);
 	}

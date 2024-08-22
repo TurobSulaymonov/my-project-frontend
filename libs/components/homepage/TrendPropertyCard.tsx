@@ -91,7 +91,9 @@ const TrendPropertyCard = (props: TrendPropertyCardProps) => {
 					//style={{ backgroundImage: `url(${REACT_APP_API_URL}/${property?.propertyImages[0]})` }}
 					onClick={() => {pushDetailHandler(property._id)}}
 				>  
-				  <img src='/img/banner/fz-cat-1.png'/>
+				 	
+                <img src={`${REACT_APP_API_URL}/${property?.propertyImages[0]}`} alt="Product Image" />
+           
 				</Box>
 			<Box component={'div'} className={'info'}>
 				{/* 	<strong className={'title'}

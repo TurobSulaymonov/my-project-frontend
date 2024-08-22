@@ -435,9 +435,128 @@
 						&:hover {
 							opacity: 1;
 							transform: scale(1.05);
-							//box-shadow: 10px 10px #181a20;
+							
+						}   .fz-3-single-product__img{
+                               width: 336px;
+							   height: 336px;
+							@include xxs {
+								width: 100%;
+								height: auto;
+							
+								background-color: red;
+							}
+						
+							&:hover {
+								.fz-3-single-product__actions .bottom-actions button {
+									translate: 0 0;
+									opacity: 1;
+									pointer-events: auto;
+								}
+							}
+						
+							&__img {
+								position: relative;
+						
+								img {
+									width: 100%;
+								}
+							}
+						
+							&__actions {
+								.top-actions {
+									button {
+										position: absolute;
+										top: 15px;
+										right: 20px;
+						
+										&:hover {
+											color: $color-3;
+										}
+									}
+								}
+						
+								.bottom-actions {
+									position: absolute;
+									bottom: 30px;
+									width: 100%;
+									display: flex;
+									gap: 10px;
+									justify-content: center;
+						
+									@include lg {
+										bottom: 15px;
+									}
+						
+									button {
+										color: $white;
+										background-color: crimson;
+										padding: 8px 20px;
+										border-radius: 5px;
+										line-height: normal;
+										translate: 0 25px;
+										opacity: 0;
+										border: 1px solid $black-0;
+										pointer-events: none;
+						
+										@include xl {
+											padding: 8px 15px;
+										}
+						
+										@include lg {
+											padding: 5px 10px;
+											font-size: 13px;
+										}
+						
+										&:nth-child(2) {
+											transition-delay: 0.1s;
+										}
+						
+										&:hover {
+											background-color: $white;
+											color: $black;
+										}
+									}
+								}
+							}
+						
+							&__txt {
+								text-align: left;
+								padding: 17px 0 0;
+						
+								@include xxs {
+									text-align: center;
+								}
+							}
+						
+							&__title {
+								font-size: 18px;
+								font-weight: 500;
+								color: $black;
+								margin-bottom: 6px;
+						
+								@include lg {
+									font-size: 16px;
+								}
+						
+								&:hover {
+									color: $color-3;
+								}
+							}
+						
+							&__price {
+								font-weight: 500;
+						
+								@include lg {
+									font-size: 14px;
+								}
+						
+								.prev-price {
+									color: #999;
+									margin-left: 5px;
+								}
+							}
 						}
-						.card-img {
+						/* .card-img {
 							position: relative;
 							width: 400px;
 							height:  336px;
@@ -582,7 +701,7 @@
 									}
 								}
 							}
-						}
+						} */
 					}
 				}
 				.pagination-box {
@@ -852,16 +971,23 @@
 			}
 		}
 		.clients-section {
-			padding: 60px 0;
+			margin-top: 40px ;
+			padding: 50px;
+			justify-content: center;
+			align-items: center;
+			display: flex;
 			background-image: url('/img/banner/fz-client-bg.png');
 			background-size: cover;
+			height: 300px;
 			
 		
 		 .container{
 			 .clients {
+			
 				display: flex;
 				justify-content: space-between;
-		
+                 align-items: center;
+		         height: auto;
 				img {
 					width: 103px;
 					margin: auto;
