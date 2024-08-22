@@ -756,124 +756,123 @@
 							margin: 10px 0 0 10px;
 						}
 					}
-					.top-card-box {
+					.fz-7-product {
 						position: relative;
-						width: 300px;
-						height: 355px;
-						display: flex;
-						flex-direction: column;
-						transition: transform 0.3s;
-						&:hover {
-							opacity: 1;
-							transform: scale(1.05);
-						}
-						.card-img {
-							position: relative;
-							background-size: cover;
-							background-position: center;
-							background-repeat: no-repeat;
-							width: 100%;
-							height: 250px; /* Adjust the height as needed */
-							cursor: pointer;
-							transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-						  
-							&:hover {
-							  transform: scale(1.05); /* Slight zoom on hover */
-							  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
-							}
-						  
-							.view-like-box {
-							  display: flex;
-							  align-items: center;
-							  justify-content: space-between;
-							  position: absolute;
-							  bottom: 10px; /* Position it near the bottom */
-							  left: 10px;
-							  right: 10px;
-							  padding: 10px 10px;
-							  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-							  border-radius: 8px;
-							  color: #fff; /* White text color */
-							  transition: background-color 0.3s ease;
-							  opacity: 0;
-						  
-							  &:hover {
-								opacity: 1;
-								background-color: rgba(0, 0, 0, 0.7); /* Darker on hover */
-							  }
-						  
-							  .MuiIconButton-root {
-								color: #fff;
-								margin-right: -30%; /* Ensure icons are white */
-								&:hover {
-								  color: darkblue; /* Change icon color on hover */
-								}
-							  }
-						  
-							  .view-cnt {
-								margin-left: 5px;
-								font-size: 1em;
-								font-weight: bold;
-							  }
-							  .shop-icon{
-								margin-right: 10px;
-							  }
-						  
-							  .MuiTypography-root {
-								font-size: 0.9em; /* Ensure text size is consistent */
-							  }
-						  
-							  .MuiSvgIcon-root {
-								font-size: 1em; /* Icon size */
-								transition: color 0.3s ease;
-						       
-								&:hover {
-								  color: red; 
-								}
-							  }
-						  
-							  .shopping-cart-icon {
-							
-								font-size: 1em;
-								color: red;
-							  }
-							}
-						  }
-						  .fz-4-single-product-txt {
-							margin-top: 10px;
-							background-color: #fff;
-						    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-						    .fz-4-single-product-title {
-							  margin: 0 0 10px;
-							  font-size: 1.2em;
-							  font-weight: bold;
-							  color: #333;
-						      a {
-								color: inherit; 
-								text-decoration: none;
-								transition: color 0.3s ease;
-						       &:hover {
-								  color: crimson; /* Change color on hover */
-								}
-							  }
-							}
-						    .fz-4-single-product-price {
-							  font-size: 1.1em;
-							  color: #555;
-							  font-weight: bold;
-						      .prev-price {
-								margin-left: 10px;
-								font-size: 0.9em;
-								color: #888;
-								text-decoration: line-through;
-								font-weight: normal;
-							  }
-							}
-						  }
-						  
-						  
+						margin-bottom: 1px;
 					
-					} 
+						&:hover {
+							.fz-7-product {
+								&-actions {
+									height: 43px;
+									color: crimson;
+									margin-top: 18px;
+								}
+					
+								&-txt {
+									margin-top: -50px;
+									padding: 23px 30px;
+									box-shadow: 0 7px 6px rgb(0, 0, 1, 0.07);
+					
+									@include lg {
+										padding: 23px 15px;
+									}
+								}
+					
+								&-img img {
+									scale: 1.06;
+								}
+							}
+					
+							.add-to-cart-btn {
+								border-color: #2B2C34;
+							}
+						}
+					
+						&-img {
+							width: 300px;
+							height: 250px;
+							overflow: hidden;
+						
+					
+							img {
+								transition: scale 0.4s ease;
+								width: 100%;
+							}
+						}
+					
+						&-txt {
+							padding: 16px 30px;
+							background-color: #fff;
+							position: relative;
+							transition: 0.4s ease;
+					
+							@include lg {
+								padding: 16px 15px;
+							}
+						}
+					
+						&-cat {
+							font-size: 14px;
+							color: #6D6D6D;
+							margin-bottom: 6px;
+						}
+					
+						&-title {
+							font-weight: 600;
+							font-size: 16px;
+							color: #2B2C34;
+							text-transform: uppercase;
+							margin-bottom: 8px;
+					
+							a:hover {
+								color: #fb2f29;
+							}
+					
+							@include lg {
+								font-size: 15px;
+							}
+						}
+					
+						&-price {
+							font-weight: 500;
+							color: #2B2C34;
+							margin-bottom: 18px;
+							margin-bottom: 0;
+						}
+					
+						&-actions {
+							display: flex;
+							justify-content: space-between;
+							height: 0;
+							overflow: hidden;
+							transition: all 0.4s ease;
+					
+							.right {
+								display: flex;
+								gap: 15px;
+					
+								button {
+									color: #929292;
+									font-size: 18px;
+					
+									&:hover {
+										color: #fb2f29;
+									}
+								}
+							}
+						}
+					
+						.add-to-cart-btn {
+							color: #2B2C34;
+							font-size: 14px;
+							border-bottom: 1px solid transparent;
+					
+							&:hover {
+								color: #fb2f29;
+								border-color: #fb2f29;
+							}
+						}
+					}
 					
 				}
 

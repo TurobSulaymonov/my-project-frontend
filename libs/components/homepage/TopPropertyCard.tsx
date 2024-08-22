@@ -80,45 +80,33 @@ const TopPropertyCard = (props: TopPropertyCardProps) => {
 		return (
 			<Stack className="top-card-box">
 			
-				 <div className="fz-4-single-product">
-      <div className="fz-4-single-product-img">
-	  <Box
-					component={'div'}
-					className={'card-img'}
-					style={{ backgroundImage: `url(${REACT_APP_API_URL}/${property?.propertyImages[0]})` }}
-					onClick={() => {pushDetailHandler(property._id)}}
-				>
-					<a role="button" className="view-like-box">
-                         <IconButton color={'default'}>
-								<RemoveRedEyeIcon />
-							</IconButton>
-							<Typography className="view-cnt">{property?.propertyViews}</Typography>
-							<IconButton color={'default'} onClick={() => likePropertyHandler(user, property?._id)}>
-								{property?.meLiked && property?.meLiked[0]?.myFavorite ? (
-									<FavoriteIcon style={{ color: 'red' }} />
-								) : (
-									<FavoriteIcon />
-								)}
-							</IconButton>
-							<Typography className="view-cnt">{property?.propertyLikes}</Typography>
-							
-							<ShoppingCartIcon className={'shop-icon'}/>
-			
-          </a>
-				
-				</Box>
 
-      
+
+<div className="fz-7-product">
+      <div className="fz-7-product-img">
+        <img src={`${REACT_APP_API_URL}/${property?.propertyImages[0]}`} alt="Product Image" />
       </div>
-      <div className="fz-4-single-product-txt">
-        <h5 className="fz-4-single-product-title">
-          <Link href="#">{property.propertyTitle}</Link>
-        </h5>
-        <span className="fz-4-single-product-price">
-          ${property.propertyPrice}.00<span className="prev-price">${property.propertyPrice}.00</span>
-        </span>
+
+      <div className="fz-7-product-txt">
+        <h6 className="fz-7-product-cat">{property.propertyStatus}</h6>
+        <h4 className="fz-7-product-title">
+          <Link href={"/property/detail"}>{property.propertyTitle}</Link>
+        </h4>
+        <span className="fz-7-product-price">${property.propertyTitle}</span>
+        <div className="fz-7-product-actions">
+          <button type="button" className="add-to-cart-btn">
+            Add To Cart  
+          </button>
+          <div className="right">
+            <button type="button" className="add-to-wishlist-btn">
+              <i className="fa-light fa-heart"></i>
+            </button>
+            <button type="button" className="fz-quick-view">
+              <i className="fa-light fa-eye"></i>
+            </button>
+          </div>
+        </div>
       </div>
-	 
     </div>
 			</Stack>
 		);

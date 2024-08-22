@@ -84,81 +84,24 @@ const PopularPropertyCard = (props: PopularPropertyCardProps) => {
 	*/}  else {
 		return (
 			<Stack className="popular-card-box">
-				{/* <Box
-					component={'div'}
-					className={'card-img'}
-					//style={{ backgroundImage: `url(${REACT_APP_API_URL}/${property?.propertyImages[0]})` }}
-					onClick={() => {pushDetailHandler(property._id)}}
-				> 
-				  <img src='/img/banner/fz-product-3.png'/>
-					{property?.propertyRank && property?.propertyRank >= 50 ? (
-						<div className={'status'}>
-							<img src="/img/icons/electricity.svg" alt="" />
-							
-						</div>
-					) : (
-						''
-					)}
-
-
-				</Box> */}
-				{/* <Box component={'div'} className={'info'}>
-					<strong className={'title'}
-					 onClick={() => {pushDetailHandler(property._id)}}
-					><Link href={'/property'}>{property.propertyTitle}</Link></strong>
-					<p className={'desc'}>{property.propertyAddress}</p>
-					
-					<div className={'price'}>${property.propertyPrice}</div>
-
-					<Divider sx={{ mt: '15px', mb: '17px' }} />
-					<div className={'bott'}>
-						<Button>Add to Cart</Button>
-						<div className="view-like-box">
-							<IconButton color={'default'}>
-								<RemoveRedEyeIcon />
-							</IconButton>
-							<Typography className="view-cnt">{property?.propertyViews}</Typography>
-							<IconButton color={'default'} onClick={() => likePropertyHandler(user, property?._id)}>
-								{property?.meLiked && property?.meLiked[0]?.myFavorite ? (
-									<FavoriteIcon style={{ color: 'red' }} />
-								) : (
-									<FavoriteIcon />
-								)}
-							</IconButton>
-							<Typography className="view-cnt">{property?.propertyLikes}</Typography>
-						</div>
-					</div>
-				</Box> */}
+				
 				<div className="fz-3-single-product__img">
                 <img src={`${REACT_APP_API_URL}/${property?.propertyImages[0]}`} alt="Product Image" />
                 <div className="fz-3-single-product__actions">
                   <div className="top-actions">
-				{/*   <div className="view-li-box">
-							<IconButton color={'default'}>
-								<RemoveRedEyeIcon />
-							</IconButton>
-							<Typography className="view-cnt">{property?.propertyViews}</Typography>
-							<IconButton color={'default'} onClick={() => likePropertyHandler(user, property?._id)}>
-								{property?.meLiked && property?.meLiked[0]?.myFavorite ? (
-									<FavoriteIcon style={{ color: 'red' }} />
-								) : (
-									<FavoriteIcon />
-								)}
-							</IconButton>
-							<Typography className="view-cnt">{property?.propertyLikes}</Typography>
-						</div> */}
+			
                   </div>
                   <div className="bottom-actions">
                     <Button
 					variant="outlined"
                       className="fz-3-add-to-cart"
-                     // onClick={() => addToCakeCart(item.id)}
+                 
                     >
                       Add to cart
                     </Button>
                     <Button variant="outlined"
                       className="fz-3-quick-view"
-                     // onClick={handleProductViewOpen}
+               
                     >
                    <div className="fz-3-quick-view ">
 						

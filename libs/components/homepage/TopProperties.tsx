@@ -132,12 +132,13 @@ const TopProperties = (props: TopPropertiesProps) => {
 							>
 						            {topProperties.map((property: Property) => {
 													return (
-														<SwiperSlide className={'top-property-slide'} key={property?._id}>
+														<SwiperSlide className={'"col-lg-3 col-md-4 col-6 col-xxs-12'} key={property?._id}>
 															<TopPropertyCard property={property} likePropertyHandler={likePropertyHandler} />
 														</SwiperSlide>
 													);
 												})}
 							</Swiper>
+							
 					</Stack>
 				</Stack>
 			</Stack>
