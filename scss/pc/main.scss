@@ -66,19 +66,21 @@ body::-webkit-scrollbar {
 					justify-content: space-between;
 					.logo-box {
 						img {
+							margin-left: -20px;
 							width: 150px;
 							cursor: pointer;
 						}
 					}
 					.router-box {
 						position: relative;
-						width: 617px;
+						width: 500px;
 						display: flex;
 						flex-direction: row;
 						justify-content: space-between;
 						div {
 							position: relative;
 							color: #eeeeeeed;
+							
 							font-family: $font;
 							font-size: 15px;
 							font-style: normal;
@@ -125,6 +127,9 @@ body::-webkit-scrollbar {
 							svg {
 								color: #ffffff;
 								margin-right: 10px;
+							}
+							&:hover{
+								background-color: crimson;
 							}
 							span {
 								font-family: $font;
@@ -175,12 +180,12 @@ body::-webkit-scrollbar {
 		position: relative;
 		width: 100%;
 		height: 860px;
-		background-image: url('/img/banner/banner-1.jfif');
+		background-image: url('/img/banner/cake-banner-3.jpg');
 		background-size: cover;
 		.threeJSContainer {
 			margin-top: 100px;
 			width: 100%;
-			height: 512px;
+			height: 450px;
 			position: relative;
 		  
 			.fz-9-banner-slider {
