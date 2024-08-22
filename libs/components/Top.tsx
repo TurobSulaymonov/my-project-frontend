@@ -225,7 +225,7 @@ const Top = () => {
 									<div className={'join-box'}>
 										<LoginIcon />
 										<span>
-											{t('Joinfree')}
+											{t('Join Free')}
 										</span>
 									</div>
 								</Link>

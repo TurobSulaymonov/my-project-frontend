@@ -139,7 +139,7 @@ export default function FiberContainer() {
 		<SwiperSlide
           className="fz-9-banner-slide pt-30 pb-120 bg-default"
           style={{
-            backgroundImage: "url(assets/images/fz-9-banner-bg.png)",
+           // backgroundImage: "url(/img/banner/fz-9-brand3.png)",
           }}
         >
           <div className="container">

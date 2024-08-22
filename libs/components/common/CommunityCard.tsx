@@ -11,6 +11,7 @@ import IconButton from '@mui/material/IconButton';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import Link from 'next/link';
 
 interface CommunityCardProps {
     boardArticle: BoardArticle;
@@ -48,15 +49,17 @@ const CommunityCard = (props: CommunityCardProps) => {
 		return <div>COMMUNITY CARD MOBILE</div>;
 	} else {
 		return (
-			<Stack
+			 <Stack
 				sx={{ width: size === 'small' ? '285px' : '317px' }}
 				className="community-general-card-config"
-				onClick={(e) => chooseArticleHandler(e, boardArticle)}
+				onClick={(
+					//@ts-ignore
+					e) => chooseArticleHandler(e, boardArticle)}
 			>
-				<Stack className="image-box">
+			{/* 	<Stack className="image-box">
 					<img src={imagePath} alt="" className="card-img" />
-				</Stack>
-				<Stack className="desc-box" sx={{ marginTop: '-20px' }}>
+				</Stack> */}
+			{/* 	<Stack className="desc-box" sx={{ marginTop: '-20px' }}>
 					<Stack>
 						<Typography
 							className="desc"
@@ -83,16 +86,89 @@ const CommunityCard = (props: CommunityCardProps) => {
 						</IconButton>
 						<Typography className="view-cnt">{boardArticle?.articleLikes}</Typography>
 					</Stack>
-				</Stack>
-				<Stack className="date-box">
+				</Stack> */}
+			{/* 	<Stack className="date-box">
 					<Moment className="month" format={'MMMM'}>
 						{boardArticle?.createdAt}
 					</Moment>
 					<Typography className="day">
 						<Moment format={'DD'}>{boardArticle?.createdAt}</Moment>
 					</Typography>
+				</Stack> */}
+
+{/* <Stack className="sidebar-single-area blog-area">
+			<h3 className="sidebar-single-area__title">Recent post</h3>
+			
+			  <div className="fz-sidebar-single-blog" >
+				<Stack className="fz-sidebar-single-blog__img">
+				<img src={imagePath} alt="" className="card-img" />
 				</Stack>
+	  
+				<div className="fz-sidebar-single-blog__txt fz-single-blog fz-inner-page-blog">
+				  <div className="fz-sidebar-single-blog__infos fz-single-blog__infos">
+					<span className="fz-single-blog__category">
+					  <Link href="#">{boardArticle.articleCategory} </Link>
+					</span>
+					<span className="fz-single-blog__date">
+					<Moment className="month" format={'MMMM'}>
+						{boardArticle?.createdAt}
+					</Moment>
+					<Typography className="day">
+						<Moment format={'DD'}>{boardArticle?.createdAt}</Moment>
+					</Typography>
+					</span>
+				  </div>
+	  
+				  <h5 className="fz-sidebar-single-blog__title">
+					<Link href={`/property/detail`}>{boardArticle.articleTitle}  An electronic product is a device that uses electricity to perform a function.</Link>
+				  </h5>
+				</div>
+			  </div>
+		  </Stack> */}
+		  <Stack className="sidebar-single-area blog-area">
+		  <div className="blogs-container">
+          <div className="blogs">
+    
+                <div
+                  className="fz-single-blog fz-inner-page-blog"
+                 
+                >
+                  <div className="fz-single-blog__img">
+				  <img src={imagePath} alt="" className="card-img" />
+                  </div>
+                  <div className="fz-single-blog__txt">
+                    <div className="fz-single-blog__infos">
+                      <span className="fz-single-blog__category">
+                        <Link href="#"> {boardArticle.articleCategory}</Link>
+                      </span>
+                      <span className="fz-single-blog__date">
+						<Moment className="month" format={'MMMM'}>
+						{boardArticle?.createdAt}
+					</Moment>
+					<Typography className="day">
+						<Moment format={'DD'}>{boardArticle?.createdAt}</Moment>
+					</Typography></span>
+                    </div>
+
+                    <h3 className="fz-single-blog__title">
+                      <Link href={`/community/detail}`}>{boardArticle.articleTitle}</Link>
+                    </h3>
+                    <p className="fz-single-blog__desc">{boardArticle.articleStatus}</p>
+
+                    <Link
+                      href={`/community/detail`}
+                      className="fz-1-banner-btn fz-single-blog__btn"
+                    >
+                      Read More
+                    </Link>
+                  </div>
+                </div>
+          </div>
+         
+        </div>
+		  </Stack>
 			</Stack>
+	
 		);
 	}
 };

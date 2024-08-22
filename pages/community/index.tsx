@@ -115,9 +115,9 @@ const Community: NextPage = ({ initialInput, ...props }: T) => {
 						<Stack className="main-box">
 							<Stack className="left-config">
 								<Stack className={'image-info'}>
-									<img src={'/img/logo/logoText.svg'} />
+									<img src={'/img/logo/favicon.png'} />
 									<Stack className={'community-name'}>
-										<Typography className={'name'}>Nestar Community</Typography>
+										<Typography className={'name'}>Our Community Category</Typography>
 									</Stack>
 								</Stack>
 
@@ -178,7 +178,7 @@ const Community: NextPage = ({ initialInput, ...props }: T) => {
 									<TabPanel value="FREE">
 										<Stack className="list-box">
 											{totalCount ? (
-												boardArticles?.map((boardArticle: BoardArticle) => {
+												boardArticles?.slice(0,3).map((boardArticle: BoardArticle) => {
 													return <CommunityCard 
 													boardArticle={boardArticle} 
 													key={boardArticle?._id} 
@@ -196,7 +196,7 @@ const Community: NextPage = ({ initialInput, ...props }: T) => {
 									<TabPanel value="RECOMMEND">
 										<Stack className="list-box">
 											{totalCount ? (
-												boardArticles?.map((boardArticle: BoardArticle) => {
+												boardArticles?.slice(0,3).map((boardArticle: BoardArticle) => {
 													return <CommunityCard 
 													boardArticle={boardArticle} 
 													key={boardArticle?._id} 
@@ -214,7 +214,7 @@ const Community: NextPage = ({ initialInput, ...props }: T) => {
 									<TabPanel value="NEWS">
 										<Stack className="list-box">
 											{totalCount ? (
-												boardArticles?.map((boardArticle: BoardArticle) => {
+												boardArticles?.slice(0,3).map((boardArticle: BoardArticle) => {
 													return <CommunityCard 
 													boardArticle={boardArticle} 
 													key={boardArticle?._id} 
@@ -232,7 +232,7 @@ const Community: NextPage = ({ initialInput, ...props }: T) => {
 									<TabPanel value="HUMOR">
 										<Stack className="list-box">
 											{totalCount ? (
-												boardArticles?.map((boardArticle: BoardArticle) => {
+												boardArticles?.slice(0, 3).map((boardArticle: BoardArticle) => {
 													return <CommunityCard 
 													boardArticle={boardArticle} 
 													key={boardArticle?._id}

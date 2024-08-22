@@ -1,6 +1,20 @@
 /** IMPORTS **/
 @import '/scss/variables.scss';
 @import '/scss/pc/general.scss';
+@import '/scss/main/mixins';
+@import '/scss/main/breakpoints';
+
+@import '/scss/main/components';
+
+@import '/scss/main/global';
+@import '/scss/main/utils';
+@import '/scss/main/variable';
+
+;
+
+
+
+
 
 @import '/scss/pc/homepage/homepage';
 
