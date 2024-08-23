@@ -7,6 +7,8 @@ import { useRouter } from 'next/router';
 import { logIn, signUp } from '../../libs/auth';
 import { sweetMixinErrorAlert } from '../../libs/sweetAlert';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
+import LoginIcon from '@mui/icons-material/Login';
 
 export const getStaticProps = async ({ locale }: any) => ({
 	props: {
@@ -73,8 +75,8 @@ const Join: NextPage = () => {
 						<Stack className={'left'}>
 							{/* @ts-ignore */}
 							<Box className={'logo'}>
-								<img src="/img/logo/logoText.svg" alt="" />
-								<span>Nestar</span>
+								<img src="/img/logo/favicon.png" alt="" />
+								<span>Cake-shop</span>
 							</Box>
 							<Box className={'info'}>
 								<span>{loginView ? 'login' : 'signup'}</span>
@@ -169,11 +171,11 @@ const Join: NextPage = () => {
 								{loginView ? (
 									<Button
 										variant="contained"
-										endIcon={<img src="/img/icons/rightup.svg" alt="" />}
+										//endIcon={<img src="/img/icons/rightu" alt="" />}
 										disabled={input.nick == '' || input.password == ''}
 										onClick={doLogin}
 									>
-										LOGIN
+										LOGIN <LoginIcon/>
 									</Button>
 								) : (
 									<Button
@@ -195,13 +197,13 @@ const Join: NextPage = () => {
 												viewChangeHandler(false);
 											}}
 										>
-											SIGNUP
+											SIGNUP <AppRegistrationIcon/>
 										</b>
 									</p>
 								) : (
 									<p>
 										Have account?
-										<b onClick={() => viewChangeHandler(true)}> LOGIN</b>
+										<b onClick={() => viewChangeHandler(true)}> LOGIN <LoginIcon/></b>
 									</p>
 								)}
 							</Box>
