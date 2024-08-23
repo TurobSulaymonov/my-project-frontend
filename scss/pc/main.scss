@@ -10,7 +10,6 @@
 @import '/scss/main/utils';
 @import '/scss/main/variable';
 
-;
 
 
 
@@ -847,7 +846,6 @@ body::-webkit-scrollbar {
 			}
 		}
 	}
-
 	#footer {
 		position: relative;
 		padding: 60px 0px 18px 0px;
@@ -880,6 +878,7 @@ body::-webkit-scrollbar {
 							cursor: pointer;
 						}
 					      span {
+							margin-top: 10px;
 							color: #bebdbd;
 							font-family: $font;
 							font-size: 20px;
@@ -888,7 +887,7 @@ body::-webkit-scrollbar {
 							text-transform: capitalize;
 						}
 						p {
-					
+					        margin-bottom: 20px;
 							color: #fff;
 							font-family: $font;
 							font-size: 15px;
@@ -1026,6 +1025,9 @@ body::-webkit-scrollbar {
 			}
 		}
 	}
+  
+	
+	
 }
 
 .MuiPaper-root.MuiMenu-paper {

@@ -46,7 +46,7 @@ const withLayoutBasic = (Component: any) => {
 				case '/mypage':
 					title = 'my page';
 					desc = 'Home / For Rent';
-					bgImage = '/img/banner/header1.svg';
+					bgImage = '/img/banner/mypage-cake-banner.jpg';
 					break;
 				case '/community':
 					title = 'Community';
@@ -72,7 +72,7 @@ const withLayoutBasic = (Component: any) => {
 				case '/member':
 					title = 'Member Page';
 					desc = 'Home / For Rent';
-					bgImage = '/img/banner/header1.svg';
+					bgImage = '/img/banner/mypage-cake-banner.jpg';
 					break;
 				default:
 					break;

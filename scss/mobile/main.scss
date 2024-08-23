@@ -1,4 +1,16 @@
 @import '/scss/variables.scss';
+@import '/scss/variables.scss';
+@import '/scss/pc/general.scss';
+@import '/scss/main/mixins';
+@import '/scss/main/breakpoints';
+
+@import '/scss/main/components';
+
+@import '/scss/main/global';
+@import '/scss/main/utils';
+@import '/scss/main/variable';
+
+
 
 #mobile-wrap {
   .top {
@@ -745,114 +757,189 @@
     }
   }
 
-  #footer {
-    position: relative;
-    padding: 60px 0px 18px 0px;
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    background: #181a20;
-    .footer-container {
-      padding: 0 10px;
-      margin: 0 auto;
-      width: 1300px;
-      height: auto;
-      .main {
-        display: flex;
-        flex-direction: column;
-        .left {
-          height: 360px;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          .footer-box {
-            display: flex;
-            flex-direction: column;
-            .logo {
-              width: 128px;
-              height: 52px;
-              cursor: pointer;
-            }
-            span {
-              color: #bebdbd;
-              font-family: $font;
-              font-size: 14px;
-              font-style: normal;
-              font-weight: 400;
-              text-transform: capitalize;
-            }
-            p {
-              color: #fff;
-              font-family: $font;
-              font-size: 15px;
-              font-style: normal;
-              font-weight: 600;
-              line-height: normal;
-              text-transform: capitalize;
-            }
-            .media-box {
-              margin-top: 12px;
-              color: #929495;
-              svg {
-                font-size: 32px;
-                margin-right: 22px;
-                cursor: pointer;
-              }
-            }
-          }
+  .fz-1-footer-section {
+    background-color: $white;
+    color: #616161;
+    font-weight: 300;
+
+    .fz-footer-top {
+        padding: 100px 0;
+        border-bottom: 1px solid #2d2d2d;
+
+        @include md {
+            padding: 60px 0;
         }
-        .right {
-          display: flex;
-          flex-direction: column;
-          .bottom {
-            margin-top: 60px;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            div {
-              display: flex;
-              flex-direction: column;
-              strong {
-                margin-bottom: 3px;
-                color: #fff;
-                font-family: $font;
-                font-size: 15px;
-                font-style: normal;
-                font-weight: 600;
-                line-height: normal;
-                text-transform: capitalize;
-              }
-              span {
-                margin-top: 25px;
-                color: #bebdbd;
-                font-family: $font;
-                font-size: 14px;
-                font-style: normal;
-                font-weight: 400;
-                cursor: pointer;
-              }
+
+        @include xxs {
+            padding: 40px 0;
+        }
+
+        .fz-footer__contact-info {
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                @include md {
+                    gap: 10px;
+                }
             }
-          }
+
+            a {
+                display: block;
+
+                i {
+                    margin-right: 10px;
+                    font-size: 18px;
+                }
+            }
+
+            li {
+                &:not(:last-child) {
+                    a {
+                        border-bottom: 1px solid #2d2d2d;
+                        padding-bottom: 20px;
+
+                        @include md {
+                            padding-bottom: 10px;
+                        }
+                    }
+                }
+            }
         }
-      }
-      .second {
-        margin-top: 60px;
-        height: 45px;
-        border-top: 1px solid #212329;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-end;
-        span {
-          color: #bebdbd;
-          font-family: $font;
-          font-size: 14px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: normal;
+
+        .fz-footer-widget {
+            &__title {
+                font-family: $playfair;
+                font-size: 22px;
+                margin-bottom: 30px;
+                color: $white;
+
+                @include md {
+                    margin-bottom: 17px;
+                }
+
+                @include sm {
+                    margin-bottom: 12px;
+                }
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 13px;
+
+                @include xxs {
+                    gap: 8px;
+                }
+
+                li a {
+                    &:hover {
+                        color: $color-3;
+                    }
+                }
+            }
         }
-      }
     }
-  }
+
+
+
+    .fz-footer-top {
+        background-color: #f8f8f8;
+        border: none;
+
+        .fz-footer-widget__title {
+            font-family: $tenorSans;
+            color: #191919;
+        }
+
+        .fz-footer__contact-info li:not(:last-child) a {
+            border-color: rgb(0 0 0 / 5%);
+        }
+    }
+
+    .fz-footer-about {
+        padding-right: 60px;
+
+        @include xl {
+            padding-right: 0;
+        }
+
+        @include md {
+            padding-right: 30px;
+        }
+
+        @include sm {
+            padding-right: 0;
+        }
+
+        &__txt {
+            margin-bottom: 24px;
+        }
+    }
+
+    .fz-footer-bottom {
+        padding: 20px 0;
+
+        .fz-copyright {
+            margin-bottom: 0;
+
+            @include md {
+                text-align: center;
+            }
+        }
+
+        .fz-footer-socials {
+            ul {
+                display: flex;
+                justify-content: flex-end;
+                gap: 20px;
+
+                @include sm {
+                    justify-content: center;
+                }
+
+                @include xxs {
+                    gap: 10px;
+                }
+            }
+
+            a {
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                text-align: center;
+                border: 1px solid #7c7c7c;
+                border-radius: 50%;
+
+                @include xxs {
+                    width: 35px;
+                    height: 35px;
+                    line-height: 35px;
+                    font-size: 14px;
+                }
+
+                &:hover {
+                    background-color: #7c7c7c;
+                    color: $white;
+                }
+            }
+        }
+    }
+
+    .fz-footer-about.fz-footer-widget {
+        @include xl {
+            text-align: center;
+            width: 60%;
+            margin: auto;
+        }
+
+        @include lg {}
+
+        @include md {
+            width: 100%;
+            text-align: left;
+        }
+    }
+}
 }

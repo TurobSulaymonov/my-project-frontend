@@ -48,7 +48,7 @@ const PropertyCard = (props: PropertyCardType) => {
 	} else {
 		return (
 			<Stack className="card-config">
-				<Stack className="top">
+				{/* <Stack className="top">
 					<Link
 						href={{
 							pathname: '/property/detail',
@@ -66,15 +66,113 @@ const PropertyCard = (props: PropertyCardType) => {
 					<Box component={'div'} className={'price-box'}>
 						<Typography>{property.propertyRank}</Typography>
 					</Box>
-				</Stack>
-				<Stack className="col-xl-4 col-md-4 col-6 col-xxs-12" key={property._id}>
+				</Stack> */}
+		
+			<Stack className="col-xl-4 col-md-4 col-6 col-xxs-12" key={property._id}>
+              <div className="fz-1-single-product">
+                <div className="fz-single-product__img">
+                  <img src={imagePath}  alt={'imaege'} />
+                  <div className="fz-single-product__actions">
+                    <button
+                      className="fz-add-to-wishlist-btn"
+                 
+                    >
+                      <span className="btn-icon">
+					  <IconButton color={'default'} onClick={() => likePropertyHandler(user, property?._id)}>
+								{property?.meLiked && property?.meLiked[0]?.myFavorite ? (
+									<FavoriteIcon style={{ color: 'red' }} />
+								) : (
+									<FavoriteIcon />
+								)}
+							</IconButton>
+                      </span>
+                    </button>
+
+               
+
+                  
+                  </div>
+                </div>
+
+                <div className="fz-single-product__txt">
+                  <Stack
+				    direction="row"
+				    justifyContent="flex-start"
+                    alignItems="flex-start" 
+				  className="fz-single-product__category list-view-text">
+                    {property.propertyType}
+                  </Stack>
+                  <Link
+                    href={`/property/detail`}
+                    className="fz-single-product__title"
+                  >
+                    {property.propertyTitle}
+                  </Link>
+                  <Stack 
+				   direction="row"
+				    justifyContent="flex-start"
+  alignItems="flex-start"
+				  className="fz-single-product__price-rating">
+                    <p className="fz-single-product__price">
+                      <span className="current-price">${property.propertyPrice}</span>
+                    </p>
+
+          
+                  </Stack>
+
+                  <p className="fz-single-product__desc list-view-text">
+                    2021 Latest G5 3200DPI Gaming Mouse 7-Color RGB Breathing
+                    Led Light for Notebook Laptop/PC RGB Backlit Universal.
+                  </p>
+
+                  <div className="fz-single-product__actions list-view-text">
+                    <button
+                      className="fz-add-to-wishlist-btn"
+                     // onClick={() => addToWishlist(item.id)}
+                    >
+                      <span className="btn-txt">add To wishlist</span>
+                      <span className="btn-icon">
+					  <IconButton color={'default'} onClick={() => likePropertyHandler(user, property?._id)}>
+								{property?.meLiked && property?.meLiked[0]?.myFavorite ? (
+									<FavoriteIcon style={{ color: 'red' }} />
+								) : (
+									<FavoriteIcon />
+								)}
+							</IconButton>
+                      </span>
+                    </button>
+
+                    <button
+                      className="fz-add-to-cart-btn"
+                     // onClick={() => addToCart(item.id)}
+                    >
+                      <span className="btn-txt">add To cart</span>
+                      <span className="btn-icon">
+                        <i className="fa-light fa-cart-shopping"></i>
+                      </span>
+                    </button>
+
+                    <button className="fz-add-to-compare-btn">
+                      <span className="btn-txt">select to compare</span>
+                      <span className="btn-icon">
+                        <i className="fa-light fa-arrow-right-arrow-left"></i>
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </Stack>
+
+			
+			
+			{/* 	<Stack className="col-xl-4 col-md-4 col-6 col-xxs-12" key={property._id}>
              
-			  {/* 8888888888888 */}
+			
 
 			  <div className="col-xl-4 col-md-4 col-6 col-xxs-12" key={property._id}>
               <div className="fz-1-single-product">
                 <div className="fz-single-product__img">
-              {/* // <img src={item.imgSrc} alt={item.name} />    */}
+            
                
                 </div>
 
@@ -148,7 +246,7 @@ const PropertyCard = (props: PropertyCardType) => {
                 </div>
               </div>
             </div>
-            </Stack>
+            </Stack> */}
 			</Stack>
 		);
 	}
