@@ -175,7 +175,7 @@ All notable changes to this project will be documented in this file. See [standa
 * modify property page ([152cd7c](https://github.com/SBekzod/nestar-next/commit/152cd7ceaa3af9fa61348bd3434b8af97c47fab0))
 * modify property rank ([ee120a4](https://github.com/SBekzod/nestar-next/commit/ee120a45e8cbed32272810107ef8b6d91cea3450))
 * modify PropertyBigCard data display ([3ba30d8](https://github.com/SBekzod/nestar-next/commit/3ba30d89dbac776010e5dd2e44471bb5519bdab1))
-* modify propertyStatus ([2f75bae](https://github.com/SBekzod/nestar-next/commit/2f75bae8d81ef652f43661cd7fc5509778bb67e9))
+* modify productStatus ([2f75bae](https://github.com/SBekzod/nestar-next/commit/2f75bae8d81ef652f43661cd7fc5509778bb67e9))
 * modify removeCommentByAdmin schema query ([4eef409](https://github.com/SBekzod/nestar-next/commit/4eef40906026caf25183d77952aa3a3542a30f02))
 * modify scss imports ([9873a5e](https://github.com/SBekzod/nestar-next/commit/9873a5e61b4a677bd95fdadfdcea950ac6c81eb6))
 * modify source image path ([7e1dc46](https://github.com/SBekzod/nestar-next/commit/7e1dc46788af12d79fa0983fd17b0bcc8eacfc32))

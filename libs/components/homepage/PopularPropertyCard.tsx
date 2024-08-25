@@ -35,7 +35,7 @@ const PopularPropertyCard = (props: PopularPropertyCardProps) => {
 				<Box
 					component={'div'}
 					className={'card-img'}
-					style={{ backgroundImage: `url(${REACT_APP_API_URL}/${property?.propertyImages[0]})` }}
+					style={{ backgroundImage: `url(${REACT_APP_API_URL}/${property?.productImages[0]})` }}
 					onClick={() => {pushDetailHandler(property._id)}}
 				>
 					{property && property?.propertyRank >= topPropertyRank ? (
@@ -47,13 +47,13 @@ const PopularPropertyCard = (props: PopularPropertyCardProps) => {
 						''
 					)}
                       
-					<div className={'price'}>${property.propertyPrice}</div>
+					<div className={'price'}>${property.productPrice}</div>
 				</Box>
 				<Box component={'div'} className={'info'}>
 					<strong className={'title'}
 					onClick={() => {pushDetailHandler(property._id)}}
-					>{property.propertyTitle}</strong>
-					<p className={'desc'}>{property.propertyAddress}</p>
+					>{property.productName}</strong>
+					<p className={'desc'}>{property.productAddress}</p>
 					<div className={'options'}>
 						<div>
 							<img src="/img/icons/bed.svg" alt="" />
@@ -75,7 +75,7 @@ const PopularPropertyCard = (props: PopularPropertyCardProps) => {
 							<IconButton color={'default'}>
 								<RemoveRedEyeIcon />
 							</IconButton>
-							<Typography className="view-cnt">{property?.propertyViews}</Typography>
+							<Typography className="view-cnt">{property?.productViews}</Typography>
 						</div>
 					</div>
 				</Box>
@@ -86,7 +86,7 @@ const PopularPropertyCard = (props: PopularPropertyCardProps) => {
 			<Stack className="popular-card-box">
 				
 				<div className="fz-3-single-product__img">
-                <img src={`${REACT_APP_API_URL}/${property?.propertyImages[0]}`} alt="Product Image" />
+                <img src={`${REACT_APP_API_URL}/${property?.productImages[0]}`} alt="Product Image" />
                 <div className="fz-3-single-product__actions">
                   <div className="top-actions">
 			
@@ -113,7 +113,7 @@ const PopularPropertyCard = (props: PopularPropertyCardProps) => {
 									<FavoriteIcon />
 								)}
 							</IconButton>
-							<Typography className="view-cnt">{property?.propertyLikes}</Typography>
+							<Typography className="view-cnt">{property?.productLikes}</Typography>
 						</div> 
                     </Button>
                   </div>
@@ -125,12 +125,12 @@ const PopularPropertyCard = (props: PopularPropertyCardProps) => {
                   href={`/property/detail}`}
                   className="fz-3-single-product__title"
                 >
-                  {property.propertyTitle}
+                  {property.productName}
                 </Link>
                 <p className="fz-3-single-product__price">
-                  <span className="current-price">${property.propertyPrice}</span>
+                  <span className="current-price">${property.productPrice}</span>
                   <span className="prev-price text-decoration-line-through">
-                    ${property.propertyPrice}
+                    ${property.productPrice}
                   </span>
                 </p>
               </div>

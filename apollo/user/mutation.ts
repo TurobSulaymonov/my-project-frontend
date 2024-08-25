@@ -127,18 +127,18 @@ export const CREATE_PROPERTY = gql`
 		createProperty(input: $input) {
 			_id
 			propertyType
-			propertyStatus
+			productStatus
 			propertyLocation
-			propertyAddress
-			propertyTitle
-			propertyPrice
+			productAddress
+			productName
+			productPrice
 			propertySquare
 			propertyBeds
 			propertyRooms
-			propertyViews
-			propertyLikes
-			propertyImages
-			propertyDesc
+			productViews
+			productLikes
+			productImages
+			productDesc
 			propertyBarter
 			propertyRent
 			memberId
@@ -156,18 +156,18 @@ export const UPDATE_PROPERTY = gql`
 		updateProperty(input: $input) {
 			_id
 			propertyType
-			propertyStatus
+			productStatus
 			propertyLocation
-			propertyAddress
-			propertyTitle
-			propertyPrice
+			productAddress
+			productName
+			productPrice
 			propertySquare
 			propertyBeds
 			propertyRooms
-			propertyViews
-			propertyLikes
-			propertyImages
-			propertyDesc
+			productViews
+			productLikes
+			productImages
+			productDesc
 			propertyBarter
 			propertyRent
 			memberId
@@ -185,18 +185,18 @@ export const LIKE_TARGET_PROPERTY = gql`
 		likeTargetProperty(propertyId: $input) {
 			_id
 			propertyType
-			propertyStatus
+			productStatus
 			propertyLocation
-			propertyAddress
-			propertyTitle
-			propertyPrice
+			productAddress
+			productName
+			productPrice
 			propertySquare
 			propertyBeds
 			propertyRooms
-			propertyViews
-			propertyLikes
-			propertyImages
-			propertyDesc
+			productViews
+			productLikes
+			productImages
+			productDesc
 			propertyBarter
 			propertyRent
 			memberId

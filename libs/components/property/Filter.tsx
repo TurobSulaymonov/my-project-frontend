@@ -440,7 +440,7 @@ const Filter = (props: FilterType) => {
 		[searchFilter],
 	);
 
-	const propertyPriceHandler = useCallback(
+	const productPriceHandler = useCallback(
 		async (value: number, type: string) => {
 			if (type == 'start') {
 				await router.push(
@@ -811,7 +811,7 @@ const Filter = (props: FilterType) => {
 							value={searchFilter?.search?.pricesRange?.start ?? 0}
 							onChange={(e: any) => {
 								if (e.target.value >= 0) {
-									propertyPriceHandler(e.target.value, 'start');
+									productPriceHandler(e.target.value, 'start');
 								}
 							}}
 						/>
@@ -822,7 +822,7 @@ const Filter = (props: FilterType) => {
 							value={searchFilter?.search?.pricesRange?.end ?? 0}
 							onChange={(e: any) => {
 								if (e.target.value >= 0) {
-									propertyPriceHandler(e.target.value, 'end');
+									productPriceHandler(e.target.value, 'end');
 								}
 							}}
 						/>

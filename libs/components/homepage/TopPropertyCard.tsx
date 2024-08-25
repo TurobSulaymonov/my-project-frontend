@@ -39,14 +39,14 @@ const TopPropertyCard = (props: TopPropertyCardProps) => {
 	  <Box
 					component={'div'}
 					className={'card-img'}
-					style={{ backgroundImage: `url(${REACT_APP_API_URL}/${property?.propertyImages[0]})` }}
+					style={{ backgroundImage: `url(${REACT_APP_API_URL}/${property?.productImages[0]})` }}
 					onClick={() => {pushDetailHandler(property._id)}}
 				>
 					<a role="button" className="view-like-box">
                          <IconButton color={'default'}>
 								<RemoveRedEyeIcon />
 							</IconButton>
-							<Typography className="view-cnt">{property?.propertyViews}</Typography>
+							<Typography className="view-cnt">{property?.productViews}</Typography>
 							<IconButton color={'default'} onClick={() => likePropertyHandler(user, property?._id)}>
 								{property?.meLiked && property?.meLiked[0]?.myFavorite ? (
 									<FavoriteIcon style={{ color: 'red' }} />
@@ -54,7 +54,7 @@ const TopPropertyCard = (props: TopPropertyCardProps) => {
 									<FavoriteIcon />
 								)}
 							</IconButton>
-							<Typography className="view-cnt">{property?.propertyLikes}</Typography>
+							<Typography className="view-cnt">{property?.productLikes}</Typography>
 							
 							<ShoppingCartIcon className={'shop-icon'}/>
 			
@@ -66,10 +66,10 @@ const TopPropertyCard = (props: TopPropertyCardProps) => {
       </div>
       <div className="fz-4-single-product-txt">
         <h5 className="fz-4-single-product-title">
-          <Link href="#">{property.propertyTitle}</Link>
+          <Link href="#">{property.productName}</Link>
         </h5>
         <span className="fz-4-single-product-price">
-          ${property.propertyPrice}.00<span className="prev-price">${property.propertyPrice}.00</span>
+          ${property.productPrice}.00<span className="prev-price">${property.productPrice}.00</span>
         </span>
       </div>
 	 
@@ -84,15 +84,15 @@ const TopPropertyCard = (props: TopPropertyCardProps) => {
 
 <div className="fz-7-product">
       <div className="fz-7-product-img">
-        <img src={`${REACT_APP_API_URL}/${property?.propertyImages[0]}`} alt="Product Image" />
+        <img src={`${REACT_APP_API_URL}/${property?.productImages[0]}`} alt="Product Image" />
       </div>
 
       <div className="fz-7-product-txt">
-        <h6 className="fz-7-product-cat">{property.propertyStatus}</h6>
+        <h6 className="fz-7-product-cat">{property.productStatus}</h6>
         <h4 className="fz-7-product-title">
-          <Link href={"/property/detail"}>{property.propertyTitle}</Link>
+          <Link href={"/property/detail"}>{property.productName}</Link>
         </h4>
-        <span className="fz-7-product-price">${property.propertyTitle}</span>
+        <span className="fz-7-product-price">${property.productName}</span>
         <div className="fz-7-product-actions">
           <button type="button" className="add-to-cart-btn">
             Add To Cart  

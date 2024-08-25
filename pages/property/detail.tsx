@@ -69,7 +69,7 @@ const PropertyDetail: NextPage = ({ initialComment, ...props }: any) => {
 	const [slideImage, setSlideImage] = useState<string>('');
 	const [destinationProperties, setDestinationProperties] = useState<Property[]>([]);
 	const [commentInquiry, setCommentInquiry] = useState<CommentsInquiry>(initialComment);
-	const [propertyComments, setPropertyComments] = useState<Comment[]>([]);
+	const [productComments, setproductComments] = useState<Comment[]>([]);
 	const [commentTotal, setCommentTotal] = useState<number>(0);
 	const [insertCommentData, setInsertCommentData] = useState<CommentInput>({
 		commentGroup: CommentGroup.PROPERTY,
@@ -96,7 +96,7 @@ const PropertyDetail: NextPage = ({ initialComment, ...props }: any) => {
 		notifyOnNetworkStatusChange: true,
 		onCompleted:( data: T) => {
 		  if(data?.getProperty) setProperty(data?.getProperty);
-		  if(data?.getProperty) setSlideImage(data?.getProperty?.propertyImages[0]);
+		  if(data?.getProperty) setSlideImage(data?.getProperty?.productImages[0]);
 
 		},
 	 });
@@ -163,7 +163,7 @@ const PropertyDetail: NextPage = ({ initialComment, ...props }: any) => {
 		 skip: !commentInquiry.search.commentRefId,
 		notifyOnNetworkStatusChange: true,
 		onCompleted:( data: T) => {
-			if(data?.getComments?.list) setPropertyComments(data?.getComments?.list),
+			if(data?.getComments?.list) setproductComments(data?.getComments?.list),
 			setCommentTotal(data?.getComments?.metaCounter[0]?.total ?? 0)
 		},
 	 });
@@ -212,7 +212,7 @@ const PropertyDetail: NextPage = ({ initialComment, ...props }: any) => {
 				input: {
 					page: 1,
 					limit: 4,
-					sort: "propertyViews",
+					sort: "productViews",
 					direction: Direction.DESC,
 					search: {
 					 locationList: [property?.propertyLocation]
@@ -264,7 +264,7 @@ const PropertyDetail: NextPage = ({ initialComment, ...props }: any) => {
 						<Stack className={'property-info-config'}>
 							<Stack className={'info'}>
 							{/* 	<Stack className={'left-box'}>
-									<Typography className={'title-main'}>{property?.propertyTitle}</Typography>
+									<Typography className={'title-main'}>{property?.productName}</Typography>
 									<Stack className={'top-box'}>
 										<Typography className={'city'}>{property?.propertyLocation}</Typography>
 										<Stack className={'divider'}></Stack>
@@ -334,9 +334,9 @@ const PropertyDetail: NextPage = ({ initialComment, ...props }: any) => {
 			 />
 			</Stack>
     <Stack className="main-title">
-		<h2 className="fz-product-details__title">{property?.propertyStatus}</h2>
+		<h2 className="fz-product-details__title">{property?.productStatus}</h2>
       <div className="fz-product-details__price-rating">
-        <span className="price">${property?.propertyPrice}</span>
+        <span className="price">${property?.productPrice}</span>
         <div className="rating">
 		<Box
       sx={{
@@ -365,7 +365,7 @@ const PropertyDetail: NextPage = ({ initialComment, ...props }: any) => {
           </li>
           <li>
             <span className="info-property"> Product name </span> :{" "}
-            <span className="info-value">{property?.propertyTitle}</span>
+            <span className="info-value">{property?.productName}</span>
           </li>
           <li>
             <span className="info-property"> Availablity </span> :{" "}
@@ -417,7 +417,7 @@ const PropertyDetail: NextPage = ({ initialComment, ...props }: any) => {
 													onClick={() => likePropertyHandler(user, property?._id)}
 												/>
 											)}
-											<Typography>{property?.propertyLikes}</Typography>
+											<Typography>{property?.productLikes}</Typography>
 											<Box classname="removeIcon">
 											<RemoveRedEyeIcon fontSize="medium" />
 											</Box>
@@ -461,7 +461,7 @@ const PropertyDetail: NextPage = ({ initialComment, ...props }: any) => {
 													onClick={() => likePropertyHandler(user, property?._id)}
 												/>
 											)}
-											<Typography>{property?.propertyLikes}</Typography>
+											<Typography>{property?.productLikes}</Typography>
 											<Box classname="removeIcon">
 											<RemoveRedEyeIcon fontSize="medium" />
 											</Box>
@@ -915,7 +915,7 @@ const PropertyDetail: NextPage = ({ initialComment, ...props }: any) => {
 									>
 										{destinationProperties.map((property: Property) => {
 											return (
-												<SwiperSlide className={'similar-homes-slide'} key={property.propertyTitle}>
+												<SwiperSlide className={'similar-homes-slide'} key={property.productName}>
 													<PropertyBigCard property={property} likePropertyHandler={likePropertyHandler} key={property?._id} />
 												</SwiperSlide>
 											);

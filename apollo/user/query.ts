@@ -87,18 +87,18 @@ export const GET_PROPERTY = gql`
 		getProperty(propertyId: $input) {
 			_id
 			propertyType
-			propertyStatus
+			productStatus
 			propertyLocation
-			propertyAddress
-			propertyTitle
-			propertyPrice
+			productAddress
+			productName
+			productPrice
 			propertySquare
 			propertyBeds
 			propertyRooms
-			propertyViews
-			propertyLikes
-			propertyImages
-			propertyDesc
+			productViews
+			productLikes
+			productImages
+			productDesc
 			propertyBarter
 			propertyRent
 			memberId
@@ -143,19 +143,19 @@ export const GET_PROPERTIES = gql`
 			list {
 				_id
 				propertyType
-				propertyStatus
+				productStatus
 				propertyLocation
-				propertyAddress
-				propertyTitle
-				propertyPrice
+				productAddress
+				productName
+				productPrice
 				propertySquare
 				propertyBeds
 				propertyRooms
-				propertyViews
-				propertyLikes
+				productViews
+				productLikes
 				propertyRank
-				propertyImages
-				propertyDesc
+				productImages
+				productDesc
 				propertyBarter
 				propertyRent
 				memberId
@@ -205,18 +205,18 @@ export const GET_AGENT_PROPERTIES = gql`
 			list {
 				_id
 				propertyType
-				propertyStatus
+				productStatus
 				propertyLocation
-				propertyAddress
-				propertyTitle
-				propertyPrice
+				productAddress
+				productName
+				productPrice
 				propertySquare
 				propertyBeds
 				propertyRooms
-				propertyViews
-				propertyLikes
-				propertyImages
-				propertyDesc
+				productViews
+				productLikes
+				productImages
+				productDesc
 				propertyBarter
 				propertyRent
 				memberId
@@ -239,20 +239,20 @@ export const GET_FAVORITES = gql`
 			list {
 				_id
 				propertyType
-				propertyStatus
+				productStatus
 				propertyLocation
-				propertyAddress
-				propertyTitle
-				propertyPrice
+				productAddress
+				productName
+				productPrice
 				propertySquare
 				propertyBeds
 				propertyRooms
-				propertyViews
-				propertyLikes
-				propertyComments
+				productViews
+				productLikes
+				productComments
 				propertyRank
-				propertyImages
-				propertyDesc
+				productImages
+				productDesc
 				propertyBarter
 				propertyRent
 				memberId
@@ -302,20 +302,20 @@ export const GET_VISITED = gql`
 			list {
 				_id
 				propertyType
-				propertyStatus
+				productStatus
 				propertyLocation
-				propertyAddress
-				propertyTitle
-				propertyPrice
+				productAddress
+				productName
+				productPrice
 				propertySquare
 				propertyBeds
 				propertyRooms
-				propertyViews
-				propertyLikes
-				propertyComments
+				productViews
+				productLikes
+				productComments
 				propertyRank
-				propertyImages
-				propertyDesc
+				productImages
+				productDesc
 				propertyBarter
 				propertyRent
 				memberId

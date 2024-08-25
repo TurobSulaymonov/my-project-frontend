@@ -151,7 +151,7 @@ TrendProperties.defaultProps = {
 	initialInput: {
 		page: 1,
 		limit: 5,
-		sort: 'propertyLikes',
+		sort: 'productLikes',
 		direction: 'DESC',
 		search: {},
 	},

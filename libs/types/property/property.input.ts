@@ -1,17 +1,17 @@
-import { PropertyLocation, PropertyStatus, PropertyType } from '../../enums/property.enum';
+import { PropertyLocation, ProductStatus, PropertyType } from '../../enums/property.enum';
 import { Direction } from '../../enums/common.enum';
 
 export interface PropertyInput {
 	propertyType: PropertyType;
 	propertyLocation: PropertyLocation;
-	propertyAddress: string;
-	propertyTitle: string;
-	propertyPrice: number;
+	productAddress: string;
+	productName: string;
+	productPrice: number;
 	propertySquare: number;
 	propertyBeds: number;
 	propertyRooms: number;
-	propertyImages: string[];
-	propertyDesc?: string;
+	productImages: string[];
+	productDesc?: string;
 	propertyBarter?: boolean;
 	propertyRent?: boolean;
 	memberId?: string;
@@ -40,7 +40,7 @@ export interface PropertiesInquiry {
 }
 
 interface APISearch {
-	propertyStatus?: PropertyStatus;
+	productStatus?: ProductStatus;
 }
 
 export interface AgentPropertiesInquiry {
@@ -52,7 +52,7 @@ export interface AgentPropertiesInquiry {
 }
 
 interface ALPISearch {
-	propertyStatus?: PropertyStatus;
+	productStatus?: ProductStatus;
 	propertyLocationList?: PropertyLocation[];
 }
 

@@ -4,7 +4,7 @@ export enum PropertyType {
 	HOUSE = 'HOUSE',
 }
 
-export enum PropertyStatus {
+export enum ProductStatus {
 	ACTIVE = 'ACTIVE',
 	SOLD = 'SOLD',
 	DELETE = 'DELETE',

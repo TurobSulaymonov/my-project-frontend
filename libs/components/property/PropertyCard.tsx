@@ -39,8 +39,8 @@ const PropertyCard = (props: PropertyCardType) => {
 	const { property, likePropertyHandler, myFavorites, recentlyVisited } = props;
 	const device = useDeviceDetect();
 	const user = useReactiveVar(userVar);
-	const imagePath: string = property?.propertyImages[0]
-		? `${REACT_APP_API_URL}/${property?.propertyImages[0]}`
+	const imagePath: string = property?.productImages[0]
+		? `${REACT_APP_API_URL}/${property?.productImages[0]}`
 		: '/img/banner/header1.svg';
 
 	if (device === 'mobile') {
@@ -106,7 +106,7 @@ const PropertyCard = (props: PropertyCardType) => {
                     href={`/property/detail`}
                     className="fz-single-product__title"
                   >
-                    {property.propertyTitle}
+                    {property.productName}
                   </Link>
                   <Stack 
 				   direction="row"
@@ -114,7 +114,7 @@ const PropertyCard = (props: PropertyCardType) => {
   alignItems="flex-start"
 				  className="fz-single-product__price-rating">
                     <p className="fz-single-product__price">
-                      <span className="current-price">${property.propertyPrice}</span>
+                      <span className="current-price">${property.productPrice}</span>
                     </p>
 
           
@@ -178,17 +178,17 @@ const PropertyCard = (props: PropertyCardType) => {
 
                 <div className="fz-single-product__txt">
                   <span className="fz-single-product__category list-view-text">
-                    {property.propertyStatus}
+                    {property.productStatus}
                   </span>
                   <Link
                     href={`/property/detail`}
                     className="fz-single-product__title"
                   >
-                    {property.propertyTitle}
+                    {property.productName}
                   </Link>
                   <div className="fz-single-product__price-rating">
                     <p className="fz-single-product__price">
-                      <span className="current-price">${property.propertyPrice}</span>
+                      <span className="current-price">${property.productPrice}</span>
                     </p>
 
                     <div className="rating list-view-text">

@@ -35,7 +35,7 @@ const PropertyBigCard = (props: PropertyBigCardProps) => {
 				<Box
 					component={'div'}
 					className={'card-img'}
-					style={{ backgroundImage: `url(${REACT_APP_API_URL}/${property?.propertyImages?.[0]})` }}
+					style={{ backgroundImage: `url(${REACT_APP_API_URL}/${property?.productImages?.[0]})` }}
 				>
 					{property && property?.propertyRank >= 50 && (
 						<div className={'status'}>
@@ -44,11 +44,11 @@ const PropertyBigCard = (props: PropertyBigCardProps) => {
 						</div>
 					)}
 
-					<div className={'price'}>${formatterStr(property?.propertyPrice)}</div>
+					<div className={'price'}>${formatterStr(property?.productPrice)}</div>
 				</Box>
 				<Box component={'div'} className={'info'}>
-					<strong className={'title'}>{property?.propertyTitle}</strong>
-					<p className={'desc'}>{property?.propertyAddress}</p>
+					<strong className={'title'}>{property?.productName}</strong>
+					<p className={'desc'}>{property?.productAddress}</p>
 					<div className={'options'}>
 						<div>
 							<img src="/img/icons/bed.svg" alt="" />
@@ -73,10 +73,13 @@ const PropertyBigCard = (props: PropertyBigCardProps) => {
 							<IconButton color={'default'}>
 								<RemoveRedEyeIcon />
 							</IconButton>
-							<Typography className="view-cnt">{property?.propertyViews}</Typography>
+							<Typography className="view-cnt">{property?.productViews}</Typography>
 							<IconButton
 								color={'default'}
-								onClick={(e) => {
+								onClick={(
+								   //@ts-ignore
+									e
+								) => {
 									e.stopPropagation();
 									likePropertyHandler(user, property?._id)
 								}}
@@ -87,7 +90,7 @@ const PropertyBigCard = (props: PropertyBigCardProps) => {
 									<FavoriteIcon />
 								)}
 							</IconButton>
-							<Typography className="view-cnt">{property?.propertyLikes}</Typography>
+							<Typography className="view-cnt">{property?.productLikes}</Typography>
 						</div>
 					</div>
 				</Box>

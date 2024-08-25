@@ -42,18 +42,18 @@ export const UPDATE_PROPERTY_BY_ADMIN = gql`
 		updatePropertyByAdmin(input: $input) {
 			_id
 			propertyType
-			propertyStatus
+			productStatus
 			propertyLocation
-			propertyAddress
-			propertyTitle
-			propertyPrice
+			productAddress
+			productName
+			productPrice
 			propertySquare
 			propertyBeds
 			propertyRooms
-			propertyViews
-			propertyLikes
-			propertyImages
-			propertyDesc
+			productViews
+			productLikes
+			productImages
+			productDesc
 			propertyBarter
 			propertyRent
 			memberId
@@ -71,18 +71,18 @@ export const REMOVE_PROPERTY_BY_ADMIN = gql`
 		removePropertyByAdmin(propertyId: $input) {
 			_id
 			propertyType
-			propertyStatus
+			productStatus
 			propertyLocation
-			propertyAddress
-			propertyTitle
-			propertyPrice
+			productAddress
+			productName
+			productPrice
 			propertySquare
 			propertyBeds
 			propertyRooms
-			propertyViews
-			propertyLikes
-			propertyImages
-			propertyDesc
+			productViews
+			productLikes
+			productImages
+			productDesc
 			propertyBarter
 			propertyRent
 			memberId
