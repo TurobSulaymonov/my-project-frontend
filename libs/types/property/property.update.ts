@@ -9,13 +9,13 @@ export interface PropertyUpdate {
 	productAddress?: string;
 	productName?: string;
 	productPrice?: number;
-	propertySquare?: number;
-	propertyBeds?: number;
+	productWeight?: number;
+	productLeftCount?: number;
 	propertyRooms?: number;
 	productImages?: string[];
 	productDesc?: string;
-	propertyBarter?: boolean;
-	propertyRent?: boolean;
+	productChocolate?: boolean;
+	fruitCake?: boolean;
 	soldAt?: Date;
 	deletedAt?: Date;
 	constructedAt?: Date;

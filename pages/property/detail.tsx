@@ -269,7 +269,7 @@ const PropertyDetail: NextPage = ({ initialComment, ...props }: any) => {
 										<Typography className={'city'}>{property?.propertyLocation}</Typography>
 										<Stack className={'divider'}></Stack>
 										<Stack className={'buy-rent-box'}>
-											{property?.propertyBarter && (
+											{property?.productChocolate && (
 												<>
 													<Stack className={'circle'}>
 														<svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6" fill="none">
@@ -280,7 +280,7 @@ const PropertyDetail: NextPage = ({ initialComment, ...props }: any) => {
 												</>
 											)}
 
-											{property?.propertyRent && (
+											{property?.fruitCake && (
 												<>
 													<Stack className={'circle'}>
 														<svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6" fill="none">
@@ -313,13 +313,13 @@ const PropertyDetail: NextPage = ({ initialComment, ...props }: any) => {
 									</Stack>
 									<Stack className={'bottom-box'}>
 										<Stack className="option">
-											<img src="/img/icons/bed.svg" alt="" /> <Typography>{property?.propertyBeds} bed</Typography>
+											<img src="/img/icons/bed.svg" alt="" /> <Typography>{property?.productLeftCount} bed</Typography>
 										</Stack>
 										<Stack className="option">
 											<img src="/img/icons/room.svg" alt="" /> <Typography>{property?.propertyRooms} room</Typography>
 										</Stack>
 										<Stack className="option">
-											<img src="/img/icons/expand.svg" alt="" /> <Typography>{property?.propertySquare} m2</Typography>
+											<img src="/img/icons/expand.svg" alt="" /> <Typography>{property?.productWeight} m2</Typography>
 										</Stack>
 									</Stack>
 								</Stack> */}

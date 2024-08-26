@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { Button, Stack, Typography } from '@mui/material';
 import useDeviceDetect from '../../hooks/useDeviceDetect';
 import { ProductSize, PropertyLocation, PropertyType } from '../../enums/property.enum';
-import { REACT_APP_API_URL, propertySquare } from '../../config';
+import { REACT_APP_API_URL, productWeight } from '../../config';
 import { PropertyInput } from '../../types/property/property.input';
 import axios from 'axios';
 import { getJwtToken } from '../../auth';
@@ -53,11 +53,11 @@ const AddProperty = ({ initialValues, ...props }: any) => {
 			productSize: getPropertyData?.getProperty ? getPropertyData?.getProperty?.productSize : '',
 
 			productAddress: getPropertyData?.getProperty ? getPropertyData?.getProperty?.productAddress : '',
-			propertyBarter: getPropertyData?.getProperty ? getPropertyData?.getProperty?.propertyBarter : false,
-			propertyRent: getPropertyData?.getProperty ? getPropertyData?.getProperty?.propertyRent : false,
+			productChocolate: getPropertyData?.getProperty ? getPropertyData?.getProperty?.productChocolate : false,
+			fruitCake: getPropertyData?.getProperty ? getPropertyData?.getProperty?.fruitCake : false,
 			propertyRooms: getPropertyData?.getProperty ? getPropertyData?.getProperty?.propertyRooms : 0,
-			propertyBeds: getPropertyData?.getProperty ? getPropertyData?.getProperty?.propertyBeds : 0,
-			propertySquare: getPropertyData?.getProperty ? getPropertyData?.getProperty?.propertySquare : 0,
+			productLeftCount: getPropertyData?.getProperty ? getPropertyData?.getProperty?.productLeftCount : 0,
+			productWeight: getPropertyData?.getProperty ? getPropertyData?.getProperty?.productWeight : 0,
 			productDesc: getPropertyData?.getProperty ? getPropertyData?.getProperty?.productDesc : '',
 			productImages: getPropertyData?.getProperty ? getPropertyData?.getProperty?.productImages : [],
 		});
@@ -124,11 +124,11 @@ const AddProperty = ({ initialValues, ...props }: any) => {
 			insertPropertyData.propertyLocation === '' || // @ts-ignore
 			insertPropertyData.productSize === '' || // @ts-ignore
         	insertPropertyData.productAddress === '' || // @ts-ignore
-			insertPropertyData.propertyBarter === '' || // @ts-ignore
-			insertPropertyData.propertyRent === '' ||
+			insertPropertyData.productChocolate === '' || // @ts-ignore
+			insertPropertyData.fruitCake === '' ||
 			insertPropertyData.propertyRooms === 0 ||
-			insertPropertyData.propertyBeds === 0 ||
-			insertPropertyData.propertySquare === 0 ||
+			insertPropertyData.productLeftCount === 0 ||
+			insertPropertyData.productWeight === 0 ||
 			insertPropertyData.productDesc === '' ||
 			insertPropertyData.productImages.length === 0
 		) {
@@ -324,10 +324,10 @@ const AddProperty = ({ initialValues, ...props }: any) => {
 									<Typography className="title">Barter</Typography>
 									<select
 										className={'select-description'}
-										value={insertPropertyData.propertyBarter ? 'yes' : 'no'}
-										defaultValue={insertPropertyData.propertyBarter ? 'yes' : 'no'}
+										value={insertPropertyData.productChocolate ? 'yes' : 'no'}
+										defaultValue={insertPropertyData.productChocolate ? 'yes' : 'no'}
 										onChange={({ target: { value } }) =>
-											setInsertPropertyData({ ...insertPropertyData, propertyBarter: value === 'yes' })
+											setInsertPropertyData({ ...insertPropertyData, productChocolate: value === 'yes' })
 										}
 									>
 										<option disabled={true} selected={true}>
@@ -343,10 +343,10 @@ const AddProperty = ({ initialValues, ...props }: any) => {
 									<Typography className="title">Rent</Typography>
 									<select
 										className={'select-description'}
-										value={insertPropertyData.propertyRent ? 'yes' : 'no'}
-										defaultValue={insertPropertyData.propertyRent ? 'yes' : 'no'}
+										value={insertPropertyData.fruitCake ? 'yes' : 'no'}
+										defaultValue={insertPropertyData.fruitCake ? 'yes' : 'no'}
 										onChange={({ target: { value } }) =>
-											setInsertPropertyData({ ...insertPropertyData, propertyRent: value === 'yes' })
+											setInsertPropertyData({ ...insertPropertyData, fruitCake: value === 'yes' })
 										}
 									>
 										<option disabled={true} selected={true}>
@@ -385,10 +385,10 @@ const AddProperty = ({ initialValues, ...props }: any) => {
 									<Typography className="title">Bed</Typography>
 									<select
 										className={'select-description'}
-										value={insertPropertyData.propertyBeds || 'select'}
-										defaultValue={insertPropertyData.propertyBeds || 'select'}
+										value={insertPropertyData.productLeftCount || 'select'}
+										defaultValue={insertPropertyData.productLeftCount || 'select'}
 										onChange={({ target: { value } }) =>
-											setInsertPropertyData({ ...insertPropertyData, propertyBeds: parseInt(value) })
+											setInsertPropertyData({ ...insertPropertyData, productLeftCount: parseInt(value) })
 										}
 									>
 										<option disabled={true} selected={true} value={'select'}>
@@ -405,16 +405,16 @@ const AddProperty = ({ initialValues, ...props }: any) => {
 									<Typography className="title">Square</Typography>
 									<select
 										className={'select-description'}
-										value={insertPropertyData.propertySquare || 'select'}
-										defaultValue={insertPropertyData.propertySquare || 'select'}
+										value={insertPropertyData.productWeight || 'select'}
+										defaultValue={insertPropertyData.productWeight || 'select'}
 										onChange={({ target: { value } }) =>
-											setInsertPropertyData({ ...insertPropertyData, propertySquare: parseInt(value) })
+											setInsertPropertyData({ ...insertPropertyData, productWeight: parseInt(value) })
 										}
 									>
 										<option disabled={true} selected={true} value={'select'}>
 											Select
 										</option>
-										{propertySquare.map((square: number) => {
+										{productWeight.map((square: number) => {
 											if (square !== 0) {
 												return <option value={`${square}`}>{square}</option>;
 											}
@@ -556,11 +556,11 @@ AddProperty.defaultProps = {
 		propertyLocation: '',
 		productSize: '',
 		productAddress: '',
-		propertyBarter: false,
-		propertyRent: false,
+		productChocolate: false,
+		fruitCake: false,
 		propertyRooms: 0,
-		propertyBeds: 0,
-		propertySquare: 0,
+		productLeftCount: 0,
+		productWeight: 0,
 		productDesc: '',
 		productImages: [],
 	},

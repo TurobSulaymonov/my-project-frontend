@@ -17,7 +17,7 @@ import { ProductSize, PropertyLocation, PropertyType } from '../../enums/propert
 import { PropertiesInquiry } from '../../types/property/property.input';
 import { useRouter } from 'next/router';
 import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
-import { propertySquare } from '../../config';
+import { productWeight } from '../../config';
 import RefreshIcon from '@mui/icons-material/Refresh';
 
 const MenuProps = {
@@ -399,7 +399,7 @@ const Filter = (props: FilterType) => {
 		[searchFilter],
 	);
 
-	const propertyBedSelectHandler = useCallback(
+	const productLeftCountelectHandler = useCallback(
 		async (number: Number) => {
 			try {
 				if (number != 0) {
@@ -454,15 +454,15 @@ const Filter = (props: FilterType) => {
 					);
 				}
 
-				console.log('propertyBedSelectHandler:', number);
+				console.log('productLeftCountelectHandler:', number);
 			} catch (err: any) {
-				console.log('ERROR, propertyBedSelectHandler:', err);
+				console.log('ERROR, productLeftCountelectHandler:', err);
 			}
 		},
 		[searchFilter],
 	);
 
-	const propertySquareHandler = useCallback(
+	const productWeightHandler = useCallback(
 		async (e: any, type: string) => {
 			const value = e.target.value;
 
@@ -681,7 +681,7 @@ const Filter = (props: FilterType) => {
 					))}
 				</Stack>
 
-				<Stack className={'find-your-home'} mb={'30px'}>
+			{/* 	<Stack className={'find-your-home'} mb={'30px'}>
 					<Typography className={'title'}>Rooms</Typography>
 					<Stack className="button-group">
 						<Button
@@ -753,7 +753,7 @@ const Filter = (props: FilterType) => {
 								borderRadius: '12px 0 0 12px',
 								border: !searchFilter?.search?.bedsList ? '2px solid #181A20' : '1px solid #b9b9b9',
 							}}
-							onClick={() => propertyBedSelectHandler(0)}
+							onClick={() => productLeftCountelectHandler(0)}
 						>
 							Any
 						</Button>
@@ -763,7 +763,7 @@ const Filter = (props: FilterType) => {
 								border: searchFilter?.search?.bedsList?.includes(1) ? '2px solid #181A20' : '1px solid #b9b9b9',
 								borderLeft: searchFilter?.search?.bedsList?.includes(1) ? undefined : 'none',
 							}}
-							onClick={() => propertyBedSelectHandler(1)}
+							onClick={() => productLeftCountelectHandler(1)}
 						>
 							1
 						</Button>
@@ -773,7 +773,7 @@ const Filter = (props: FilterType) => {
 								border: searchFilter?.search?.bedsList?.includes(2) ? '2px solid #181A20' : '1px solid #b9b9b9',
 								borderLeft: searchFilter?.search?.bedsList?.includes(2) ? undefined : 'none',
 							}}
-							onClick={() => propertyBedSelectHandler(2)}
+							onClick={() => productLeftCountelectHandler(2)}
 						>
 							2
 						</Button>
@@ -783,7 +783,7 @@ const Filter = (props: FilterType) => {
 								border: searchFilter?.search?.bedsList?.includes(3) ? '2px solid #181A20' : '1px solid #b9b9b9',
 								borderLeft: searchFilter?.search?.bedsList?.includes(3) ? undefined : 'none',
 							}}
-							onClick={() => propertyBedSelectHandler(3)}
+							onClick={() => productLeftCountelectHandler(3)}
 						>
 							3
 						</Button>
@@ -794,7 +794,7 @@ const Filter = (props: FilterType) => {
 								borderLeft: searchFilter?.search?.bedsList?.includes(4) ? undefined : 'none',
 								// borderRight: false ? undefined : 'none',
 							}}
-							onClick={() => propertyBedSelectHandler(4)}
+							onClick={() => productLeftCountelectHandler(4)}
 						>
 							4
 						</Button>
@@ -804,12 +804,12 @@ const Filter = (props: FilterType) => {
 								border: searchFilter?.search?.bedsList?.includes(5) ? '2px solid #181A20' : '1px solid #b9b9b9',
 								borderLeft: searchFilter?.search?.bedsList?.includes(5) ? undefined : 'none',
 							}}
-							onClick={() => propertyBedSelectHandler(5)}
+							onClick={() => productLeftCountelectHandler(5)}
 						>
 							5+
 						</Button>
 					</Stack>
-				</Stack>
+				</Stack> */}
 				<Stack className={'find-your-home'} mb={'30px'}>
 					<Typography className={'title'}>Options</Typography>
 					<Stack className={'input-box'}>
@@ -818,12 +818,12 @@ const Filter = (props: FilterType) => {
 							className="property-checkbox"
 							color="default"
 							size="small"
-							value={'propertyBarter'}
-							checked={(searchFilter?.search?.options || []).includes('propertyBarter')}
+							value={'productChocolate'}
+							checked={(searchFilter?.search?.options || []).includes('productChocolate')}
 							onChange={propertyOptionSelectHandler}
 						/>
 						<label htmlFor={'Barter'} style={{ cursor: 'pointer' }}>
-							<Typography className="propert-type">Barter</Typography>
+							<Typography className="propert-type">Fruit Cake</Typography>
 						</label>
 					</Stack>
 					<Stack className={'input-box'}>
@@ -832,17 +832,17 @@ const Filter = (props: FilterType) => {
 							className="property-checkbox"
 							color="default"
 							size="small"
-							value={'propertyRent'}
-							checked={(searchFilter?.search?.options || []).includes('propertyRent')}
+							value={'fruitCake'}
+							checked={(searchFilter?.search?.options || []).includes('fruitCake')}
 							onChange={propertyOptionSelectHandler}
 						/>
 						<label htmlFor={'Rent'} style={{ cursor: 'pointer' }}>
-							<Typography className="propert-type">Rent</Typography>
+							<Typography className="propert-type">Chocolate Cake</Typography>
 						</label>
 					</Stack>
 				</Stack>
 				<Stack className={'find-your-home'} mb={'30px'}>
-					<Typography className={'title'}>Square meter</Typography>
+					<Typography className={'title'}>Cake Weight</Typography>
 					<Stack className="square-year-input">
 						<FormControl>
 							<InputLabel id="demo-simple-select-label">Min</InputLabel>
@@ -851,10 +851,10 @@ const Filter = (props: FilterType) => {
 								id="demo-simple-select"
 								value={searchFilter?.search?.squaresRange?.start ?? 0}
 								label="Min"
-								onChange={(e: any) => propertySquareHandler(e, 'start')}
+								onChange={(e: any) => productWeightHandler(e, 'start')}
 								MenuProps={MenuProps}
 							>
-								{propertySquare.map((square: number) => (
+								{productWeight.map((square: number) => (
 									<MenuItem
 										value={square}
 										disabled={(searchFilter?.search?.squaresRange?.end || 0) < square}
@@ -873,10 +873,10 @@ const Filter = (props: FilterType) => {
 								id="demo-simple-select"
 								value={searchFilter?.search?.squaresRange?.end ?? 500}
 								label="Max"
-								onChange={(e: any) => propertySquareHandler(e, 'end')}
+								onChange={(e: any) => productWeightHandler(e, 'end')}
 								MenuProps={MenuProps}
 							>
-								{propertySquare.map((square: number) => (
+								{productWeight.map((square: number) => (
 									<MenuItem
 										value={square}
 										disabled={(searchFilter?.search?.squaresRange?.start || 0) > square}

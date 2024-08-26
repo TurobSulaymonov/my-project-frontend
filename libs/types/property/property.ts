@@ -20,8 +20,8 @@ export interface Property {
 	productAddress: string;
 	productName: string;
 	productPrice: number;
-	propertySquare: number;
-	propertyBeds: number;
+	productWeight: number;
+	productLeftCount: number;
 	propertyRooms: number;
 	productViews: number;
 	productLikes: number;
@@ -29,8 +29,8 @@ export interface Property {
 	propertyRank: number;
 	productImages: string[];
 	productDesc?: string;
-	propertyBarter: boolean;
-	propertyRent: boolean;
+	productChocolate: boolean;
+	fruitCake: boolean;
 	memberId: string;
 	soldAt?: Date;
 	deletedAt?: Date;

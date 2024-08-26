@@ -133,15 +133,15 @@ export const CREATE_PROPERTY = gql`
 			productAddress
 			productName
 			productPrice
-			propertySquare
-			propertyBeds
+			productWeight
+			productLeftCount
 			propertyRooms
 			productViews
 			productLikes
 			productImages
 			productDesc
-			propertyBarter
-			propertyRent
+			productChocolate
+			fruitCake
 			memberId
 			soldAt
 			deletedAt
@@ -163,15 +163,15 @@ export const UPDATE_PROPERTY = gql`
 			productAddress
 			productName
 			productPrice
-			propertySquare
-			propertyBeds
+			productWeight
+			productLeftCount
 			propertyRooms
 			productViews
 			productLikes
 			productImages
 			productDesc
-			propertyBarter
-			propertyRent
+			productChocolate
+			fruitCake
 			memberId
 			soldAt
 			deletedAt
@@ -193,15 +193,15 @@ export const LIKE_TARGET_PROPERTY = gql`
 			productAddress
 			productName
 			productPrice
-			propertySquare
-			propertyBeds
+			productWeight
+			productLeftCount
 			propertyRooms
 			productViews
 			productLikes
 			productImages
 			productDesc
-			propertyBarter
-			propertyRent
+			productChocolate
+			fruitCake
 			memberId
 			soldAt
 			deletedAt

@@ -57,7 +57,7 @@ const PopularPropertyCard = (props: PopularPropertyCardProps) => {
 					<div className={'options'}>
 						<div>
 							<img src="/img/icons/bed.svg" alt="" />
-							<span>{property?.propertyBeds} bed</span>
+							<span>{property?.productLeftCount} bed</span>
 						</div>
 						<div>
 							<img src="/img/icons/room.svg" alt="" />
@@ -65,12 +65,12 @@ const PopularPropertyCard = (props: PopularPropertyCardProps) => {
 						</div>
 						<div>
 							<img src="/img/icons/expand.svg" alt="" />
-							<span>{property?.propertySquare} m2</span>
+							<span>{property?.productWeight} m2</span>
 						</div>
 					</div>
 					<Divider sx={{ mt: '15px', mb: '17px' }} />
 					<div className={'bott'}>
-						<p>{property?.propertyRent ? 'rent' : 'sale'}</p>
+						<p>{property?.fruitCake ? 'rent' : 'sale'}</p>
 						<div className="view-like-box">
 							<IconButton color={'default'}>
 								<RemoveRedEyeIcon />

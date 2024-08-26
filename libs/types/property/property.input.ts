@@ -8,13 +8,13 @@ export interface PropertyInput {
 	productAddress: string;
 	productName: string;
 	productPrice: number;
-	propertySquare: number;
-	propertyBeds: number;
+	productWeight: number;
+	productLeftCount: number;
 	propertyRooms: number;
 	productImages: string[];
 	productDesc?: string;
-	propertyBarter?: boolean;
-	propertyRent?: boolean;
+	productChocolate?: boolean;
+	fruitCake?: boolean;
 	memberId?: string;
 	constructedAt?: Date;
 }

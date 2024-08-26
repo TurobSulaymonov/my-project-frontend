@@ -54,15 +54,15 @@ export const GET_ALL_PROPERTIES_BY_ADMIN = gql`
 				productAddress
 				productName
 				productPrice
-				propertySquare
-				propertyBeds
+				productWeight
+				productLeftCount
 				propertyRooms
 				productViews
 				productLikes
 				productImages
 				productDesc
-				propertyBarter
-				propertyRent
+				productChocolate
+				fruitCake
 				memberId
 				soldAt
 				deletedAt

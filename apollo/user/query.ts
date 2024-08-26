@@ -93,15 +93,15 @@ export const GET_PROPERTY = gql`
 			productAddress
 			productName
 			productPrice
-			propertySquare
-			propertyBeds
+			productWeight
+			productLeftCount
 			propertyRooms
 			productViews
 			productLikes
 			productImages
 			productDesc
-			propertyBarter
-			propertyRent
+			productChocolate
+			fruitCake
 			memberId
 			soldAt
 			deletedAt
@@ -150,16 +150,16 @@ export const GET_PROPERTIES = gql`
 				productAddress
 				productName
 				productPrice
-				propertySquare
-				propertyBeds
+				productWeight
+				productLeftCount
 				propertyRooms
 				productViews
 				productLikes
 				propertyRank
 				productImages
 				productDesc
-				propertyBarter
-				propertyRent
+				productChocolate
+				fruitCake
 				memberId
 				soldAt
 				deletedAt
@@ -213,15 +213,15 @@ export const GET_AGENT_PROPERTIES = gql`
 				productAddress
 				productName
 				productPrice
-				propertySquare
-				propertyBeds
+				productWeight
+				productLeftCount
 				propertyRooms
 				productViews
 				productLikes
 				productImages
 				productDesc
-				propertyBarter
-				propertyRent
+				productChocolate
+				fruitCake
 				memberId
 				soldAt
 				deletedAt
@@ -248,8 +248,8 @@ export const GET_FAVORITES = gql`
 				productAddress
 				productName
 				productPrice
-				propertySquare
-				propertyBeds
+				productWeight
+				productLeftCount
 				propertyRooms
 				productViews
 				productLikes
@@ -257,8 +257,8 @@ export const GET_FAVORITES = gql`
 				propertyRank
 				productImages
 				productDesc
-				propertyBarter
-				propertyRent
+				productChocolate
+				fruitCake
 				memberId
 				soldAt
 				deletedAt
@@ -312,8 +312,8 @@ export const GET_VISITED = gql`
 				productAddress
 				productName
 				productPrice
-				propertySquare
-				propertyBeds
+				productWeight
+				productLeftCount
 				propertyRooms
 				productViews
 				productLikes
@@ -321,8 +321,8 @@ export const GET_VISITED = gql`
 				propertyRank
 				productImages
 				productDesc
-				propertyBarter
-				propertyRent
+				productChocolate
+				fruitCake
 				memberId
 				soldAt
 				deletedAt
