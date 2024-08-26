@@ -554,6 +554,7 @@ AddProperty.defaultProps = {
 		productPrice: 0,
 		propertyType: '',
 		propertyLocation: '',
+		productSize: '',
 		productAddress: '',
 		propertyBarter: false,
 		propertyRent: false,

@@ -13,7 +13,7 @@ import {
 	IconButton,
 } from '@mui/material';
 import useDeviceDetect from '../../hooks/useDeviceDetect';
-import { PropertyLocation, PropertyType } from '../../enums/property.enum';
+import { ProductSize, PropertyLocation, PropertyType } from '../../enums/property.enum';
 import { PropertiesInquiry } from '../../types/property/property.input';
 import { useRouter } from 'next/router';
 import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
@@ -39,7 +39,8 @@ const Filter = (props: FilterType) => {
 	const device = useDeviceDetect();
 	const router = useRouter();
 	const [propertyLocation, setPropertyLocation] = useState<PropertyLocation[]>(Object.values(PropertyLocation));
-	const [propertyType, setPropertyType] = useState<PropertyType[]>(Object.values(PropertyType));
+	const [productSize, setProductSize] = useState<ProductSize[]>(Object.values(ProductSize));
+    const [propertyType, setPropertyType] = useState<PropertyType[]>(Object.values(PropertyType));
 	const [searchText, setSearchText] = useState<string>('');
 	const [showMore, setShowMore] = useState<boolean>(false);
 
@@ -65,6 +66,23 @@ const Filter = (props: FilterType) => {
 		if (searchFilter?.search?.typeList?.length == 0) {
 			delete searchFilter.search.typeList;
 			router.push(`/property?input=${JSON.stringify({
+				...searchFilter,
+				search: {
+					...searchFilter.search
+				}
+			})}`, `/property?input=${JSON.stringify({
+				...searchFilter,
+				search: {
+					...searchFilter.search
+				}
+			})}`, { scroll: false }).then();
+		}
+
+		if (searchFilter?.search?.sizeList?.length == 0) {
+			delete searchFilter.search.sizeList;
+			setShowMore(false);
+			router
+			.push(`/property?input=${JSON.stringify({
 				...searchFilter,
 				search: {
 					...searchFilter.search
@@ -219,6 +237,55 @@ const Filter = (props: FilterType) => {
 				console.log('propertyTypeSelectHandler:', e.target.value);
 			} catch (err: any) {
 				console.log('ERROR, propertyTypeSelectHandler:', err);
+			}
+		},
+		[searchFilter],
+	);
+
+	const productSizeSelectHandler = useCallback(
+		async (e: any) => {
+			try {
+				const isChecked = e.target.checked;
+				const value = e.target.value;
+				if (isChecked) {
+					await router.push(
+						`/property?input=${JSON.stringify({
+							...searchFilter,
+							search: { ...searchFilter.search, sizeList: [...(searchFilter?.search?.sizeList || []), value] },
+						})}`,
+						`/property?input=${JSON.stringify({
+							...searchFilter,
+							search: { ...searchFilter.search, sizeList: [...(searchFilter?.search?.sizeList || []), value] },
+						})}`,
+						{ scroll: false },
+					);
+				} else if (searchFilter?.search?.sizeList?.includes(value)) {
+					await router.push(
+						`/property?input=${JSON.stringify({
+							...searchFilter,
+							search: {
+								...searchFilter.search,
+								sizeList: searchFilter?.search?.sizeList?.filter((item: string) => item !== value),
+							},
+						})}`,
+						`/property?input=${JSON.stringify({
+							...searchFilter,
+							search: {
+								...searchFilter.search,
+								sizeList: searchFilter?.search?.sizeList?.filter((item: string) => item !== value),
+							},
+						})}`,
+						{ scroll: false },
+					);
+				}
+
+				if (searchFilter?.search?.sizeList?.length == 0) {
+					alert('error');
+				}
+
+				console.log('productSizeSelectHandler:', e.target.value);
+			} catch (err: any) {
+				console.log('ERROR, productSizeSelectHandler:', err);
 			}
 		},
 		[searchFilter],
@@ -593,6 +660,27 @@ const Filter = (props: FilterType) => {
 						</Stack>
 					))}
 				</Stack>
+
+				<Stack className={'find-your-home'} mb={'30px'}>
+					<Typography className={'title'}>Product Size</Typography>
+					{productSize.map((size: string) => (
+						<Stack className={'input-box'} key={size}>
+							<Checkbox
+								id={size}
+								className="property-checkbox"
+								color="default"
+								size="small"
+								value={size}
+								onChange={productSizeSelectHandler}
+								checked={(searchFilter?.search?.sizeList || []).includes(size as ProductSize)}
+							/>
+							<label style={{ cursor: 'pointer' }}>
+								<Typography className="property_type">{size}</Typography>
+							</label>
+						</Stack>
+					))}
+				</Stack>
+
 				<Stack className={'find-your-home'} mb={'30px'}>
 					<Typography className={'title'}>Rooms</Typography>
 					<Stack className="button-group">

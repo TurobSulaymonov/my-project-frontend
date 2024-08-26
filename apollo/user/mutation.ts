@@ -129,6 +129,7 @@ export const CREATE_PROPERTY = gql`
 			propertyType
 			productStatus
 			propertyLocation
+			productSize
 			productAddress
 			productName
 			productPrice
@@ -158,6 +159,7 @@ export const UPDATE_PROPERTY = gql`
 			propertyType
 			productStatus
 			propertyLocation
+			productSize
 			productAddress
 			productName
 			productPrice
@@ -187,6 +189,7 @@ export const LIKE_TARGET_PROPERTY = gql`
 			propertyType
 			productStatus
 			propertyLocation
+			productSize
 			productAddress
 			productName
 			productPrice
