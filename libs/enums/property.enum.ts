@@ -1,7 +1,7 @@
 export enum PropertyType {
-	APARTMENT = 'APARTMENT',
-	VILLA = 'VILLA',
-	HOUSE = 'HOUSE',
+	BirthdayCake = 'BirthdayCake',
+	AnniversaryCake = 'AnniversaryCake',
+	CelebrationCake = 'CelebrationCake',
 }
 
 export enum ProductStatus {
@@ -20,4 +20,10 @@ export enum PropertyLocation {
 	CHONJU = 'CHONJU',
 	DAEJON = 'DAEJON',
 	JEJU = 'JEJU',
+}
+
+export enum ProductSize {
+	SMALL = "SMALL",
+	MEDIUM ="MEDIUM",
+	LARGE = 'LARGE'
 }

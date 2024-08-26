@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/router';
 import { Button, Stack, Typography } from '@mui/material';
 import useDeviceDetect from '../../hooks/useDeviceDetect';
-import { PropertyLocation, PropertyType } from '../../enums/property.enum';
+import { ProductSize, PropertyLocation, PropertyType } from '../../enums/property.enum';
 import { REACT_APP_API_URL, propertySquare } from '../../config';
 import { PropertyInput } from '../../types/property/property.input';
 import axios from 'axios';
@@ -20,6 +20,8 @@ const AddProperty = ({ initialValues, ...props }: any) => {
 	const [insertPropertyData, setInsertPropertyData] = useState<PropertyInput>(initialValues);
 	const [propertyType, setPropertyType] = useState<PropertyType[]>(Object.values(PropertyType));
 	const [propertyLocation, setPropertyLocation] = useState<PropertyLocation[]>(Object.values(PropertyLocation));
+	const [productSize, setProudctSize] = useState<ProductSize[]>(Object.values(ProductSize));
+
 	const token = getJwtToken();
 	const user = useReactiveVar(userVar);
 
@@ -48,6 +50,8 @@ const AddProperty = ({ initialValues, ...props }: any) => {
 			productPrice: getPropertyData?.getProperty ? getPropertyData?.getProperty?.productPrice : 0,
 			propertyType: getPropertyData?.getProperty ? getPropertyData?.getProperty?.propertyType : '',
 			propertyLocation: getPropertyData?.getProperty ? getPropertyData?.getProperty?.propertyLocation : '',
+			productSize: getPropertyData?.getProperty ? getPropertyData?.getProperty?.productSize : '',
+
 			productAddress: getPropertyData?.getProperty ? getPropertyData?.getProperty?.productAddress : '',
 			propertyBarter: getPropertyData?.getProperty ? getPropertyData?.getProperty?.propertyBarter : false,
 			propertyRent: getPropertyData?.getProperty ? getPropertyData?.getProperty?.propertyRent : false,
@@ -118,7 +122,8 @@ const AddProperty = ({ initialValues, ...props }: any) => {
 			insertPropertyData.productPrice === 0 || // @ts-ignore
 			insertPropertyData.propertyType === '' || // @ts-ignore
 			insertPropertyData.propertyLocation === '' || // @ts-ignore
-			insertPropertyData.productAddress === '' || // @ts-ignore
+			insertPropertyData.productSize === '' || // @ts-ignore
+        	insertPropertyData.productAddress === '' || // @ts-ignore
 			insertPropertyData.propertyBarter === '' || // @ts-ignore
 			insertPropertyData.propertyRent === '' ||
 			insertPropertyData.propertyRooms === 0 ||
@@ -271,6 +276,33 @@ const AddProperty = ({ initialValues, ...props }: any) => {
 									<div className={'divider'}></div>
 									<img src={'/img/icons/Vector.svg'} className={'arrow-down'} />
 								</Stack>
+ 
+                                <Stack className="price-year-after-price">
+									<Typography className="title">ProductSize:</Typography>
+									<select
+										className={'select-description'}
+										defaultValue={insertPropertyData.productSize || 'select'}
+										value={insertPropertyData.productSize || 'select'}
+										onChange={({ target: { value } }) =>
+											// @ts-ignore
+											setInsertPropertyData({ ...insertPropertyData, productSize: value })
+										}
+									>
+										<>
+											<option selected={true} disabled={true} value={'select'}>
+												Select
+											</option>
+											{productSize.map((size: any) => (
+												<option value={`${size}`} key={size}>
+													{size}
+												</option>
+											))}
+										</>
+									</select>
+									<div className={'divider'}></div>
+									<img src={'/img/icons/Vector.svg'} className={'arrow-down'} />
+								</Stack>
+
 								<Stack className="price-year-after-price">
 									<Typography className="title">Address</Typography>
 									<input
@@ -284,6 +316,8 @@ const AddProperty = ({ initialValues, ...props }: any) => {
 									/>
 								</Stack>
 							</Stack>
+                              
+					
 
 							<Stack className="config-row">
 								<Stack className="price-year-after-price">
