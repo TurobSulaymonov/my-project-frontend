@@ -9,6 +9,7 @@ export interface PropertyUpdate {
 	productAddress?: string;
 	productName?: string;
 	productPrice?: number;
+	productIngredients?:string;
 	productWeight?: number;
 	productLeftCount?: number;
 

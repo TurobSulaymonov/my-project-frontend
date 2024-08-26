@@ -8,6 +8,7 @@ export interface PropertyInput {
 	productAddress: string;
 	productName: string;
 	productPrice: number;
+	productIngredients: string;
 	productWeight: number;
 	productLeftCount: number;
 

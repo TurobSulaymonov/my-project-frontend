@@ -20,6 +20,7 @@ export interface Property {
 	productAddress: string;
 	productName: string;
 	productPrice: number;
+	productIngredients: string,
 	productWeight: number;
 	productLeftCount: number;
 

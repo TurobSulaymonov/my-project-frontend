@@ -54,6 +54,7 @@ export const GET_ALL_PROPERTIES_BY_ADMIN = gql`
 				productAddress
 				productName
 				productPrice
+				productIngredients
 				productWeight
 				productLeftCount
 			

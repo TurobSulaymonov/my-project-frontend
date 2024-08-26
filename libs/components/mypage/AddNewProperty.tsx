@@ -55,7 +55,8 @@ const AddProperty = ({ initialValues, ...props }: any) => {
 			productAddress: getPropertyData?.getProperty ? getPropertyData?.getProperty?.productAddress : '',
 			productChocolate: getPropertyData?.getProperty ? getPropertyData?.getProperty?.productChocolate : false,
 			fruitCake: getPropertyData?.getProperty ? getPropertyData?.getProperty?.fruitCake : false,
-
+			productIngredients: getPropertyData?.getProperty ? getPropertyData?.getProperty?.productIngredients : '',
+            
 			productLeftCount: getPropertyData?.getProperty ? getPropertyData?.getProperty?.productLeftCount : 0,
 			productWeight: getPropertyData?.getProperty ? getPropertyData?.getProperty?.productWeight : 0,
 			productDesc: getPropertyData?.getProperty ? getPropertyData?.getProperty?.productDesc : '',
@@ -126,7 +127,7 @@ const AddProperty = ({ initialValues, ...props }: any) => {
         	insertPropertyData.productAddress === '' || // @ts-ignore
 			insertPropertyData.productChocolate === '' || // @ts-ignore
 			insertPropertyData.fruitCake === '' ||
-
+            insertPropertyData.productIngredients === '' || // @ts-ignore
 			insertPropertyData.productLeftCount === 0 ||
 			insertPropertyData.productWeight === 0 ||
 			insertPropertyData.productDesc === '' ||
@@ -308,10 +309,23 @@ const AddProperty = ({ initialValues, ...props }: any) => {
 									<input
 										type="text"
 										className="description-input"
-										placeholder={'Address'}
+										placeholder={'ingredients'}
 										value={insertPropertyData.productAddress}
 										onChange={({ target: { value } }) =>
 											setInsertPropertyData({ ...insertPropertyData, productAddress: value })
+										}
+									/>
+								</Stack> 
+
+								<Stack className="price-year-after-price">
+									<Typography className="title">Ingredients</Typography>
+									<input
+										type="text"
+										className="description-input"
+										placeholder={'Address'}
+										value={insertPropertyData.productIngredients}
+										onChange={({ target: { value } }) =>
+											setInsertPropertyData({ ...insertPropertyData, productIngredients: value })
 										}
 									/>
 								</Stack>
@@ -539,7 +553,7 @@ AddProperty.defaultProps = {
 		productAddress: '',
 		productChocolate: false,
 		fruitCake: false,
-		
+		productIngredients: '',
 		productLeftCount: 0,
 		productWeight: 0,
 		productDesc: '',
