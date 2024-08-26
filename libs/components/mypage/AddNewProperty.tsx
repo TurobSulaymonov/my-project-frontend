@@ -52,7 +52,6 @@ const AddProperty = ({ initialValues, ...props }: any) => {
 			propertyLocation: getPropertyData?.getProperty ? getPropertyData?.getProperty?.propertyLocation : '',
 			productSize: getPropertyData?.getProperty ? getPropertyData?.getProperty?.productSize : '',
 
-			productAddress: getPropertyData?.getProperty ? getPropertyData?.getProperty?.productAddress : '',
 			productChocolate: getPropertyData?.getProperty ? getPropertyData?.getProperty?.productChocolate : false,
 			fruitCake: getPropertyData?.getProperty ? getPropertyData?.getProperty?.fruitCake : false,
 			productIngredients: getPropertyData?.getProperty ? getPropertyData?.getProperty?.productIngredients : '',
@@ -124,7 +123,7 @@ const AddProperty = ({ initialValues, ...props }: any) => {
 			insertPropertyData.propertyType === '' || // @ts-ignore
 			insertPropertyData.propertyLocation === '' || // @ts-ignore
 			insertPropertyData.productSize === '' || // @ts-ignore
-        	insertPropertyData.productAddress === '' || // @ts-ignore
+        	
 			insertPropertyData.productChocolate === '' || // @ts-ignore
 			insertPropertyData.fruitCake === '' ||
             insertPropertyData.productIngredients === '' || // @ts-ignore
@@ -303,19 +302,6 @@ const AddProperty = ({ initialValues, ...props }: any) => {
 									<div className={'divider'}></div>
 									<img src={'/img/icons/Vector.svg'} className={'arrow-down'} />
 								</Stack>
-
-								<Stack className="price-year-after-price">
-									<Typography className="title">Address</Typography>
-									<input
-										type="text"
-										className="description-input"
-										placeholder={'ingredients'}
-										value={insertPropertyData.productAddress}
-										onChange={({ target: { value } }) =>
-											setInsertPropertyData({ ...insertPropertyData, productAddress: value })
-										}
-									/>
-								</Stack> 
 
 								<Stack className="price-year-after-price">
 									<Typography className="title">Ingredients</Typography>
@@ -550,7 +536,7 @@ AddProperty.defaultProps = {
 		propertyType: '',
 		propertyLocation: '',
 		productSize: '',
-		productAddress: '',
+	
 		productChocolate: false,
 		fruitCake: false,
 		productIngredients: '',

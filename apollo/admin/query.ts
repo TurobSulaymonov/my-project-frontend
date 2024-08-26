@@ -50,8 +50,7 @@ export const GET_ALL_PROPERTIES_BY_ADMIN = gql`
 				propertyType
 				productStatus
 				propertyLocation
-				productSize
-				productAddress
+            	productSize	
 				productName
 				productPrice
 				productIngredients

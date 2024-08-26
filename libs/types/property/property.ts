@@ -17,7 +17,7 @@ export interface Property {
 	productStatus: ProductStatus;
 	propertyLocation: PropertyLocation;
 	productSize: ProductSize;
-	productAddress: string;
+
 	productName: string;
 	productPrice: number;
 	productIngredients: string,

@@ -6,7 +6,7 @@ export interface PropertyUpdate {
 	productStatus?: ProductStatus;
 	propertyLocation?: PropertyLocation;
 	productSize?: ProductSize;
-	productAddress?: string;
+
 	productName?: string;
 	productPrice?: number;
 	productIngredients?:string;

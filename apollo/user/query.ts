@@ -90,7 +90,7 @@ export const GET_PROPERTY = gql`
 			productStatus
 			propertyLocation
 			productSize
-			productAddress
+			
 			productName
 			productPrice
 			productIngredients
@@ -147,8 +147,7 @@ export const GET_PROPERTIES = gql`
 				propertyType
 				productStatus
 				propertyLocation
-				productSize
-				productAddress
+				productSize	
 				productName
 				productPrice
 				productIngredients
@@ -211,8 +210,7 @@ export const GET_AGENT_PROPERTIES = gql`
 				propertyType
 				productStatus
 				propertyLocation
-				productSize
-				productAddress
+				productSize	
 				productName
 				productPrice
 				productIngredients
@@ -247,8 +245,7 @@ export const GET_FAVORITES = gql`
 				propertyType
 				productStatus
 				propertyLocation
-				productSize
-				productAddress
+				productSize	
 				productName
 				productPrice
 				productIngredients
@@ -313,7 +310,6 @@ export const GET_VISITED = gql`
 				productStatus
 				propertyLocation
 				productSize
-				productAddress
 				productName
 				productPrice
 				productIngredients

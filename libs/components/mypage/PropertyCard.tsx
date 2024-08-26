@@ -60,7 +60,7 @@ export const PropertyCard = (props: PropertyCardProps) => {
 				</Stack>
 				<Stack className="information-box" onClick={() => pushPropertyDetail(property?._id)}>
 					<Typography className="name">{property.productName}</Typography>
-					<Typography className="address">{property.productAddress}</Typography>
+					<Typography className="address">{property.productIngredients}</Typography>
 					<Typography className="price">
 						<strong>${formatterStr(property?.productPrice)}</strong>
 					</Typography>

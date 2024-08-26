@@ -5,7 +5,7 @@ export interface PropertyInput {
 	propertyType: PropertyType;
 	propertyLocation: PropertyLocation;
 	productSize: ProductSize;
-	productAddress: string;
+	
 	productName: string;
 	productPrice: number;
 	productIngredients: string;
