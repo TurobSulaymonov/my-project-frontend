@@ -84,10 +84,10 @@ const TopPropertyCard = (props: TopPropertyCardProps) => {
 
 <div className="fz-7-product">
       <div className="fz-7-product-img">
-        <img src={`${REACT_APP_API_URL}/${property?.productImages[0]}`} alt="Product Image" />
+        <img src={`${REACT_APP_API_URL}/${property?.productImages[0]}`} alt="Product Image"   style={{width:"326px", height:"326px"}} />
       </div>
 
-      <div className="fz-7-product-txt">
+      <div className="fz-7-product-txt" style={{marginLeft: "-30px"}}>
         <h6 className="fz-7-product-cat">{property.productStatus}</h6>
         <h4 className="fz-7-product-title">
           <Link href={"/property/detail"}>{property.productName}</Link>

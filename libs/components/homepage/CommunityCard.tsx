@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import useDeviceDetect from '../../hooks/useDeviceDetect';
-import { Box } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import Moment from 'react-moment';
 import { BoardArticle } from '../../types/board-article/board-article';
 
@@ -39,15 +39,18 @@ const CommunityCard = (props: CommunityCardProps) => {
                 <div className="fz-3-single-blog__txt">
                   <h3 className="fz-3-single-blog__title">
                     <Link href="#">
-                      Banana Cake with Brown Butter Cream Cheese
+					<Moment className="month" format={'DD MMMM'}>
+						{article.createdAt}
+					</Moment>
+				
                     </Link>
                   </h3>
                   <div className="fz-3-single-blog__category-and-actions">
                     <span className="fz-3-single-blog__category">
-                      <Link href="/blog">Cake Shop</Link>
+                      <Link href="/property/detail">Cake Shop</Link>
                     </span>
                    <span>
-				   <Link href="#" className="fz-3-single-blog__btn">
+				   <Link href="/community/detail" className="fz-3-single-blog__btn">
                       Read More <i className="fa-regular fa-arrow-right"></i>
                     </Link>
 				   </span>

@@ -86,7 +86,7 @@ const PopularPropertyCard = (props: PopularPropertyCardProps) => {
 			<Stack className="popular-card-box">
 				
 				<div className="fz-3-single-product__img">
-                <img src={`${REACT_APP_API_URL}/${property?.productImages[0]}`} alt="Product Image" />
+                <img src={`${REACT_APP_API_URL}/${property?.productImages[0]}`} alt="Product Image"  style={{width:"380px", height:"350px"}}/>
                 <div className="fz-3-single-product__actions">
                   <div className="top-actions">
 			
@@ -113,7 +113,7 @@ const PopularPropertyCard = (props: PopularPropertyCardProps) => {
 									<FavoriteIcon />
 								)}
 							</IconButton>
-							<Typography className="view-cnt">{property?.productLikes}</Typography>
+						
 						</div> 
                     </Button>
                   </div>
@@ -129,9 +129,7 @@ const PopularPropertyCard = (props: PopularPropertyCardProps) => {
                 </Link>
                 <p className="fz-3-single-product__price">
                   <span className="current-price">${property.productPrice}</span>
-                  <span className="prev-price text-decoration-line-through">
-                    ${property.productPrice}
-                  </span>
+                 
                 </p>
               </div>
 			</Stack>

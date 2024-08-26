@@ -85,20 +85,15 @@ const TrendPropertyCard = (props: TrendPropertyCardProps) => {
 				<Box
 					component={'div'}
 					className={'card-img'}
-					//style={{ backgroundImage: `url(${REACT_APP_API_URL}/${property?.productImages[0]})` }}
+					style={{ backgroundImage: `url(${REACT_APP_API_URL}/${property?.productImages[0]})` }}
 					onClick={() => {pushDetailHandler(property._id)}}
 				>  
 				 	
-                <img src={`${REACT_APP_API_URL}/${property?.productImages[0]}`} alt="Product Image" />
+
            
 				</Box>
 			<Box component={'div'} className={'info'}>
-				{/* 	<strong className={'title'}
-					onClick={() => {pushDetailHandler(property._id)}}
-					>{property.productName}</strong>
-					<p className={'desc'}>{property.productDesc ?? 'no description'}</p>
-					
-					<Divider sx={{ mt: '15px', mb: '17px' }} /> */}
+				
 					<strong className={'title'}
 					onClick={() => {pushDetailHandler(property._id)}}
 					>{property.productName}</strong>

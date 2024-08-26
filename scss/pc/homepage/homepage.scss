@@ -193,8 +193,8 @@
 						}
 						.card-img {
 							position: relative;
-							width:  214px;
-							height: 214px;
+							width:  300px;
+							height: 300px;
 							background-color: #bdbdbd;
 							background-size: cover;
 							//border-radius: 12px 12px 0px 0px;
@@ -221,9 +221,10 @@
 							.title {
 								overflow: hidden;
 								color: crimson;
-							    margin-right:35%;
+							    margin-right:10%;
 								text-overflow: ellipsis;
 								white-space: nowrap;
+							
 								font-family: $font;
 								font-size: 15px;
 								font-style: normal;
@@ -771,6 +772,7 @@
 								&-txt {
 									margin-top: -50px;
 									padding: 23px 30px;
+								
 									box-shadow: 0 7px 6px rgb(0, 0, 1, 0.07);
 					
 									@include lg {
