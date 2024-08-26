@@ -56,14 +56,14 @@ const CommunityCard = (props: CommunityCardProps) => {
 					//@ts-ignore
 					e) => chooseArticleHandler(e, boardArticle)}
 			>
-			{/* 	<Stack className="image-box">
-					<img src={imagePath} alt="" className="card-img" />
-				</Stack> */}
-			{/* 	<Stack className="desc-box" sx={{ marginTop: '-20px' }}>
+			 	
+				<Stack className="desc-box" sx={{ marginTop: '-20px' }}>
 					<Stack>
 						<Typography
 							className="desc"
-							onClick={(e) => {
+							onClick={(
+								//@ts-ignore
+								e) => {
 								e.stopPropagation();
 								goMemberPage(boardArticle?.memberData?._id as string);
 							}}
@@ -86,45 +86,17 @@ const CommunityCard = (props: CommunityCardProps) => {
 						</IconButton>
 						<Typography className="view-cnt">{boardArticle?.articleLikes}</Typography>
 					</Stack>
-				</Stack> */}
-			{/* 	<Stack className="date-box">
+				</Stack> 
+			 	<Stack className="date-box">
 					<Moment className="month" format={'MMMM'}>
 						{boardArticle?.createdAt}
 					</Moment>
 					<Typography className="day">
 						<Moment format={'DD'}>{boardArticle?.createdAt}</Moment>
 					</Typography>
-				</Stack> */}
+				</Stack> 
 
-{/* <Stack className="sidebar-single-area blog-area">
-			<h3 className="sidebar-single-area__title">Recent post</h3>
-			
-			  <div className="fz-sidebar-single-blog" >
-				<Stack className="fz-sidebar-single-blog__img">
-				<img src={imagePath} alt="" className="card-img" />
-				</Stack>
-	  
-				<div className="fz-sidebar-single-blog__txt fz-single-blog fz-inner-page-blog">
-				  <div className="fz-sidebar-single-blog__infos fz-single-blog__infos">
-					<span className="fz-single-blog__category">
-					  <Link href="#">{boardArticle.articleCategory} </Link>
-					</span>
-					<span className="fz-single-blog__date">
-					<Moment className="month" format={'MMMM'}>
-						{boardArticle?.createdAt}
-					</Moment>
-					<Typography className="day">
-						<Moment format={'DD'}>{boardArticle?.createdAt}</Moment>
-					</Typography>
-					</span>
-				  </div>
-	  
-				  <h5 className="fz-sidebar-single-blog__title">
-					<Link href={`/property/detail`}>{boardArticle.articleTitle}  An electronic product is a device that uses electricity to perform a function.</Link>
-				  </h5>
-				</div>
-			  </div>
-		  </Stack> */}
+
 		  <Stack className="sidebar-single-area blog-area">
 		  <div className="blogs-container">
           <div className="blogs">

@@ -11,7 +11,7 @@ export interface PropertyUpdate {
 	productPrice?: number;
 	productWeight?: number;
 	productLeftCount?: number;
-	propertyRooms?: number;
+
 	productImages?: string[];
 	productDesc?: string;
 	productChocolate?: boolean;

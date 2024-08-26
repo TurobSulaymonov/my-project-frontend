@@ -61,7 +61,7 @@ const PopularPropertyCard = (props: PopularPropertyCardProps) => {
 						</div>
 						<div>
 							<img src="/img/icons/room.svg" alt="" />
-							<span>{property?.propertyRooms} rooms</span>
+
 						</div>
 						<div>
 							<img src="/img/icons/expand.svg" alt="" />

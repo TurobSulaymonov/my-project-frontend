@@ -49,10 +49,7 @@ const TrendPropertyCard = (props: TrendPropertyCardProps) => {
 							<img src="/img/icons/bed.svg" alt="" />
 							<span>{property.productLeftCount} bed</span>
 						</div>
-						<div>
-							<img src="/img/icons/room.svg" alt="" />
-							<span>{property.propertyRooms} rooms</span>
-						</div>
+					
 						<div>
 							<img src="/img/icons/expand.svg" alt="" />
 							<span>{property.productWeight} m2</span>

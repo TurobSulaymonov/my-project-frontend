@@ -22,7 +22,7 @@ export interface Property {
 	productPrice: number;
 	productWeight: number;
 	productLeftCount: number;
-	propertyRooms: number;
+
 	productViews: number;
 	productLikes: number;
 	productComments: number;

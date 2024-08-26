@@ -49,7 +49,7 @@ export const UPDATE_PROPERTY_BY_ADMIN = gql`
 			productPrice
 			productWeight
 			productLeftCount
-			propertyRooms
+		
 			productViews
 			productLikes
 			productImages
@@ -78,7 +78,7 @@ export const REMOVE_PROPERTY_BY_ADMIN = gql`
 			productPrice
 			productWeight
 			productLeftCount
-			propertyRooms
+		
 			productViews
 			productLikes
 			productImages

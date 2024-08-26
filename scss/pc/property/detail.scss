@@ -21,6 +21,204 @@
 					.left-box {
 						width: 100%;
 						height: auto;
+
+						.reviews-config {
+							width: 100%;
+							height: auto;
+							padding: 30px 38px 45px 38px;
+							border-radius: 12px;
+							border: 1px solid #c4c4c4;
+							.filter-box {
+								width: 100%;
+								height: auto;
+								flex-direction: row;
+								justify-content: space-between;
+								margin-bottom: 30px;
+								.review-cnt {
+									width: auto;
+									height: auto;
+									flex-direction: row;
+									align-items: center;
+									gap: 12px;
+									.reviews {
+										width: 153.6px;
+										color: #181a20;
+										font-family: $font;
+										font-size: 17px;
+										font-style: normal;
+										font-weight: 600;
+										line-height: normal;
+									}
+								}
+								.select-box {
+									width: auto;
+									height: auto;
+									flex-direction: row;
+									gap: 10px;
+									.sort-title {
+										color: #717171;
+										font-family: $font;
+										font-size: 14px;
+										font-style: normal;
+										font-weight: 400;
+										line-height: 26px;
+									}
+									.select-main {
+										width: 140px;
+										border: none;
+										outline: none;
+										color: #181a20;
+										font-family: $font;
+										font-size: 14px;
+										font-style: normal;
+										font-weight: 400;
+										line-height: 26px;
+									}
+								}
+							}
+							.review-list {
+								width: 100%;
+								height: auto;
+								gap: 20px;
+								.review-config {
+									width: 100%;
+									height: auto;
+									padding-bottom: 10px;
+									border-bottom: 1px solid #c4c4c4;
+									.review-mb-info {
+										width: 100%;
+										height: auto;
+										flex-direction: row;
+										justify-content: space-between;
+										.img-name-box {
+											width: 30%;
+											flex-direction: row;
+											align-items: center;
+											gap: 20px;
+											.img-box {
+												width: 65px;
+												height: 65px;
+												align-items: center;
+												justify-content: center;
+												border-radius: 50%;
+												background: #f6f6f6;
+												border: 1px solid #b9b9b9;
+												object-fit: cover;
+											}
+											.name {
+												width: 100%;
+												color: #181a20;
+												font-family: $font;
+												font-size: 15px;
+												font-style: normal;
+												font-weight: 600;
+												line-height: normal;
+												cursor: pointer;
+											}
+											.date {
+												width: 100%;
+												color: #181a20;
+												font-family: $font;
+												font-size: 13px;
+												font-style: normal;
+												font-weight: 400;
+												line-height: normal;
+											}
+										}
+										.review-stars {
+											padding-top: 10px;
+										}
+									}
+									.desc-box {
+										width: 100%;
+										height: auto;
+										margin-top: 15px;
+										.description {
+											color: #181a20;
+											font-family: $font;
+											font-size: 14px;
+											font-style: normal;
+											font-weight: 400;
+											line-height: 26px;
+										}
+									}
+								}
+								.pagination-box {
+									margin-top: 15px;
+									width: 100%;
+									height: auto;
+									display: flex;
+									justify-content: center;
+								}
+							}
+						}
+
+						.leave-review-config {
+							border-radius: 12px;
+							border: 1px solid #c4c4c4;
+							background: #fff;
+							box-shadow: 0px 1px 4px 0px rgba(24, 26, 32, 0.07);
+							padding: 30px 38px;
+							.main-title {
+								color: #181a20;
+								font-family: $font;
+								font-size: 17px;
+								font-style: normal;
+								font-weight: 600;
+								line-height: normal;
+							}
+							.review-title {
+								margin-top: 20px;
+								color: #181a20;
+								font-family: $font;
+								font-size: 14px;
+								font-style: normal;
+								font-weight: 600;
+								line-height: normal;
+							}
+							textarea {
+								width: 100%;
+								height: 120px;
+								margin-top: 8px;
+								padding: 20px;
+								border-radius: 8px;
+								border: 1px solid #ddd;
+								color: #717171;
+								font-family: $font;
+								font-size: 14px;
+								font-style: normal;
+								font-weight: 400;
+								line-height: 26px;
+							}
+							.submit-btn {
+								width: 100%;
+								display: flex;
+								justify-content: flex-end;
+								button:disabled {
+									background: #dfdfdf;
+								}
+								.submit-review {
+									display: flex;
+									width: 256px;
+									margin-top: 30px;
+									padding: 16px 30px;
+									justify-content: center;
+									align-items: center;
+									gap: 10px;
+									border-radius: 12px;
+									border: 1px solid #c4c4c4;
+									cursor: pointer;
+									.title {
+										color: #181a20;
+										font-family: $font;
+										font-size: 15px;
+										font-style: normal;
+										font-weight: 600;
+										line-height: normal;
+									}
+								}
+							}
+						}
 						.col-lg-4, .col-md-6, .col-12, .col-xxs-12 {
 							margin-bottom: 20px;
 						  
@@ -83,7 +281,13 @@
 									
 									}
 								  }
+
+								  
 								}
+                                 
+								
+
+
 						  
 								.fz-product-details__infos {
 								  margin-bottom: 20px;
@@ -117,6 +321,7 @@
 								  margin-bottom: 20px;
 								}
 							  }
+							  
 						  
 							  .fz-product-details__quantity {
 								display: flex;
@@ -156,6 +361,8 @@
 								  border-radius: 5px;
 								  margin-left: 10px;
 								}
+
+								
 						  
 								.button-box {
 								  display: flex;
@@ -180,6 +387,7 @@
 								  }
 								}
 							  }
+							  
 						  
 							  .fz-product-details__payment-methods {
 								text-align: center;
@@ -196,7 +404,12 @@
 								  color: #777;
 								}
 							  }
+							  
 							}
+
+					
+							
+							
 						  }
 						  
 						  
@@ -204,7 +417,7 @@
 						  
 						  
 
-					/* 	.title-main {
+					 	.title-main {
 							color: #181a20;
 							font-family: $font;
 							font-size: 30px;
@@ -213,7 +426,8 @@
 							line-height: normal;
 							letter-spacing: 0.6px;
 							text-transform: capitalize;
-						} */
+						} 
+
 						.top-box {
 							width: auto;
 							height: auto;

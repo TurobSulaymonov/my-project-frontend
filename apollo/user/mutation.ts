@@ -135,7 +135,7 @@ export const CREATE_PROPERTY = gql`
 			productPrice
 			productWeight
 			productLeftCount
-			propertyRooms
+			
 			productViews
 			productLikes
 			productImages
@@ -165,7 +165,7 @@ export const UPDATE_PROPERTY = gql`
 			productPrice
 			productWeight
 			productLeftCount
-			propertyRooms
+		
 			productViews
 			productLikes
 			productImages
@@ -195,7 +195,7 @@ export const LIKE_TARGET_PROPERTY = gql`
 			productPrice
 			productWeight
 			productLeftCount
-			propertyRooms
+			
 			productViews
 			productLikes
 			productImages

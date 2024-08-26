@@ -56,7 +56,7 @@ export const GET_ALL_PROPERTIES_BY_ADMIN = gql`
 				productPrice
 				productWeight
 				productLeftCount
-				propertyRooms
+			
 				productViews
 				productLikes
 				productImages

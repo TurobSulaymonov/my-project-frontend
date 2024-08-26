@@ -147,23 +147,6 @@ const HeaderFilter = (props: HeaderFilterProps) => {
 		[searchFilter],
 	);
 
-	const propertyRoomSelectHandler = useCallback(
-		async (value: any) => {
-			try {
-				setSearchFilter({
-					...searchFilter,
-					search: {
-						...searchFilter.search,
-						roomsList: [value],
-					},
-				});
-				disableAllStateHandler();
-			} catch (err: any) {
-				console.log('ERROR, propertyRoomSelectHandler:', err);
-			}
-		},
-		[searchFilter],
-	);
 
 	const productLeftCountelectHandler = useCallback(
 		async (number: Number) => {
@@ -372,15 +355,7 @@ const HeaderFilter = (props: HeaderFilterProps) => {
 						})}
 					</div>
 
-					<div className={`filter-rooms ${openRooms ? 'on' : ''}`} ref={roomsRef}>
-						{[1, 2, 3, 4, 5].map((room: number) => {
-							return (
-								<span onClick={() => propertyRoomSelectHandler(room)} key={room}>
-									{room} room{room > 1 ? 's' : ''}
-								</span>
-							);
-						})}
-					</div>
+				
 				</Stack>
 
 				{/* ADVANCED FILTER MODAL */}

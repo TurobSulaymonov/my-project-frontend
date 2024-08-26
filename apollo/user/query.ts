@@ -95,7 +95,7 @@ export const GET_PROPERTY = gql`
 			productPrice
 			productWeight
 			productLeftCount
-			propertyRooms
+		
 			productViews
 			productLikes
 			productImages
@@ -152,7 +152,7 @@ export const GET_PROPERTIES = gql`
 				productPrice
 				productWeight
 				productLeftCount
-				propertyRooms
+				
 				productViews
 				productLikes
 				propertyRank
@@ -215,7 +215,7 @@ export const GET_AGENT_PROPERTIES = gql`
 				productPrice
 				productWeight
 				productLeftCount
-				propertyRooms
+				
 				productViews
 				productLikes
 				productImages
@@ -250,7 +250,7 @@ export const GET_FAVORITES = gql`
 				productPrice
 				productWeight
 				productLeftCount
-				propertyRooms
+				
 				productViews
 				productLikes
 				productComments
@@ -314,7 +314,7 @@ export const GET_VISITED = gql`
 				productPrice
 				productWeight
 				productLeftCount
-				propertyRooms
+				
 				productViews
 				productLikes
 				productComments

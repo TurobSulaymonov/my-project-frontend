@@ -3,6 +3,7 @@ import { Stack, Box, Divider, Typography } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import useDeviceDetect from '../../hooks/useDeviceDetect';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import TocIcon from '@mui/icons-material/Toc';
 import { Property } from '../../types/property/property';
 import { REACT_APP_API_URL } from '../../config';
 import { formatterStr } from '../../utils';
@@ -48,27 +49,17 @@ const PropertyBigCard = (props: PropertyBigCardProps) => {
 				</Box>
 				<Box component={'div'} className={'info'}>
 					<strong className={'title'}>{property?.productName}</strong>
-					<p className={'desc'}>{property?.productAddress}</p>
+					<p className={'desc'}>{property?.productSize}</p>
 					<div className={'options'}>
 						<div>
-							<img src="/img/icons/bed.svg" alt="" />
-							<span>{property?.productLeftCount} bed</span>
+							<span>{property?.productDesc}</span>
 						</div>
-						<div>
-							<img src="/img/icons/room.svg" alt="" />
-							<span>{property?.propertyRooms} rooms</span>
-						</div>
-						<div>
-							<img src="/img/icons/expand.svg" alt="" />
-							<span>{property?.productWeight} m2</span>
-						</div>
+					
+					
 					</div>
 					<Divider sx={{ mt: '15px', mb: '17px' }} />
 					<div className={'bott'}>
-						<div>
-							{property?.fruitCake ? <p>Rent</p> : <span>Rent</span>}
-							{property?.productChocolate ? <p>Barter</p> : <span>Barter</span>}
-						</div>
+					
 						<div className="buttons-box">
 							<IconButton color={'default'}>
 								<RemoveRedEyeIcon />

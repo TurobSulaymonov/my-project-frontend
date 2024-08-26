@@ -55,7 +55,7 @@ const AddProperty = ({ initialValues, ...props }: any) => {
 			productAddress: getPropertyData?.getProperty ? getPropertyData?.getProperty?.productAddress : '',
 			productChocolate: getPropertyData?.getProperty ? getPropertyData?.getProperty?.productChocolate : false,
 			fruitCake: getPropertyData?.getProperty ? getPropertyData?.getProperty?.fruitCake : false,
-			propertyRooms: getPropertyData?.getProperty ? getPropertyData?.getProperty?.propertyRooms : 0,
+
 			productLeftCount: getPropertyData?.getProperty ? getPropertyData?.getProperty?.productLeftCount : 0,
 			productWeight: getPropertyData?.getProperty ? getPropertyData?.getProperty?.productWeight : 0,
 			productDesc: getPropertyData?.getProperty ? getPropertyData?.getProperty?.productDesc : '',
@@ -126,7 +126,7 @@ const AddProperty = ({ initialValues, ...props }: any) => {
         	insertPropertyData.productAddress === '' || // @ts-ignore
 			insertPropertyData.productChocolate === '' || // @ts-ignore
 			insertPropertyData.fruitCake === '' ||
-			insertPropertyData.propertyRooms === 0 ||
+
 			insertPropertyData.productLeftCount === 0 ||
 			insertPropertyData.productWeight === 0 ||
 			insertPropertyData.productDesc === '' ||
@@ -361,26 +361,7 @@ const AddProperty = ({ initialValues, ...props }: any) => {
 							</Stack>
 
 							<Stack className="config-row">
-								<Stack className="price-year-after-price">
-									<Typography className="title">Rooms</Typography>
-									<select
-										className={'select-description'}
-										value={insertPropertyData.propertyRooms || 'select'}
-										defaultValue={insertPropertyData.propertyRooms || 'select'}
-										onChange={({ target: { value } }) =>
-											setInsertPropertyData({ ...insertPropertyData, propertyRooms: parseInt(value) })
-										}
-									>
-										<option disabled={true} selected={true} value={'select'}>
-											Select
-										</option>
-										{[1, 2, 3, 4, 5].map((room: number) => (
-											<option value={`${room}`}>{room}</option>
-										))}
-									</select>
-									<div className={'divider'}></div>
-									<img src={'/img/icons/Vector.svg'} className={'arrow-down'} />
-								</Stack>
+							
 								<Stack className="price-year-after-price">
 									<Typography className="title">Bed</Typography>
 									<select
@@ -402,7 +383,7 @@ const AddProperty = ({ initialValues, ...props }: any) => {
 									<img src={'/img/icons/Vector.svg'} className={'arrow-down'} />
 								</Stack>
 								<Stack className="price-year-after-price">
-									<Typography className="title">Square</Typography>
+									<Typography className="title">Weight:</Typography>
 									<select
 										className={'select-description'}
 										value={insertPropertyData.productWeight || 'select'}
@@ -558,7 +539,7 @@ AddProperty.defaultProps = {
 		productAddress: '',
 		productChocolate: false,
 		fruitCake: false,
-		propertyRooms: 0,
+		
 		productLeftCount: 0,
 		productWeight: 0,
 		productDesc: '',

@@ -291,68 +291,7 @@ const Filter = (props: FilterType) => {
 		[searchFilter],
 	);
 
-	const propertyRoomSelectHandler = useCallback(
-		async (number: Number) => {
-			try {
-				if (number != 0) {
-					if (searchFilter?.search?.roomsList?.includes(number)) {
-						await router.push(
-							`/property?input=${JSON.stringify({
-								...searchFilter,
-								search: {
-									...searchFilter.search,
-									roomsList: searchFilter?.search?.roomsList?.filter((item: Number) => item !== number),
-								},
-							})}`,
-							`/property?input=${JSON.stringify({
-								...searchFilter,
-								search: {
-									...searchFilter.search,
-									roomsList: searchFilter?.search?.roomsList?.filter((item: Number) => item !== number),
-								},
-							})}`,
-							{ scroll: false },
-						);
-					} else {
-						await router.push(
-							`/property?input=${JSON.stringify({
-								...searchFilter,
-								search: { ...searchFilter.search, roomsList: [...(searchFilter?.search?.roomsList || []), number] },
-							})}`,
-							`/property?input=${JSON.stringify({
-								...searchFilter,
-								search: { ...searchFilter.search, roomsList: [...(searchFilter?.search?.roomsList || []), number] },
-							})}`,
-							{ scroll: false },
-						);
-					}
-				} else {
-					delete searchFilter?.search.roomsList;
-					setSearchFilter({ ...searchFilter });
-					await router.push(
-						`/property?input=${JSON.stringify({
-							...searchFilter,
-							search: {
-								...searchFilter.search,
-							},
-						})}`,
-						`/property?input=${JSON.stringify({
-							...searchFilter,
-							search: {
-								...searchFilter.search,
-							},
-						})}`,
-						{ scroll: false },
-					);
-				}
 
-				console.log('propertyRoomSelectHandler:', number);
-			} catch (err: any) {
-				console.log('ERROR, propertyRoomSelectHandler:', err);
-			}
-		},
-		[searchFilter],
-	);
 
 	const propertyOptionSelectHandler = useCallback(
 		async (e: any) => {
@@ -642,7 +581,7 @@ const Filter = (props: FilterType) => {
 					</Stack>
 				</Stack>
 				<Stack className={'find-your-home'} mb={'30px'}>
-					<Typography className={'title'}>Property Type</Typography>
+					<Typography className={'title'}>Product Collection</Typography>
 					{propertyType.map((type: string) => (
 						<Stack className={'input-box'} key={type}>
 							<Checkbox
@@ -681,135 +620,7 @@ const Filter = (props: FilterType) => {
 					))}
 				</Stack>
 
-			{/* 	<Stack className={'find-your-home'} mb={'30px'}>
-					<Typography className={'title'}>Rooms</Typography>
-					<Stack className="button-group">
-						<Button
-							sx={{
-								borderRadius: '12px 0 0 12px',
-								border: !searchFilter?.search?.roomsList ? '2px solid #181A20' : '1px solid #b9b9b9',
-							}}
-							onClick={() => propertyRoomSelectHandler(0)}
-						>
-							Any
-						</Button>
-						<Button
-							sx={{
-								borderRadius: 0,
-								border: searchFilter?.search?.roomsList?.includes(1) ? '2px solid #181A20' : '1px solid #b9b9b9',
-								borderLeft: searchFilter?.search?.roomsList?.includes(1) ? undefined : 'none',
-							}}
-							onClick={() => propertyRoomSelectHandler(1)}
-						>
-							1
-						</Button>
-						<Button
-							sx={{
-								borderRadius: 0,
-								border: searchFilter?.search?.roomsList?.includes(2) ? '2px solid #181A20' : '1px solid #b9b9b9',
-								borderLeft: searchFilter?.search?.roomsList?.includes(2) ? undefined : 'none',
-							}}
-							onClick={() => propertyRoomSelectHandler(2)}
-						>
-							2
-						</Button>
-						<Button
-							sx={{
-								borderRadius: 0,
-								border: searchFilter?.search?.roomsList?.includes(3) ? '2px solid #181A20' : '1px solid #b9b9b9',
-								borderLeft: searchFilter?.search?.roomsList?.includes(3) ? undefined : 'none',
-							}}
-							onClick={() => propertyRoomSelectHandler(3)}
-						>
-							3
-						</Button>
-						<Button
-							sx={{
-								borderRadius: 0,
-								border: searchFilter?.search?.roomsList?.includes(4) ? '2px solid #181A20' : '1px solid #b9b9b9',
-								borderLeft: searchFilter?.search?.roomsList?.includes(4) ? undefined : 'none',
-								borderRight: searchFilter?.search?.roomsList?.includes(4) ? undefined : 'none',
-							}}
-							onClick={() => propertyRoomSelectHandler(4)}
-						>
-							4
-						</Button>
-						<Button
-							sx={{
-								borderRadius: '0 12px 12px 0',
-								border: searchFilter?.search?.roomsList?.includes(5) ? '2px solid #181A20' : '1px solid #b9b9b9',
-							}}
-							onClick={() => propertyRoomSelectHandler(5)}
-						>
-							5+
-						</Button>
-					</Stack>
-				</Stack>
-				<Stack className={'find-your-home'} mb={'30px'}>
-					<Typography className={'title'}>Bedrooms</Typography>
-					<Stack className="button-group">
-						<Button
-							sx={{
-								borderRadius: '12px 0 0 12px',
-								border: !searchFilter?.search?.bedsList ? '2px solid #181A20' : '1px solid #b9b9b9',
-							}}
-							onClick={() => productLeftCountelectHandler(0)}
-						>
-							Any
-						</Button>
-						<Button
-							sx={{
-								borderRadius: 0,
-								border: searchFilter?.search?.bedsList?.includes(1) ? '2px solid #181A20' : '1px solid #b9b9b9',
-								borderLeft: searchFilter?.search?.bedsList?.includes(1) ? undefined : 'none',
-							}}
-							onClick={() => productLeftCountelectHandler(1)}
-						>
-							1
-						</Button>
-						<Button
-							sx={{
-								borderRadius: 0,
-								border: searchFilter?.search?.bedsList?.includes(2) ? '2px solid #181A20' : '1px solid #b9b9b9',
-								borderLeft: searchFilter?.search?.bedsList?.includes(2) ? undefined : 'none',
-							}}
-							onClick={() => productLeftCountelectHandler(2)}
-						>
-							2
-						</Button>
-						<Button
-							sx={{
-								borderRadius: 0,
-								border: searchFilter?.search?.bedsList?.includes(3) ? '2px solid #181A20' : '1px solid #b9b9b9',
-								borderLeft: searchFilter?.search?.bedsList?.includes(3) ? undefined : 'none',
-							}}
-							onClick={() => productLeftCountelectHandler(3)}
-						>
-							3
-						</Button>
-						<Button
-							sx={{
-								borderRadius: 0,
-								border: searchFilter?.search?.bedsList?.includes(4) ? '2px solid #181A20' : '1px solid #b9b9b9',
-								borderLeft: searchFilter?.search?.bedsList?.includes(4) ? undefined : 'none',
-								// borderRight: false ? undefined : 'none',
-							}}
-							onClick={() => productLeftCountelectHandler(4)}
-						>
-							4
-						</Button>
-						<Button
-							sx={{
-								borderRadius: '0 12px 12px 0',
-								border: searchFilter?.search?.bedsList?.includes(5) ? '2px solid #181A20' : '1px solid #b9b9b9',
-								borderLeft: searchFilter?.search?.bedsList?.includes(5) ? undefined : 'none',
-							}}
-							onClick={() => productLeftCountelectHandler(5)}
-						>
-							5+
-						</Button>
-					</Stack>
-				</Stack> */}
+		
 				<Stack className={'find-your-home'} mb={'30px'}>
 					<Typography className={'title'}>Options</Typography>
 					<Stack className={'input-box'}>
