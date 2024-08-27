@@ -116,7 +116,7 @@ export default function FiberContainer() {
                   <h1 className="fz-9-banner-title">
 				  Elevate Your Cake Cravings.
                   </h1>
-                  <Link className="fz-9-def-btn fz-9-def-btn-pink" href="/shop">
+                  <Link className="fz-9-def-btn fz-9-def-btn-pink" href="/property/detail">
                     Shop Now
                   </Link>
                 </div>

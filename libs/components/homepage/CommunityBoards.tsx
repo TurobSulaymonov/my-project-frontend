@@ -52,7 +52,34 @@ const CommunityBoards = () => {
 
 
 	if (device === 'mobile') {
-		return <div>News Feed (MOBILE)</div>;
+		return (
+			<Stack className={'community-board'}>
+			<Stack className={'container'}>
+				<Stack>
+				<div className="fz-3-section-heading">
+				   <h2 className="fz-section-title">News Feed</h2>
+				   <p className="fz-section-sub-title">
+					 True Pound Cake is a recipe that dates
+					 </p>
+				  </div>
+				</Stack>
+				<Stack className="community-main">
+					<Stack className={'community-left'}>
+						<Stack className={'content-top'}>
+							 
+						
+						</Stack>
+						<Stack className={'card-wrap'}>
+							{newsArticles.map((article, index) => {
+								return <CommunityCard vertical={true} article={article} index={index} key={article?._id} />;
+							})}
+						</Stack>
+					</Stack> 
+				
+				</Stack>
+			</Stack>
+		</Stack>
+		)
 	} else {
 		return (
 			<Stack className={'community-board'}>
@@ -77,19 +104,7 @@ const CommunityBoards = () => {
 								})}
 							</Stack>
 						</Stack> 
-						{/* <Stack className={'community-right'}>
-							<Stack className={'content-top'}>
-								<Link href={'/community?articleCategory=FREE'}>
-									<span>Free</span>
-								</Link>
-								<img src="/img/icons/arrowBig.svg" alt="" />
-							</Stack>
-							<Stack className={'card-wrap vertical'}>
-								{freeArticles.map((article, index) => {
-									return <CommunityCard vertical={false} article={article} index={index} key={article?._id} />;
-								})}
-							</Stack>
-						</Stack> */}
+				
 					</Stack>
 				</Stack>
 			</Stack>

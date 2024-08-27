@@ -69,35 +69,47 @@ const TrendProperties = (props: TrendPropertiesProps) => {
 	if (device === 'mobile') {
 		return (
 			<Stack className={'trend-properties'}>
-				<Stack className={'container'}>
-					<Stack className={'info-box'}>
-						<span>Trend Properties</span>
-					</Stack>
-					<Stack className={'card-box'}>
-						{trendProperties.length === 0 ? (
-							<Box component={'div'} className={'empty-list'}>
-								Trends Empty
-							</Box>
-						) : (
-							<Swiper
-								className={'trend-property-swiper'}
-								slidesPerView={'auto'}
-								centeredSlides={true}
-								spaceBetween={15}
-								modules={[Autoplay]}
-							>
-								{trendProperties.map((property: Property) => {
-									return (
-										<SwiperSlide key={property._id} className={'trend-property-slide'}>
-											<TrendPropertyCard property={property} likePropertyHandler={likePropertyHandler} /> 
-										</SwiperSlide>
-									);
-								})}
-							</Swiper>
-						)}
-					</Stack>
+			<Stack className={'container'}>
+				<Stack className={'info-box'}>
+					<Box component={'div'} className={'left'}>
+						<span>Browse By Type of Cake</span>
+						<p>Establishments producing and selling flour-based food like cakes cookies, and pastries are what bakeries.</p>
+					</Box>
+					<Box component={'div'} className={'right'}>
+						
+					</Box>
+				</Stack>
+				<Stack className={'card-box'}>
+					{trendProperties.length === 0 ? (
+						<Box component={'div'} className={'empty-list'}>
+							Trends Empty
+						</Box>
+					) : (
+						<Swiper
+							className={'trend-property-swiper'}
+							slidesPerView={'auto'}
+							spaceBetween={15}
+							modules={[Autoplay, Navigation, Pagination]}
+							navigation={{
+								nextEl: '.swiper-trend-next',
+								prevEl: '.swiper-trend-prev',
+							}}
+							pagination={{
+								el: '.swiper-trend-pagination',
+							}}
+						>
+							{trendProperties.map((property: Property) => {
+								return (
+									<SwiperSlide key={property._id} className={'trend-property-slide'}>
+										<TrendPropertyCard property={property} likePropertyHandler={likePropertyHandler} />
+									</SwiperSlide>
+								);
+							})}
+						</Swiper>
+					)}
 				</Stack>
 			</Stack>
+		</Stack>
 		);
 	} else {
 		return (

@@ -321,7 +321,7 @@ const AddProperty = ({ initialValues, ...props }: any) => {
 
 							<Stack className="config-row">
 								<Stack className="price-year-after-price">
-									<Typography className="title">Barter</Typography>
+									<Typography className="title">Fruit Cake</Typography>
 									<select
 										className={'select-description'}
 										value={insertPropertyData.productChocolate ? 'yes' : 'no'}
@@ -340,7 +340,7 @@ const AddProperty = ({ initialValues, ...props }: any) => {
 									<img src={'/img/icons/Vector.svg'} className={'arrow-down'} />
 								</Stack>
 								<Stack className="price-year-after-price">
-									<Typography className="title">Rent</Typography>
+									<Typography className="title">Chacolate Cake</Typography>
 									<select
 										className={'select-description'}
 										value={insertPropertyData.fruitCake ? 'yes' : 'no'}
@@ -363,7 +363,7 @@ const AddProperty = ({ initialValues, ...props }: any) => {
 							<Stack className="config-row">
 							
 								<Stack className="price-year-after-price">
-									<Typography className="title">Bed</Typography>
+									<Typography className="title">Product Left Count</Typography>
 									<select
 										className={'select-description'}
 										value={insertPropertyData.productLeftCount || 'select'}
@@ -406,7 +406,7 @@ const AddProperty = ({ initialValues, ...props }: any) => {
 								</Stack>
 							</Stack>
 
-							<Typography className="property-title">Property Description</Typography>
+							<Typography className="property-title">Product Description</Typography>
 							<Stack className="config-column">
 								<Typography className="title">Description</Typography>
 								<textarea
@@ -421,7 +421,7 @@ const AddProperty = ({ initialValues, ...props }: any) => {
 							</Stack>
 						</Stack>
 
-						<Typography className="upload-title">Upload photos of your property</Typography>
+						<Typography className="upload-title">Upload photos of your Cake</Typography>
 						<Stack className="images-box">
 							<Stack className="upload-box">
 								<svg xmlns="http://www.w3.org/2000/svg" width="121" height="120" viewBox="0 0 121 120" fill="none">

@@ -63,30 +63,71 @@ const PopularProperties = (props: PopularPropertiesProps) => {
 
 	if (device === 'mobile') {
 		return (
-			<Stack className={'popular-properties'}>
-				<Stack className={'container'}>
-					<Stack className={'info-box'}>
-						<span>Browse By Type of Cake</span>
-					</Stack>
-					<Stack className={'card-box'}>
-						<Swiper
-							className={'popular-property-swiper'}
-							slidesPerView={'auto'}
-							centeredSlides={true}
-							spaceBetween={25}
-							modules={[Autoplay]}
-						>
-							{popularProperties.map((property: Property) => {
-								return (
-									<SwiperSlide key={property._id} className={'popular-property-slide'}>
-										<PopularPropertyCard property={property}  likePropertyHandler={likePropertyHandler} />
-									</SwiperSlide>
-								);
-							})}
-						</Swiper>
-					</Stack>
+			<Stack className={'popular-properties py-120'}>
+			<Stack className={'container'}>
+				<Stack className={'info-box-1 d-flex flex-column flex-md-row justify-content-between align-items-center align-items-md-end'}>
+					<Box component={'div'} className={'left'}>
+						<span>Layer Cakes</span>
+						<p>True Pound Cake is a recipe that dates</p>
+					</Box>
+					<Box component={'div'} className={'right'}>
+						<div className={'more-box'}>
+							<Link href={'/property'}>
+								<span>See All Categories</span>
+							</Link>
+							<img src="/img/icons/rightup.svg" alt="" />
+						</div>
+					</Box>
+				</Stack>
+				<Stack className={'card-box'}>
+					<Swiper
+						className={'popular-property-swiper'}
+						slidesPerView={'auto'}
+						spaceBetween={25}
+
+						navigation={{
+							nextEl: '.swiper-popular-next',
+							prevEl: '.swiper-popular-prev',
+						}}
+						pagination={{
+							el: '.swiper-popular-pagination',
+						}}
+						breakpoints={{
+							0: {
+							  slidesPerView: 1,
+							  spaceBetween: 20,
+							},
+							480: {
+							  slidesPerView: 2,
+							},
+							768: {
+							  slidesPerView: 3,
+							},
+							992: {
+							  slidesPerView: 4,
+							},
+							1200: {
+							  spaceBetween: 30,
+							},
+						  }}
+						  modules={[Autoplay, Navigation, Pagination]}
+					>
+						{popularProperties.map((property: Property) => {
+							return (
+								<SwiperSlide key={property._id} className={'popular-property-slide'}>
+									<PopularPropertyCard property={property} likePropertyHandler={likePropertyHandler} />
+								</SwiperSlide>
+							);
+						})}
+					</Swiper>
+				</Stack>
+				<Stack className={'pagination-box'}>
+					<WestIcon className={'swiper-popular-prev'} />
+					<div className={'swiper-popular-pagination'}></div>
+					<EastIcon className={'swiper-popular-next'} />
 				</Stack>
 			</Stack>
+		</Stack>
 		);
 	} else {
 		return (

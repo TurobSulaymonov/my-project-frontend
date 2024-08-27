@@ -1,14 +1,17 @@
 import React from 'react';
-import useDeviceDetect from '../../hooks/useDeviceDetect';
+
 import { Stack, Box, Typography } from '@mui/material';
 import Link from 'next/link';
-import { REACT_APP_API_URL } from '../../config';
+
 import IconButton from '@mui/material/IconButton';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { useReactiveVar } from '@apollo/client';
-import { userVar } from '../../../apollo/store';
+import { REACT_APP_API_URL } from './libs/config';
+import useDeviceDetect from './libs/hooks/useDeviceDetect';
+import { userVar } from './apollo/store';
+
 
 interface AgentCardProps {
 	agent: any;

@@ -49,7 +49,7 @@ const PropertyBigCard = (props: PropertyBigCardProps) => {
 				</Box>
 				<Box component={'div'} className={'info'}>
 					<strong className={'title'}>{property?.productName}</strong>
-					<p className={'desc'}>{property?.productSize}</p>
+					<p className={'desc'}>{property?.propertyType}</p>
 					<div className={'options'}>
 						<div>
 							<span>{property?.productDesc}</span>

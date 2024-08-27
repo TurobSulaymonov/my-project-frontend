@@ -27,62 +27,13 @@ const TopPropertyCard = (props: TopPropertyCardProps) => {
 
 	const pushDetailHandler = async (propertyId: string) => {
 		console.log("id:", propertyId);
-		await router.push({pathname: `/property/detail`, query: {id: propertyId}})
+		await router.push({pathname: `/shop/detail`, query: {id: propertyId}})
 	   }
 
 	if (device === 'mobile') {
 		return (
 			<Stack className="top-card-box">
-			
-				 <div className="fz-4-single-product">
-      <div className="fz-4-single-product-img">
-	  <Box
-					component={'div'}
-					className={'card-img'}
-					style={{ backgroundImage: `url(${REACT_APP_API_URL}/${property?.productImages[0]})` }}
-					onClick={() => {pushDetailHandler(property._id)}}
-				>
-					<a role="button" className="view-like-box">
-                         <IconButton color={'default'}>
-								<RemoveRedEyeIcon />
-							</IconButton>
-							<Typography className="view-cnt">{property?.productViews}</Typography>
-							<IconButton color={'default'} onClick={() => likePropertyHandler(user, property?._id)}>
-								{property?.meLiked && property?.meLiked[0]?.myFavorite ? (
-									<FavoriteIcon style={{ color: 'red' }} />
-								) : (
-									<FavoriteIcon />
-								)}
-							</IconButton>
-							<Typography className="view-cnt">{property?.productLikes}</Typography>
-							
-							<ShoppingCartIcon className={'shop-icon'}/>
-			
-          </a>
-				
-				</Box>
-
-      
-      </div>
-      <div className="fz-4-single-product-txt">
-        <h5 className="fz-4-single-product-title">
-          <Link href="#">{property.productName}</Link>
-        </h5>
-        <span className="fz-4-single-product-price">
-          ${property.productPrice}.00<span className="prev-price">${property.productPrice}.00</span>
-        </span>
-      </div>
-	 
-    </div>
-			</Stack>
-		);
-	} else {
-		return (
-			<Stack className="top-card-box">
-			
-
-
-<div className="fz-7-product">
+			<div className="fz-7-product">
       <div className="fz-7-product-img">
         <img src={`${REACT_APP_API_URL}/${property?.productImages[0]}`} alt="Product Image"   style={{width:"326px", height:"326px"}} />
       </div>
@@ -90,13 +41,47 @@ const TopPropertyCard = (props: TopPropertyCardProps) => {
       <div className="fz-7-product-txt" style={{marginLeft: "-30px"}}>
         <h6 className="fz-7-product-cat">{property.productStatus}</h6>
         <h4 className="fz-7-product-title">
-          <Link href={"/property/detail"}>{property.productName}</Link>
+          <Link href={"/shop/detail"}>{property.productName}</Link>
         </h4>
         <span className="fz-7-product-price">${property.productName}</span>
         <div className="fz-7-product-actions">
           <button type="button" className="add-to-cart-btn">
             Add To Cart  
           </button>
+          <div className="right">
+            <button type="button" className="add-to-wishlist-btn">
+              <i className="fa-light fa-heart"></i>
+            </button>
+            <button type="button" className="fz-quick-view">
+              <i className="fa-light fa-eye"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+			</Stack>
+		);
+	} else {
+		return (
+			<Stack className="top-card-box">
+			<div className="fz-7-product">
+      <div className="fz-7-product-img">
+        <img src={`${REACT_APP_API_URL}/${property?.productImages[0]}`} alt="Product Image"   style={{width:"326px", height:"326px"}} />
+      </div>
+
+      <div className="fz-7-product-txt" style={{marginLeft: "-30px"}}>
+        <h6 className="fz-7-product-cat">{property.productStatus}</h6>
+        <h4 className="fz-7-product-title">
+          <Link href={"/shop/detail"}>{property.productName}</Link>
+        </h4>
+        <span className="fz-7-product-price">${property.productName}</span>
+        <div className="fz-7-product-actions">
+          
+		  <Link href={"/shop/detail"}>
+		  <button type="button" className="add-to-cart-btn">
+            Add To Cart  
+          </button>
+		  </Link>
           <div className="right">
             <button type="button" className="add-to-wishlist-btn">
               <i className="fa-light fa-heart"></i>

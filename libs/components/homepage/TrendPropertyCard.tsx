@@ -25,59 +25,30 @@ const TrendPropertyCard = (props: TrendPropertyCardProps) => {
      
    const pushDetailHandler = async (propertyId: string) => {
 	console.log("id:", propertyId);
-	await router.push({pathname: `/property/detail`, query: {id: propertyId}})
+	await router.push({pathname: `/shop/detail`, query: {id: propertyId}})
    }
 
 	if (device === 'mobile') {
 		return (
 			<Stack className="trend-card-box" key={property._id}>
-				<Box
-					component={'div'}
-					className={'card-img'}
-					style={{ backgroundImage: `url(${REACT_APP_API_URL}/${property?.productImages[0]})` }}
-					onClick={() => {pushDetailHandler(property._id)}}
-				>
-					<div>${property.productPrice}</div>
-				</Box>
-				<Box component={'div'} className={'info'}>
-					<strong className={'title'}
-					onClick={() => {pushDetailHandler(property._id)}}
-					>{property.productName}</strong>
-					<p className={'desc'}>{property.productDesc ?? 'no description'}</p>
-					<div className={'options'}>
-						<div>
-							<img src="/img/icons/bed.svg" alt="" />
-							<span>{property.productLeftCount} bed</span>
-						</div>
-					
-						<div>
-							<img src="/img/icons/expand.svg" alt="" />
-							<span>{property.productWeight} m2</span>
-						</div>
-					</div>
-					<Divider sx={{ mt: '15px', mb: '17px' }} />
-					<div className={'bott'}>
-						<p>
-							{property.fruitCake ? 'Rent' : ''} {property.fruitCake && property.productChocolate && '/'}{' '}
-							{property.productChocolate ? 'Barter' : ''}
-						</p>
-						<div className="view-like-box">
-							<IconButton color={'default'}>
-								<RemoveRedEyeIcon />
-							</IconButton>
-							<Typography className="view-cnt">{property?.productViews}</Typography>
-							<IconButton color={'default'} onClick={() => likePropertyHandler(user, property?._id)}>
-								{property?.meLiked && property?.meLiked[0]?.myFavorite ? (
-									<FavoriteIcon style={{ color: 'red' }} />
-								) : (
-									<FavoriteIcon />
-								)}
-							</IconButton>
-							<Typography className="view-cnt">{property?.productLikes}</Typography>
-						</div>
-					</div>
-				</Box>
-			</Stack>
+			<Box
+				component={'div'}
+				className={'card-img'}
+				style={{ backgroundImage: `url(${REACT_APP_API_URL}/${property?.productImages[0]})` }}
+				onClick={() => {pushDetailHandler(property._id)}}
+			>  
+				 
+
+	   
+			</Box>
+		<Box component={'div'} className={'info'}>
+			
+				<strong className={'title'}
+				onClick={() => {pushDetailHandler(property._id)}}
+				>{property.productName}</strong>
+				
+			</Box> 
+		</Stack>
 		);
 	} else {
 		return (

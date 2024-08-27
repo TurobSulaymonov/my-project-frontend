@@ -103,7 +103,7 @@ const PropertyCard = (props: PropertyCardType) => {
                     {property.propertyType}
                   </Stack>
                   <Link
-                    href={`/property/detail`}
+                    href={`/shop/detail`}
                     className="fz-single-product__title"
                   >
                     {property.productName}
@@ -142,7 +142,8 @@ const PropertyCard = (props: PropertyCardType) => {
                       </span>
                     </button>
 
-                    <button
+                  <Link href={"/shop/detail"}>
+                  <button 
                       className="fz-add-to-cart-btn"
                      // onClick={() => addToCart(item.id)}
                     >
@@ -151,6 +152,7 @@ const PropertyCard = (props: PropertyCardType) => {
                         <i className="fa-light fa-cart-shopping"></i>
                       </span>
                     </button>
+                  </Link>
 
                     <button className="fz-add-to-compare-btn">
                       <span className="btn-txt">select to compare</span>
