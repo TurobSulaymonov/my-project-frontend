@@ -333,3 +333,40 @@ export const UNSUBSCRIBE = gql`
 		}
 	}
 `;
+
+
+
+export const MARKNOTIFICATIONREAD = gql`
+	mutation MarkNotificationsAsRead($ids: [String!]!) {
+		markNotificationsAsRead(ids: $ids) {
+			_id
+			notificationType
+			notificationStatus
+			notificationGroup
+			notificationTitle
+			notificationDesc
+			authorId
+			receiverId
+			propertyId
+			articleId
+			createdAt
+		}
+	}
+`;
+/**************************
+ *         MESSGE        *
+ *************************/
+
+export const CREATE_CONTACT = gql`
+	mutation CreateMessage($input: ContactInput!) {
+		createMessage(input: $input) {
+			_id
+			name
+			phone
+			email
+			message
+			contactRefId
+			memberId
+		}
+	}
+`;

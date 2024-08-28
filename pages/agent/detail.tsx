@@ -3,7 +3,7 @@ import { NextPage } from 'next';
 import useDeviceDetect from '../../libs/hooks/useDeviceDetect';
 import withLayoutBasic from '../../libs/components/layout/LayoutBasic';
 import PropertyBigCard from '../../libs/components/common/PropertyBigCard';
-import ReviewCard from '../../libs/components/agent/ReviewCard';
+
 import { Box, Button, Pagination, Stack, Typography } from '@mui/material';
 import StarIcon from '@mui/icons-material/Star';
 import {useMutation, useQuery, useReactiveVar } from '@apollo/client';
@@ -21,6 +21,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { CREATE_COMMENT, LIKE_TARGET_PROPERTY } from '../../apollo/user/mutation';
 import { GET_COMMENTS, GET_MEMBER, GET_PROPERTIES } from '../../apollo/user/query';
 import { T } from '../../libs/types/common';
+import ReviewCard from '../../libs/components/pastrychef/ReviewCard';
 
 export const getStaticProps = async ({ locale }: any) => ({
 	props: {
