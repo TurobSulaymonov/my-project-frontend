@@ -6,6 +6,11 @@ import { useRouter } from 'next/router';
 import { styled } from '@mui/material/styles';
 import useDeviceDetect from '../../hooks/useDeviceDetect';
 import KeyboardArrowDownRoundedIcon from '@mui/icons-material/KeyboardArrowDownRounded';
+import { useQuery } from '@apollo/client';
+import { GET_FAQ } from '../../../apollo/admin/query';
+import { Faqs } from '../../types/faq/faq';
+import { FaqCategory } from '../../enums/faq.enum';
+
 
 const Accordion = styled((props: AccordionProps) => <MuiAccordion disableGutters elevation={0} square {...props} />)(
 	({ theme }) => ({
@@ -33,14 +38,28 @@ const AccordionSummary = styled((props: AccordionSummaryProps) => (
 const Faq = () => {
 	const device = useDeviceDetect();
 	const router = useRouter();
-	const [category, setCategory] = useState<string>('property');
+	const [category, setCategory] = useState<FaqCategory>(FaqCategory.PROPERTY);
 	const [expanded, setExpanded] = useState<string | false>('panel1');
 
 	/** APOLLO REQUESTS **/
+
+	const {
+		loading: getCommentsLoading,
+		data: getFaqData,
+		error: getCommentsError,
+		refetch: getCommentsRefetch,
+	} = useQuery(GET_FAQ, {
+		fetchPolicy: 'cache-and-network',
+		variables: {
+			input: '',
+		},
+	});
+
+	console.log('getFaqData', getFaqData?.getFaq);
 	/** LIFECYCLES **/
-	
+
 	/** HANDLERS **/
-	const changeCategoryHandler = (category: string) => {
+	const changeCategoryHandler = (category: FaqCategory) => {
 		setCategory(category);
 	};
 
@@ -440,82 +459,85 @@ const Faq = () => {
 			<Stack className={'faq-content'}>
 				<Box className={'categories'} component={'div'}>
 					<div
-						className={category === 'property' ? 'active' : ''}
+						className={category === 'PROPERTY' ? 'active' : ''}
 						onClick={() => {
-							changeCategoryHandler('property');
+							changeCategoryHandler(FaqCategory.PROPERTY);
 						}}
 					>
 						Property
 					</div>
 					<div
-						className={category === 'payment' ? 'active' : ''}
+						className={category === 'PAYMENT' ? 'active' : ''}
 						onClick={() => {
-							changeCategoryHandler('payment');
+							changeCategoryHandler(FaqCategory.PAYMENT);
 						}}
 					>
 						Payment
 					</div>
 					<div
-						className={category === 'buyers' ? 'active' : ''}
+						className={category === 'FOR_BUYERS' ? 'active' : ''}
 						onClick={() => {
-							changeCategoryHandler('buyers');
+							changeCategoryHandler(FaqCategory.FOR_BUYERS);
 						}}
 					>
 						Foy Buyers
 					</div>
 					<div
-						className={category === 'agents' ? 'active' : ''}
+						className={category === 'FOR_AGENTS' ? 'active' : ''}
 						onClick={() => {
-							changeCategoryHandler('agents');
+							changeCategoryHandler(FaqCategory.FOR_AGENTS);
 						}}
 					>
 						For Agents
 					</div>
 					<div
-						className={category === 'membership' ? 'active' : ''}
+						className={category === 'MEMBERSHIP' ? 'active' : ''}
 						onClick={() => {
-							changeCategoryHandler('membership');
+							changeCategoryHandler(FaqCategory.MEMBERSHIP);
 						}}
 					>
 						Membership
 					</div>
 					<div
-						className={category === 'community' ? 'active' : ''}
+						className={category === 'COMMUNITY' ? 'active' : ''}
 						onClick={() => {
-							changeCategoryHandler('community');
+							changeCategoryHandler(FaqCategory.COMMUNITY);
 						}}
 					>
 						Community
 					</div>
 					<div
-						className={category === 'other' ? 'active' : ''}
+						className={category === 'OTHER' ? 'active' : ''}
 						onClick={() => {
-							changeCategoryHandler('other');
+							changeCategoryHandler(FaqCategory.OTHER);
 						}}
 					>
 						Other
 					</div>
 				</Box>
 				<Box className={'wrap'} component={'div'}>
-					{data[category] &&
-						data[category].map((ele: any) => (
-							<Accordion expanded={expanded === ele?.id} onChange={handleChange(ele?.id)} key={ele?.subject}>
+					{getFaqData?.getFaq
+						.filter((ele: Faqs) => ele.faqCategory === category)
+						.map((ele: Faqs) => (
+							<Accordion expanded={expanded === ele._id} onChange={handleChange(ele._id)} key={ele.faqQuestion}>
 								<AccordionSummary id="panel1d-header" className="question" aria-controls="panel1d-content">
 									<Typography className="badge" variant={'h4'}>
 										Q
 									</Typography>
-									<Typography> {ele?.subject}</Typography>
+									<Typography> {ele.faqQuestion}</Typography>
 								</AccordionSummary>
 								<AccordionDetails>
 									<Stack className={'answer flex-box'}>
 										<Typography className="badge" variant={'h4'} color={'primary'}>
 											A
 										</Typography>
-										<Typography> {ele?.content}</Typography>
+										<Typography> {ele.faqAnswer}</Typography>
 									</Stack>
 								</AccordionDetails>
 							</Accordion>
 						))}
+
+					
 				</Box>
 			</Stack>
 		);

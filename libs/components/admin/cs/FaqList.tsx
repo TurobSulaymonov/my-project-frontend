@@ -16,9 +16,12 @@ import {
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import { Stack } from '@mui/material';
+import { FaqInput } from '../../../types/faq/faq.input';
+import moment from 'moment';
 
 interface Data {
 	category: string;
+	group: string;
 	title: string;
 	writer: string;
 	date: string;
@@ -50,7 +53,7 @@ const headCells: readonly HeadCell[] = [
 		id: 'category',
 		numeric: true,
 		disablePadding: false,
-		label: 'CATEGORY',
+		label: 'Number',
 	},
 	{
 		id: 'title',
@@ -72,11 +75,18 @@ const headCells: readonly HeadCell[] = [
 		label: 'DATE',
 	},
 	{
-		id: 'status',
+		id: 'group',
 		numeric: false,
 		disablePadding: false,
-		label: 'STATUS',
+		label: 'Group',
 	},
+ {
+	id: 'status',
+	numeric: false,
+	disablePadding: false,
+	label: 'Status',
+},
+
 ];
 
 interface EnhancedTableProps {
@@ -116,6 +126,7 @@ interface FaqArticlesPanelListType {
 	handleMenuIconClick?: any;
 	handleMenuIconClose?: any;
 	generateMentorTypeHandle?: any;
+	data: any;
 }
 
 export const FaqArticlesPanelList = (props: FaqArticlesPanelListType) => {
@@ -127,6 +138,7 @@ export const FaqArticlesPanelList = (props: FaqArticlesPanelListType) => {
 		handleMenuIconClick,
 		handleMenuIconClose,
 		generateMentorTypeHandle,
+		data
 	} = props;
 	const router = useRouter();
 
@@ -141,31 +153,22 @@ export const FaqArticlesPanelList = (props: FaqArticlesPanelListType) => {
 					{/*@ts-ignore*/}
 					<EnhancedTableHead />
 					<TableBody>
-						{[1, 2, 3, 4, 5].map((ele: any, index: number) => {
+						{data?.map((ele: FaqInput, index: any) => {
 							const member_image = '/img/profile/defaultUser.svg';
 
 							let status_class_name = '';
 
 							return (
 								<TableRow hover key={'member._id'} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
-									<TableCell align="left">mb id</TableCell>
-									<TableCell align="left">member.mb_full_name</TableCell>
+									<TableCell align="left">{index + 1}</TableCell>
+									<TableCell align="left">{ele.faqQuestion}</TableCell>
 									<TableCell align="left" className={'name'}>
-										<Stack direction={'row'}>
-											<Link href={`/_admin/users/detail?mb_id=$'{member._id'}`}>
-												<div>
-													<Avatar alt="Remy Sharp" src={member_image} sx={{ ml: '2px', mr: '10px' }} />
-												</div>
-											</Link>
-											<Link href={`/_admin/users/detail?mb_id=${'member._id'}`}>
-												<div>member.mb_nick</div>
-											</Link>
-										</Stack>
+								      {moment(ele.createdAt).format('YYYY MM DD')}
 									</TableCell>
-									<TableCell align="left">member.mb_phone</TableCell>
+									<TableCell align="left">{ele.faqCategory}</TableCell>
 									<TableCell align="center">
-										<Button onClick={(e: any) => handleMenuIconClick(e, index)} className={'badge success'}>
-											member.mb_type
+									<Button onClick={(e: any) => handleMenuIconClick(e, index)} className={'badge success'}>
+											{ele.faqStatus}
 										</Button>
 
 										<Menu
@@ -179,12 +182,12 @@ export const FaqArticlesPanelList = (props: FaqArticlesPanelListType) => {
 											TransitionComponent={Fade}
 											sx={{ p: 1 }}
 										>
-											<MenuItem onClick={(e) => generateMentorTypeHandle('member._id', 'mentor', 'originate')}>
+											<MenuItem onClick={(e: any) => generateMentorTypeHandle('member._id', 'mentor', 'originate')}>
 												<Typography variant={'subtitle1'} component={'span'}>
 													MENTOR
 												</Typography>
 											</MenuItem>
-											<MenuItem onClick={(e) => generateMentorTypeHandle('member._id', 'user', 'remove')}>
+											<MenuItem onClick={(e: any) => generateMentorTypeHandle('member._id', 'user', 'remove')}>
 												<Typography variant={'subtitle1'} component={'span'}>
 													USER
 												</Typography>
