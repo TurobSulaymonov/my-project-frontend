@@ -7,7 +7,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import { productWeight, propertyYears } from '../../config';
-import { PropertyLocation, PropertyType } from '../../enums/property.enum';
+import { ProductSize, PropertyLocation, PropertyType } from '../../enums/property.enum';
 import { PropertiesInquiry } from '../../types/property/property.input';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
@@ -53,6 +53,8 @@ const HeaderFilter = (props: HeaderFilterProps) => {
 	const [openRooms, setOpenRooms] = useState(false);
 	const [propertyLocation, setPropertyLocation] = useState<PropertyLocation[]>(Object.values(PropertyLocation));
 	const [propertyType, setPropertyType] = useState<PropertyType[]>(Object.values(PropertyType));
+	const [productSize, setProductSize] = useState<ProductSize[]>(Object.values(ProductSize));
+
 	const [yearCheck, setYearCheck] = useState({ start: 1970, end: thisYear });
 	const [optionCheck, setOptionCheck] = useState('all');
 
@@ -142,6 +144,24 @@ const HeaderFilter = (props: HeaderFilterProps) => {
 				roomStateChangeHandler();
 			} catch (err: any) {
 				console.log('ERROR, propertyTypeSelectHandler:', err);
+			}
+		},
+		[searchFilter],
+	);
+
+	const productSizeSelectHandler = useCallback(
+		async (value: any) => {
+			try {
+				setSearchFilter({
+					...searchFilter,
+					search: {
+						...searchFilter.search,
+					      sizeList: [value],
+					},
+				});
+				roomStateChangeHandler();
+			} catch (err: any) {
+				console.log('ERROR, productSizeSelectHandler:', err);
 			}
 		},
 		[searchFilter],
@@ -355,7 +375,19 @@ const HeaderFilter = (props: HeaderFilterProps) => {
 						})}
 					</div>
 
-				
+					<div className={`filter-type ${openType ? 'on' : ''}`} ref={typeRef}>
+						{productSize.map((size: string) => {
+							return (
+								<div
+									style={{ backgroundImage: `url(/img/banner/types/${size.toLowerCase()}.webp)` }}
+									onClick={() => productSizeSelectHandler(size)}
+									key={size}
+								>
+									<span>{size}</span>
+								</div>
+							);
+						})}
+					</div>
 				</Stack>
 
 				{/* ADVANCED FILTER MODAL */}

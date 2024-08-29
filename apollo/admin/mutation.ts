@@ -45,6 +45,7 @@ export const UPDATE_PROPERTY_BY_ADMIN = gql`
 			productStatus
 			propertyLocation	
             productIngredients
+			productSize
 			productName
 			productPrice
 			productWeight
@@ -74,6 +75,7 @@ export const REMOVE_PROPERTY_BY_ADMIN = gql`
 			productStatus
 			propertyLocation	
 			productName
+			productSize
 			productPrice
 			productIngredients
 			productWeight

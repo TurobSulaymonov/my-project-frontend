@@ -39,8 +39,8 @@ const Filter = (props: FilterType) => {
 	const device = useDeviceDetect();
 	const router = useRouter();
 	const [propertyLocation, setPropertyLocation] = useState<PropertyLocation[]>(Object.values(PropertyLocation));
+	const [propertyType, setPropertyType] = useState<PropertyType[]>(Object.values(PropertyType));
 	const [productSize, setProductSize] = useState<ProductSize[]>(Object.values(ProductSize));
-    const [propertyType, setPropertyType] = useState<PropertyType[]>(Object.values(PropertyType));
 	const [searchText, setSearchText] = useState<string>('');
 	const [showMore, setShowMore] = useState<boolean>(false);
 

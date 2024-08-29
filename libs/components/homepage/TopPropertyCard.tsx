@@ -43,7 +43,7 @@ const TopPropertyCard = (props: TopPropertyCardProps) => {
         <h4 className="fz-7-product-title">
           <Link href={"/shop/detail"}>{property.productName}</Link>
         </h4>
-        <span className="fz-7-product-price">${property.productName}</span>
+        <span className="fz-7-product-price">${property.productPrice}</span>
         <div className="fz-7-product-actions">
           <button type="button" className="add-to-cart-btn">
             Add To Cart  
@@ -74,7 +74,7 @@ const TopPropertyCard = (props: TopPropertyCardProps) => {
         <h4 className="fz-7-product-title">
           <Link href={"/shop/detail"}>{property.productName}</Link>
         </h4>
-        <span className="fz-7-product-price">${property.productName}</span>
+        <span className="fz-7-product-price">${property.productPrice}</span>
         <div className="fz-7-product-actions">
           
 		  <Link href={"/shop/detail"}>
