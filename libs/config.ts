@@ -10,7 +10,7 @@ for (let i = 1970; i <= thisYear; i++) {
 	propertyYears.push(String(i));
 }
 
-export const productWeight = [0.2,  0.3, 0.4, 0.5, 1, 1.5, 2,];
+export const productWeight = [1, 2, 3, 4, 5];
 
 export const Messages = {
 	error1: 'Something went wrong!',

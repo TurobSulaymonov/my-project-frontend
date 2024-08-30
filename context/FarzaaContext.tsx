@@ -1,5 +1,5 @@
 "use client";
-import { BlogType, ProductType } from "@/types";
+
 import { allProductList, blogList } from "../data/Data";
 import {
   createContext,
@@ -11,6 +11,7 @@ import {
   useState,
 } from "react";
 import { toast } from "react-toastify";
+import { BlogType, ProductType } from "../types";
 
 interface FarzaaContextData {
   showWishlist: boolean;

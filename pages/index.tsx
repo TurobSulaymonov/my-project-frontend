@@ -2,7 +2,7 @@ import { NextPage } from 'next';
 import useDeviceDetect from '../libs/hooks/useDeviceDetect';
 import withLayoutMain from '../libs/components/layout/LayoutHome';
 import CommunityBoards from '../libs/components/homepage/CommunityBoards';
-import PopularProperties from '../libs/components/homepage/PopularProperties';
+
 
 import Events from '../libs/components/homepage/Events';
 import TrendProperties from '../libs/components/homepage/TrendProperties';
@@ -12,7 +12,6 @@ import Advertisement from '../libs/components/homepage/Advertisement';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import ClientSlider from '../libs/components/homepage/ClientSlider';
 import OfferSection from '../libs/components/homepage/OfferSection';
-import FeaturedSection from '../libs/components/homepage/FeaturedSection';
 
 export const getStaticProps = async ({ locale }: any) => ({
 	props: {
@@ -27,7 +26,7 @@ const Home: NextPage = () => {
 		return (
 			<Stack className={'home-page'}>
 				<TrendProperties />
-				<PopularProperties />
+				{/* <PopularProperties /> */}
 				<OfferSection/>
 				<Advertisement />
 				<TopProperties />
@@ -41,7 +40,7 @@ const Home: NextPage = () => {
 		return (
 			<Stack className={'home-page'}>
 				<TrendProperties />
-				<PopularProperties />
+				{/* <PopularProperties /> */}
 				<OfferSection/>
 				<Advertisement />
 				<TopProperties />
