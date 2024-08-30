@@ -284,7 +284,7 @@ const PropertyDetail: NextPage = ({ initialComment, ...props }: any) => {
         <ul>
    
            <li>
-		   <span className="info-property"> Product Price: </span>   
+		   <span className="info-property"> Product Namw: </span>   
 		   <span className="price">{property?.productName}</span>
 		   </li>
 
